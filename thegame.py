@@ -132,209 +132,192 @@ def rgb_to_hex(red, green, blue):
     return "#%02x%02x%02x" % (red, green, blue)
 
 
-class RoundedButton(tk.Canvas):
+def test():
+    print("Hello")
+
+
+class RabRectangle:
     def __init__(
-        self, parent, width, height, cornerradius, padding, color, bg, command=None
+        self,
+        parent,
+        x,
+        y,
+        width,
+        height,
+        corner_radius,
+        fill,
+        text_data=None,
+        button=False,
+        command=None,
+        top_left_arc=True,
+        top_right_arc=True,
+        bottom_left_arc=True,
+        bottom_right_arc=True,
     ):
-        tk.Canvas.__init__(
-            self,
-            parent,
-            bd=0,
-            borderwidth=0,
-            relief="flat",
-            highlightthickness=0,
-            bg=bg,
+        self.canvas = parent
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.corner_radius = corner_radius
+        self.fill = fill
+        self.top_left_arc = top_left_arc
+        self.top_right_arc = top_right_arc
+        self.bottom_left_arc = bottom_left_arc
+        self.bottom_right_arc = bottom_right_arc
+        self.text_data = text_data
+        self.rectangle = self.make_rectangle()
+        if self.text_data:
+            print(f'Creating Text: {self.text_data["string"]}')
+            self.text_id = self.canvas.create_text(
+                self.x + self.width / 2,
+                self.y + self.height / 2,
+                text=self.text_data["string"],
+                fill=self.text_data["color"],
+                font=(self.text_data["font"], self.text_data["size"]),
+            )
+        self.button = button
+        if self.button:
+            self.command = command
+            self.canvas.tag_bind(self.rectangle, "<ButtonPress-1>", self._on_press)
+            self.canvas.tag_bind(self.rectangle, "<ButtonRelease-1>", self._on_release)
+
+    def make_rectangle(self):
+        points = []
+        if self.top_left_arc:
+            print("Top Left Arc")
+            # Top left arc
+            for i in range(180, 271):
+                a = math.radians(i)
+                points.extend(
+                    [
+                        self.x + self.corner_radius + self.corner_radius * math.cos(a),
+                        self.y + self.corner_radius + self.corner_radius * math.sin(a),
+                    ]
+                )
+        else:
+            print("Top Left No Arc")
+            points.extend([self.x, self.y, self.x, self.y])
+
+        points.extend([self.x + self.width, self.y])  # Top right corner
+        print("Top Right Corner")
+
+        if self.top_right_arc:
+            # Top right arc
+            print("Top Right Arc")
+            for i in range(270, 361):
+                a = math.radians(i)
+                points.extend(
+                    [
+                        self.x
+                        + self.width
+                        - self.corner_radius
+                        + self.corner_radius * math.cos(a),
+                        self.y + self.corner_radius + self.corner_radius * math.sin(a),
+                    ]
+                )
+        else:
+            print("Top Right No Arc")
+            points.extend([self.x + self.width, self.y])
+
+        points.extend(
+            [self.x + self.width, self.y + self.height]
+        )  # Bottom right corner
+        print("Bottom Right Corner")
+
+        if self.bottom_right_arc:
+            # Bottom right arc
+            print("Bottom Right Arc")
+            for i in range(0, 91):
+                a = math.radians(i)
+                points.extend(
+                    [
+                        self.x
+                        + self.width
+                        - self.corner_radius
+                        + self.corner_radius * math.cos(a),
+                        self.y
+                        + self.height
+                        - self.corner_radius
+                        + self.corner_radius * math.sin(a),
+                    ]
+                )
+        else:
+            print("Bottom Right No Arc")
+            points.extend([self.x + self.width, self.y + self.height])
+
+        points.extend([self.x, self.y + self.height])  # Bottom left corner
+        print("Bottom Left Corner")
+
+        if self.bottom_left_arc:
+            # Bottom left arc
+            print("Bottom Left Arc")
+            for i in range(90, 181):
+                a = math.radians(i)
+                points.extend(
+                    [
+                        self.x + self.corner_radius + self.corner_radius * math.cos(a),
+                        self.y
+                        + self.height
+                        - self.corner_radius
+                        + self.corner_radius * math.sin(a),
+                    ]
+                )
+
+        else:
+            print("Bottom Left No Arc")
+            points.extend([self.x, self.y + self.height])
+
+        points.extend([self.x, self.y])  # Top left corner
+
+        return self.canvas.create_polygon(
+            points, fill=self.fill, smooth=True, splinesteps=12
         )
-        self.command = command
-
-        if cornerradius > 0.5 * width:
-            print("Error: cornerradius is greater than width.")
-            return None
-
-        if cornerradius > 0.5 * height:
-            print("Error: cornerradius is greater than height.")
-            return None
-
-        rad = 2 * cornerradius
-
-        def shape():
-            self.create_polygon(
-                (
-                    padding,
-                    height - cornerradius - padding,
-                    padding,
-                    cornerradius + padding,
-                    padding + cornerradius,
-                    padding,
-                    width - padding - cornerradius,
-                    padding,
-                    width - padding,
-                    cornerradius + padding,
-                    width - padding,
-                    height - cornerradius - padding,
-                    width - padding - cornerradius,
-                    height - padding,
-                    padding + cornerradius,
-                    height - padding,
-                ),
-                fill=color,
-                outline=color,
-            )
-            self.create_arc(
-                (padding, padding + rad, padding + rad, padding),
-                start=90,
-                extent=90,
-                fill=color,
-                outline=color,
-            )
-            self.create_arc(
-                (width - padding - rad, padding, width - padding, padding + rad),
-                start=0,
-                extent=90,
-                fill=color,
-                outline=color,
-            )
-            self.create_arc(
-                (
-                    width - padding,
-                    height - rad - padding,
-                    width - padding - rad,
-                    height - padding,
-                ),
-                start=270,
-                extent=90,
-                fill=color,
-                outline=color,
-            )
-            self.create_arc(
-                (padding, height - padding - rad, padding + rad, height - padding),
-                start=180,
-                extent=90,
-                fill=color,
-                outline=color,
-            )
-
-        shape()
-        (x0, y0, x1, y1) = self.bbox("all")
-        width = x1 - x0
-        height = y1 - y0
-        self.configure(width=width, height=height)
-        self.bind("<ButtonPress-1>", self._on_press)
-        self.bind("<ButtonRelease-1>", self._on_release)
-
-    def rounded_rect(self, x, y, w, h, c):
-        self.create_arc(x, y, x + 2 * c, y + 2 * c, start=90, extent=90, style="arc")
-        self.create_arc(
-            x + w - 2 * c,
-            y + h - 2 * c,
-            x + w,
-            y + h,
-            start=270,
-            extent=90,
-            style="arc",
-        )
-        self.create_arc(
-            x + w - 2 * c, y, x + w, y + 2 * c, start=0, extent=90, style="arc"
-        )
-        self.create_arc(
-            x, y + h - 2 * c, x + 2 * c, y + h, start=180, extent=90, style="arc"
-        )
-        self.create_line(x + c, y, x + w - c, y)
-        self.create_line(x + c, y + h, x + w - c, y + h)
-        self.create_line(x, y + c, x, y + h - c)
-        self.create_line(x + w, y + c, x + w, y + h - c)
 
     def _on_press(self, event):
-        self.configure(relief="sunken")
+        self.canvas.configure(relief="sunken")
 
     def _on_release(self, event):
-        self.configure(relief="raised")
+        self.canvas.configure(relief="raised")
         if self.command is not None:
             self.command()
 
 
-class RoundedBox(tk.Canvas):
-    def __init__(self, parent, width, height, cornerradius, padding, color, bg):
-        tk.Canvas.__init__(
-            self, parent, borderwidth=0, relief="flat", highlightthickness=0, bg=bg
-        )
+class GridMaker:
+    def __init__(self, parent, canvas, grid_width, amount_of_rectangles, rect_gap):
+        self.parent = parent
+        self.canvas = canvas
+        self.grid_width = grid_width
+        self.grid_starting_x = (self.parent.window_width - self.grid_width) / 2
+        self.amount_of_rectangles = amount_of_rectangles
+        self.rect_gap = rect_gap
+        self.list_of_rectangles = []
 
-        if cornerradius > 0.5 * width:
-            print("Error: cornerradius is greater than width.")
-            return None
+        self.rect_width = (
+            self.grid_width - (self.amount_of_rectangles - 1) * self.rect_gap
+        ) / self.amount_of_rectangles
 
-        if cornerradius > 0.5 * height:
-            print("Error: cornerradius is greater than height.")
-            return None
+        self.rect_height = 50
 
-        rad = 2 * cornerradius
-
-        def shape():
-            self.create_polygon(
-                (
-                    padding,
-                    height - cornerradius - padding,
-                    padding,
-                    cornerradius + padding,
-                    padding + cornerradius,
-                    padding,
-                    width - padding - cornerradius,
-                    padding,
-                    width - padding,
-                    cornerradius + padding,
-                    width - padding,
-                    height - cornerradius - padding,
-                    width - padding - cornerradius,
-                    height - padding,
-                    padding + cornerradius,
-                    height - padding,
-                ),
-                fill=color,
-                outline=color,
+        for i in range(self.amount_of_rectangles):
+            rect = RabRectangle(
+                self.canvas,
+                (self.grid_starting_x + (i * rect_gap) + (i * self.rect_width)),
+                200,
+                self.rect_width,
+                self.rect_height,
+                10,
+                fill="blue",
+                text_data={
+                    "string": f"Test {i}",
+                    "color": "black",
+                    "font": "Arial",
+                    "size": 16,
+                },
+                button=True,
+                command=test,
             )
-            self.create_arc(
-                (padding, padding + rad, padding + rad, padding),
-                start=90,
-                extent=90,
-                fill=color,
-                outline=color,
-            )
-            self.create_arc(
-                (width - padding - rad, padding, width - padding, padding + rad),
-                start=0,
-                extent=90,
-                fill=color,
-                outline=color,
-            )
-            self.create_arc(
-                (
-                    width - padding,
-                    height - rad - padding,
-                    width - padding - rad,
-                    height - padding,
-                ),
-                start=270,
-                extent=90,
-                fill=color,
-                outline=color,
-            )
-            self.create_arc(
-                (padding, height - padding - rad, padding + rad, height - padding),
-                start=180,
-                extent=90,
-                fill=color,
-                outline=color,
-            )
-
-        shape()
-        (x0, y0, x1, y1) = self.bbox("all")
-        width = x1 - x0
-        height = y1 - y0
-        self.configure(width=width, height=height)
-
-
-def test():
-    print("Hello")
+            self.list_of_rectangles.append(rect)
 
 
 class Window(tk.Canvas):
@@ -342,12 +325,9 @@ class Window(tk.Canvas):
         super().__init__(parent, *args, **kwargs)
         self.parent = parent
 
-        # button = RoundedButton(self, 200, 100, 50, 2, "red", None, command=test)
-        # button.place(relx=0.1, rely=0.1)
-
         rect_x = 50
         rect_y = 50
-        rect_width = 150
+        rect_width = self.parent.window_width - 200
         rect_height = 200
         rect_radius = 40
         rect_color = "#0000FF"
@@ -360,123 +340,40 @@ class Window(tk.Canvas):
         antialias_b = int((rect_color_rgb[2] + background_color_rgb[2] * cw) / (cw + 1))
         antialias_color_hex = rgb_to_hex(antialias_r, antialias_g, antialias_b)
 
-        self.rounded_rect_polygon(
-            rect_x,
-            rect_y,
+        print(f"Title-Bar is : {self.parent.title_bar_height}")
+        background = RabRectangle(
+            self,
+            0,
+            0,
+            self.parent.window_width,
+            self.parent.window_height - self.parent.title_bar_height,
+            20,
+            fill=background_color,
+            top_left_arc=False,
+            top_right_arc=False,
+            bottom_left_arc=True,
+            bottom_right_arc=True,
+        )
+
+        first_grid = GridMaker(
+            self.parent,
+            self,
+            grid_width=rect_width,
+            amount_of_rectangles=10,
+            rect_gap=2,
+        )
+        test_rect = RabRectangle(
+            self,
+            self.parent.window_width / 2 - rect_width / 2,
+            self.parent.window_height / 2 - rect_height / 2,
             rect_width,
             rect_height,
             rect_radius,
+            text_data={"string": "Test", "color": "black", "font": "Arial", "size": 16},
             fill=rect_color,
+            button=True,
+            command=test,
         )
-
-        self.rounded_rect(
-            rect_x + 200,
-            rect_y,
-            rect_width,
-            rect_height,
-            rect_radius,
-            fill=antialias_color_hex,
-            width=1.5,
-        )
-
-        self.rounded_rect_polygon(
-            rect_x + 200, rect_y, rect_width, rect_height, rect_radius, fill=rect_color
-        )
-
-    def rounded_rect(self, x, y, w, h, c, fill, width=1):
-        """
-        Draws a rounded rectangle with the ability to change the thickness and color of the lines.
-
-        Args:
-            x (int): X-coordinate of the top-left corner of the rectangle.
-            y (int): Y-coordinate of the top-left corner of the rectangle.
-            w (int): Width of the rectangle.
-            h (int): Height of the rectangle.
-            c (int): Radius of the corners.
-            fill (str, optional): Color of the rectangle's fill. Defaults to "black".
-            width (int, optional): Thickness of the rectangle's fill. Defaults to 1.
-        """
-        self.create_arc(
-            x,
-            y,
-            x + 2 * c,
-            y + 2 * c,
-            start=90,
-            extent=90,
-            style="arc",
-            outline=fill,
-            width=width,
-        )
-        self.create_arc(
-            x + w - 2 * c,
-            y + h - 2 * c,
-            x + w,
-            y + h,
-            start=270,
-            extent=90,
-            style="arc",
-            outline=fill,
-            width=width,
-        )
-        self.create_arc(
-            x + w - 2 * c,
-            y,
-            x + w,
-            y + 2 * c,
-            start=0,
-            extent=90,
-            style="arc",
-            outline=fill,
-            width=width,
-        )
-        self.create_arc(
-            x,
-            y + h - 2 * c,
-            x + 2 * c,
-            y + h,
-            start=180,
-            extent=90,
-            style="arc",
-            outline=fill,
-            width=width,
-        )
-        self.create_line(x + c, y, x + w - c, y, fill=fill, width=width)
-        self.create_line(x + c, y + h, x + w - c, y + h, fill=fill, width=width)
-        self.create_line(x, y + c, x, y + h - c, fill=fill, width=width)
-        self.create_line(x + w, y + c, x + w, y + h - c, fill=fill, width=width)
-
-    def rounded_rect_polygon(self, x, y, w, h, c, fill, **kwargs):
-        points = []
-
-        # Top left arc
-        for i in range(180, 271):
-            a = math.radians(i)
-            points.extend([x + c + c * math.cos(a), y + c + c * math.sin(a)])
-
-        points.extend([x + w, y])  # Top right corner
-
-        # Top right arc
-        for i in range(270, 361):
-            a = math.radians(i)
-            points.extend([x + w - c + c * math.cos(a), y + c + c * math.sin(a)])
-
-        points.extend([x + w, y + h])  # Bottom right corner
-
-        # Bottom right arc
-        for i in range(0, 91):
-            a = math.radians(i)
-            points.extend([x + w - c + c * math.cos(a), y + h - c + c * math.sin(a)])
-
-        points.extend([x, y + h])  # Bottom left corner
-
-        # Bottom left arc
-        for i in range(90, 181):
-            a = math.radians(i)
-            points.extend([x + c + c * math.cos(a), y + h - c + c * math.sin(a)])
-
-        points.extend([x, y])  # Top left corner
-
-        self.create_polygon(points, fill=fill, smooth=1, splinesteps=1, **kwargs)
 
 
 class App(tk.Tk):
@@ -487,21 +384,59 @@ class App(tk.Tk):
         self.mouse_y = 0
 
         self.overrideredirect(True)  # turns off title bar, geometry
-        self.geometry("500x500")
+        self.window_width = 1280
+        self.window_height = 780
+        self.geometry(f"{self.window_width}x{self.window_height}")
+        self.geometry(
+            f"+{int((self.winfo_screenwidth()/2)-(self.window_width/2))}+{int((self.winfo_screenheight()/2)-(self.window_height/2))}"
+        )
+
         self.wm_attributes("-topmost", 1)
         self.wm_attributes("-transparentcolor", "DarkOliveGreen4")
 
-        title_bar = tk.Frame(self, bg="red", height=0, bd=0)
-        close_button = tk.Button(
-            title_bar, text=" X ", command=self.destroy, bd=0, bg="red"
+        title_bar = tk.Canvas(
+            bd=0, highlightthickness=0, bg="DarkOliveGreen4", height=22, width=0
         )
-        close_button.pack(side="right")
+        RabRectangle(
+            title_bar,
+            0,
+            0,
+            self.window_width,
+            22,
+            20,
+            fill="red",
+            top_left_arc=True,
+            top_right_arc=True,
+            bottom_left_arc=False,
+            bottom_right_arc=False,
+        )
+
+        # title_bar = tk.Frame(self, bg="red", height=0, bd=0)
+        close_button_width = 22
+        close_button = RabRectangle(
+            title_bar,
+            self.window_width - (close_button_width * 0.8),
+            0,
+            close_button_width,
+            close_button_width,
+            25,
+            fill="black",
+            button=True,
+            command=self.destroy,
+            top_left_arc=False,
+            top_right_arc=True,
+            bottom_left_arc=False,
+            bottom_right_arc=False,
+        )
+        # close_button.pack(side="right")
 
         # pack the widgets
         title_bar.pack(expand=False, fill="x", side="top")
+        self.title_bar_height = title_bar.winfo_reqheight()
+        print(f"Title-Bar is : {self.title_bar_height}")
 
         # Create an instance of WindowCanvas
-        window = Window(self, bg="yellow", bd=0, highlightthickness=0)
+        window = Window(self, bg="DarkOliveGreen4", bd=0, highlightthickness=0)
         window.pack(expand=True, fill="both", side="top")
 
         # bind title bar motion to the move window function
