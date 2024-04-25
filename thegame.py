@@ -34,23 +34,24 @@ guess_display_order = [
     "weight",
 ]
 
-# def resizeImage(image, width=False, height=False, resize_resolution=10):
-#     original_width = image.width()
-#     original_height = image.height()
-#     print(f"Original Size: {original_width, original_height}")
-#     if width:
-#         width_fraction = math.ceil((width / original_width) / (resize_resolution / 100))
-#         print(f"Width Fraction : {width_fraction}")
-#     if height:
-#         height_fraction = math.ceil(
-#             (height / original_height) / (resize_resolution / 100)
-#         )
-#         print(f"Height Fraction Numerator : {height_fraction}")
 
-#     print(f"Shrinking Denominator : {resize_resolution}")
-#     return image.zoom(
-#         width_fraction if width else 1, height_fraction if height else 1
-#     ).subsample(resize_resolution if width else 1, resize_resolution if height else 1)
+def resizeImage(image, width=False, height=False, resize_resolution=10):
+    original_width = image.width()
+    original_height = image.height()
+    print(f"Original Size: {original_width, original_height}")
+    if width:
+        width_fraction = math.ceil((width / original_width) / (resize_resolution / 100))
+        print(f"Width Fraction : {width_fraction}")
+    if height:
+        height_fraction = math.ceil(
+            (height / original_height) / (resize_resolution / 100)
+        )
+        print(f"Height Fraction Numerator : {height_fraction}")
+
+    print(f"Shrinking Denominator : {resize_resolution}")
+    return image.zoom(
+        width_fraction if width else 1, height_fraction if height else 1
+    ).subsample(resize_resolution if width else 1, resize_resolution if height else 1)
 
 
 class Guess:
@@ -82,6 +83,7 @@ class Guess:
                 if guessed_pokemon["results"]["Correct"]:
                     print("Correct")
                 else:
+
                     print(guessed_pokemon["results"][category])
                 print("\n")
 
@@ -90,7 +92,7 @@ class Guess:
         guessed_pokemon = Pokemon(
             (guessed_pokemon_name, pokemon_data[guessed_pokemon_name])
         )
-        print(guessed_pokemon)
+        # print(guessed_pokemon)
         if self.correct_pokemon.number == guessed_pokemon.number:
             result = {"Correct": True}
         else:
@@ -115,7 +117,7 @@ class Guess:
                 "results": result,
             }
         )
-        self.guess_display()
+        # self.guess_display()
         # return self.guessed_pokemon_list
 
 
@@ -139,9 +141,9 @@ with open("Pokemon.json", encoding="utf-8") as file:
 pokemon_data = pokemon_data[0]
 # target_pokemon = random.choice(list(pokemon_data.items()))
 target_pokemon = ("Bulbasaur", pokemon_data["Bulbasaur"])
-print(target_pokemon)
+# print(target_pokemon)
 correctPokemon = Pokemon(target_pokemon)
-print(f"Correct Pokemon: {correctPokemon.name}")
+# print(f"Correct Pokemon: {correctPokemon.name}")
 
 # Create a Guess object
 guess = Guess(correctPokemon)
@@ -177,11 +179,13 @@ class RabRectangle:
         fill,
         text_data=None,
         button=False,
+        input=False,
         command=None,
         top_left_arc=True,
         top_right_arc=True,
         bottom_left_arc=True,
         bottom_right_arc=True,
+        rect_outline=False,
     ):
         self.canvas = parent
         self.x = x
@@ -195,7 +199,11 @@ class RabRectangle:
         self.bottom_left_arc = bottom_left_arc
         self.bottom_right_arc = bottom_right_arc
         self.text_data = text_data
+        self.rect_outline = rect_outline
+        self.input = input
+
         self.rectangle = self.make_rectangle()
+
         if self.text_data:
             print(f'Creating Text: {self.text_data["string"]}')
             self.text_id = self.canvas.create_text(
@@ -214,7 +222,7 @@ class RabRectangle:
     def make_rectangle(self):
         points = []
         if self.top_left_arc:
-            print("Top Left Arc")
+            # print("Top Left Arc")
             # Top left arc
             for i in range(180, 271):
                 a = math.radians(i)
@@ -225,7 +233,7 @@ class RabRectangle:
                     ]
                 )
         else:
-            print("Top Left No Arc")
+            # print("Top Left No Arc")
             points.extend([self.x, self.y, self.x, self.y])
 
         # points.extend([self.x + self.width, self.y])  # Top right corner
@@ -233,7 +241,7 @@ class RabRectangle:
 
         if self.top_right_arc:
             # Top right arc
-            print("Top Right Arc")
+            # print("Top Right Arc")
             for i in range(270, 361):
                 a = math.radians(i)
                 points.extend(
@@ -246,7 +254,7 @@ class RabRectangle:
                     ]
                 )
         else:
-            print("Top Right No Arc")
+            # print("Top Right No Arc")
             points.extend([self.x + self.width, self.y])
 
         # points.extend(
@@ -256,7 +264,7 @@ class RabRectangle:
 
         if self.bottom_right_arc:
             # Bottom right arc
-            print("Bottom Right Arc")
+            # print("Bottom Right Arc")
             for i in range(0, 91):
                 a = math.radians(i)
                 points.extend(
@@ -272,7 +280,7 @@ class RabRectangle:
                     ]
                 )
         else:
-            print("Bottom Right No Arc")
+            # print("Bottom Right No Arc")
             points.extend([self.x + self.width, self.y + self.height])
 
         # points.extend([self.x, self.y + self.height])  # Bottom left corner
@@ -280,7 +288,7 @@ class RabRectangle:
 
         if self.bottom_left_arc:
             # Bottom left arc
-            print("Bottom Left Arc")
+            # print("Bottom Left Arc")
             for i in range(90, 181):
                 a = math.radians(i)
                 points.extend(
@@ -294,17 +302,23 @@ class RabRectangle:
                 )
 
         else:
-            print("Bottom Left No Arc")
+            # print("Bottom Left No Arc")
             points.extend([self.x, self.y + self.height])
 
         # points.extend([self.x, self.y])  # Top left corner
-
-        return self.canvas.create_polygon(
-            points,
-            fill=self.fill,
-            width=1,
-            outline="black",
-        )
+        if self.rect_outline:
+            return self.canvas.create_polygon(
+                points,
+                fill=self.fill,
+                width=1,
+                outline=self.rect_outline,
+            )
+        else:
+            return self.canvas.create_polygon(
+                points,
+                fill=self.fill,
+                width=1,
+            )
 
     def _on_press(self, event):
         self.canvas.configure(relief="sunken")
@@ -326,6 +340,8 @@ class GridMaker:
         text_data,
         combined=False,
         arcs=[True, True, True, True],
+        grid_height=50,
+        grid_y=0,
     ):
         self.parent = parent
         self.canvas = canvas
@@ -337,6 +353,8 @@ class GridMaker:
         self.test_data = text_data
         self.combined = combined
         self.arcs = arcs
+        self.grid_height = grid_height
+        self.grid_y = grid_y
 
         self.rect_width = (
             self.grid_width - (self.amount_of_rectangles - 1) * self.rect_gap
@@ -348,9 +366,9 @@ class GridMaker:
             rect = RabRectangle(
                 self.canvas,
                 (self.grid_starting_x + (i * rect_gap) + (i * self.rect_width)),
-                200,
+                self.grid_y,
                 self.rect_width,
-                self.rect_height,
+                self.grid_height,
                 10,
                 fill="blue",
                 text_data={
@@ -384,7 +402,7 @@ class Window(tk.Canvas):
         rect_height = 200
         rect_radius = 40
         rect_color = "#0000FF"
-        background_color = "#FFFF00"
+        background_color = "#000033"
         cw = 2
         rect_color_rgb = hex_to_rgb(rect_color)
         background_color_rgb = hex_to_rgb(background_color)
@@ -393,7 +411,7 @@ class Window(tk.Canvas):
         antialias_b = int((rect_color_rgb[2] + background_color_rgb[2] * cw) / (cw + 1))
         antialias_color_hex = rgb_to_hex(antialias_r, antialias_g, antialias_b)
 
-        print(f"Title-Bar is : {self.parent.title_bar_height}")
+        # print(f"Title-Bar is : {self.parent.title_bar_height}")
         background = RabRectangle(
             self,
             0,
@@ -411,6 +429,7 @@ class Window(tk.Canvas):
         header_grid = GridMaker(
             self.parent,
             self,
+            grid_y=150,
             grid_width=rect_width,
             amount_of_rectangles=4,
             rect_gap=0,
@@ -424,9 +443,10 @@ class Window(tk.Canvas):
             arcs=[True, True, True, True],
         )
 
-        first_grid = GridMaker(
+        guesses_grid = GridMaker(
             self.parent,
             self,
+            grid_y=self.parent.window_height - 200,
             grid_width=rect_width,
             amount_of_rectangles=4,
             rect_gap=2,
@@ -455,6 +475,51 @@ class Window(tk.Canvas):
             command=test,
         )
 
+        entry = tk.Entry(self.parent, bd=0)
+
+        entry_width = rect_width / 3
+        entry_height = 50
+        entry_relx = 0.5
+        entry_rely = 0.85
+        submit_button_x = (self.parent.window_width * 0.5) + (entry_width / 2)
+        submit_button_y = (self.parent.window_height * 0.85) - entry_height + 3
+
+        submit_button = RabRectangle(
+            self,
+            submit_button_x,
+            submit_button_y,
+            70,
+            entry_height,
+            20,
+            top_left_arc=False,
+            bottom_left_arc=False,
+            text_data={
+                "string": "Submit",
+                "color": "black",
+                "font": "Arial",
+                "size": 8,
+            },
+            fill="white",
+            button=True,
+            command=lambda: print("Submit Button Pressed"),
+        )
+
+        entry.place(
+            relx=entry_relx,
+            rely=entry_rely,
+            width=entry_width,
+            height=50,
+            anchor="center",
+        )
+
+        separator = self.create_rectangle(
+            submit_button_x,
+            submit_button_y,
+            submit_button_x + 1,
+            submit_button_y + entry_height,
+            fill="black",
+        )
+
 
 class App(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -471,7 +536,7 @@ class App(tk.Tk):
             f"+{int((self.winfo_screenwidth()/2)-(self.window_width/2))}+{int((self.winfo_screenheight()/2)-(self.window_height/2))}"
         )
 
-        self.wm_attributes("-topmost", 1)
+        # self.wm_attributes("-topmost", 1)
         self.wm_attributes("-transparentcolor", "DarkOliveGreen4")
 
         title_bar = tk.Canvas(
@@ -513,7 +578,7 @@ class App(tk.Tk):
         # pack the widgets
         title_bar.pack(expand=False, fill="x", side="top")
         self.title_bar_height = title_bar.winfo_reqheight()
-        print(f"Title-Bar is : {self.title_bar_height}")
+        # print(f"Title-Bar is : {self.title_bar_height}")
 
         # Create an instance of WindowCanvas
         window = Window(self, bg="DarkOliveGreen4", bd=0, highlightthickness=0)
