@@ -36,6 +36,24 @@ guess_display_order = [
     "weight",
 ]
 
+# def resizeImage(image, width=False, height=False, resize_resolution=10):
+#     original_width = image.width()
+#     original_height = image.height()
+#     print(f"Original Size: {original_width, original_height}")
+#     if width:
+#         width_fraction = math.ceil((width / original_width) / (resize_resolution / 100))
+#         print(f"Width Fraction : {width_fraction}")
+#     if height:
+#         height_fraction = math.ceil(
+#             (height / original_height) / (resize_resolution / 100)
+#         )
+#         print(f"Height Fraction Numerator : {height_fraction}")
+
+#     print(f"Shrinking Denominator : {resize_resolution}")
+#     return image.zoom(
+#         width_fraction if width else 1, height_fraction if height else 1
+#     ).subsample(resize_resolution if width else 1, resize_resolution if height else 1)
+
 
 class Guess:
     def __init__(self, correct_pokemon):
@@ -66,8 +84,12 @@ class Guess:
                 print(guessed_pokemon["results"][category])
                 print("\n")
 
-    def guess(self, guessed_pokemon):
+    def guess(self, guessed_pokemon_name):
         result = {}
+        guessed_pokemon = Pokemon(
+            (guessed_pokemon_name, pokemon_data[guessed_pokemon_name])
+        )
+        print(guessed_pokemon)
         if self.correct_pokemon.number == guessed_pokemon.number:
             result = {"Correct": True}
         else:
@@ -97,8 +119,9 @@ class Guess:
 
 
 class Pokemon:
-    def __init__(self, json_data):
-        self.data = json_data
+    def __init__(self, pokemon_tuple):
+        self.name = pokemon_tuple[0]
+        self.data = pokemon_tuple[1]
 
     def __getattr__(self, attr_name):
         return self.data[better_pokemon_data_keys_dict[attr_name]["key"]]
@@ -112,14 +135,20 @@ with open("Pokemon.json", encoding="utf-8") as file:
     pokemon_data = json.load(file)
 
 # Select a random Pokemon
-target_pokemon = random.choice(pokemon_data)
-print(target_pokemon["#"], target_pokemon["Pokemon"])
+pokemon_data = pokemon_data[0]
+target_pokemon = random.choice(list(pokemon_data.items()))
+print(target_pokemon)
 correctPokemon = Pokemon(target_pokemon)
+print(f"Correct Pokemon: {correctPokemon.name}")
 
 # Create a Guess object
 guess = Guess(correctPokemon)
 
+guess.guess("Bulbasaur")
+guess.guess("Ivysaur")
 
+
+'''
 def hex_to_rgb(value):
     """Return (red, green, blue) for the color given as #rrggbb."""
     value = value.lstrip("#")
@@ -452,3 +481,4 @@ class App(tk.Tk):
 
 
 App().mainloop()
+'''
