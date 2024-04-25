@@ -4,7 +4,6 @@ import json
 import random
 
 better_pokemon_data_keys_dict = {
-    "name": {"key": "Pokemon", "data_type": "boolean"},
     "type_main": {"key": "Type I", "data_type": "boolean"},
     "type_secondary": {"key": "Type II", "data_type": "boolean"},
     "ability_one": {"key": "Ability I", "data_type": "boolean"},
@@ -28,7 +27,6 @@ better_pokemon_data_keys_dict = {
 
 guess_display_order = [
     "number",
-    "name",
     "type_main",
     "type_secondary",
     "evolution_stage",
@@ -65,9 +63,9 @@ class Guess:
         if correct_value == guessed_value:
             return "Equal"
         if correct_value > guessed_value:
-            return "Less"
-        if correct_value < guessed_value:
             return "Greater"
+        if correct_value < guessed_value:
+            return "Less"
         return "Error"
 
     def compare_boolean(self, guessed_value, key):
@@ -81,7 +79,10 @@ class Guess:
         for guessed_pokemon in self.guessed_pokemon_list:
             for category in guess_display_order:
                 print(category)
-                print(guessed_pokemon["results"][category])
+                if guessed_pokemon["results"]["Correct"]:
+                    print("Correct")
+                else:
+                    print(guessed_pokemon["results"][category])
                 print("\n")
 
     def guess(self, guessed_pokemon_name):
@@ -136,7 +137,8 @@ with open("Pokemon.json", encoding="utf-8") as file:
 
 # Select a random Pokemon
 pokemon_data = pokemon_data[0]
-target_pokemon = random.choice(list(pokemon_data.items()))
+# target_pokemon = random.choice(list(pokemon_data.items()))
+target_pokemon = ("Bulbasaur", pokemon_data["Bulbasaur"])
 print(target_pokemon)
 correctPokemon = Pokemon(target_pokemon)
 print(f"Correct Pokemon: {correctPokemon.name}")
@@ -144,11 +146,9 @@ print(f"Correct Pokemon: {correctPokemon.name}")
 # Create a Guess object
 guess = Guess(correctPokemon)
 
-guess.guess("Bulbasaur")
-guess.guess("Ivysaur")
+# guess.guess("Bulbasaur")
 
 
-'''
 def hex_to_rgb(value):
     """Return (red, green, blue) for the color given as #rrggbb."""
     value = value.lstrip("#")
@@ -228,8 +228,8 @@ class RabRectangle:
             print("Top Left No Arc")
             points.extend([self.x, self.y, self.x, self.y])
 
-        points.extend([self.x + self.width, self.y])  # Top right corner
-        print("Top Right Corner")
+        # points.extend([self.x + self.width, self.y])  # Top right corner
+        # print("Top Right Corner")
 
         if self.top_right_arc:
             # Top right arc
@@ -249,10 +249,10 @@ class RabRectangle:
             print("Top Right No Arc")
             points.extend([self.x + self.width, self.y])
 
-        points.extend(
-            [self.x + self.width, self.y + self.height]
-        )  # Bottom right corner
-        print("Bottom Right Corner")
+        # points.extend(
+        #     [self.x + self.width, self.y + self.height]
+        # )  # Bottom right corner
+        # print("Bottom Right Corner")
 
         if self.bottom_right_arc:
             # Bottom right arc
@@ -275,8 +275,8 @@ class RabRectangle:
             print("Bottom Right No Arc")
             points.extend([self.x + self.width, self.y + self.height])
 
-        points.extend([self.x, self.y + self.height])  # Bottom left corner
-        print("Bottom Left Corner")
+        # points.extend([self.x, self.y + self.height])  # Bottom left corner
+        # print("Bottom Left Corner")
 
         if self.bottom_left_arc:
             # Bottom left arc
@@ -297,10 +297,13 @@ class RabRectangle:
             print("Bottom Left No Arc")
             points.extend([self.x, self.y + self.height])
 
-        points.extend([self.x, self.y])  # Top left corner
+        # points.extend([self.x, self.y])  # Top left corner
 
         return self.canvas.create_polygon(
-            points, fill=self.fill, smooth=True, splinesteps=12
+            points,
+            fill=self.fill,
+            width=1,
+            outline="black",
         )
 
     def _on_press(self, event):
@@ -313,7 +316,17 @@ class RabRectangle:
 
 
 class GridMaker:
-    def __init__(self, parent, canvas, grid_width, amount_of_rectangles, rect_gap):
+    def __init__(
+        self,
+        parent,
+        canvas,
+        grid_width,
+        amount_of_rectangles,
+        rect_gap,
+        text_data,
+        combined=False,
+        arcs=[True, True, True, True],
+    ):
         self.parent = parent
         self.canvas = canvas
         self.grid_width = grid_width
@@ -321,6 +334,9 @@ class GridMaker:
         self.amount_of_rectangles = amount_of_rectangles
         self.rect_gap = rect_gap
         self.list_of_rectangles = []
+        self.test_data = text_data
+        self.combined = combined
+        self.arcs = arcs
 
         self.rect_width = (
             self.grid_width - (self.amount_of_rectangles - 1) * self.rect_gap
@@ -338,13 +354,21 @@ class GridMaker:
                 10,
                 fill="blue",
                 text_data={
-                    "string": f"Test {i}",
-                    "color": "black",
-                    "font": "Arial",
+                    "string": self.test_data["string_list"][i],
+                    "color": self.test_data["color"],
+                    "font": self.test_data["font"],
                     "size": 16,
                 },
                 button=True,
                 command=test,
+                top_left_arc=self.arcs[0] if i == 0 else False,
+                top_right_arc=(
+                    self.arcs[1] if i == self.amount_of_rectangles - 1 else False
+                ),
+                bottom_left_arc=self.arcs[2] if i == 0 else False,
+                bottom_right_arc=(
+                    self.arcs[3] if i == self.amount_of_rectangles - 1 else False
+                ),
             )
             self.list_of_rectangles.append(rect)
 
@@ -384,12 +408,34 @@ class Window(tk.Canvas):
             bottom_right_arc=True,
         )
 
+        header_grid = GridMaker(
+            self.parent,
+            self,
+            grid_width=rect_width,
+            amount_of_rectangles=4,
+            rect_gap=0,
+            text_data={
+                "string_list": ["Test", "My", "Asshole", "test"],
+                "color": "black",
+                "font": "Arial",
+                "size": 16,
+            },
+            combined=True,
+            arcs=[True, True, True, True],
+        )
+
         first_grid = GridMaker(
             self.parent,
             self,
             grid_width=rect_width,
-            amount_of_rectangles=10,
+            amount_of_rectangles=4,
             rect_gap=2,
+            text_data={
+                "string_list": ["Rawr", "Hehe", "X3", "uwu"],
+                "color": "black",
+                "font": "Arial",
+                "size": 16,
+            },
         )
         test_rect = RabRectangle(
             self,
@@ -398,7 +444,12 @@ class Window(tk.Canvas):
             rect_width,
             rect_height,
             rect_radius,
-            text_data={"string": "Test", "color": "black", "font": "Arial", "size": 16},
+            text_data={
+                "string": "Test",
+                "color": "black",
+                "font": "Arial",
+                "size": 16,
+            },
             fill=rect_color,
             button=True,
             command=test,
@@ -481,4 +532,3 @@ class App(tk.Tk):
 
 
 App().mainloop()
-'''
