@@ -429,12 +429,12 @@ class Window(tk.Canvas):
         header_grid = GridMaker(
             self.parent,
             self,
-            grid_y=150,
+            grid_y=50,
             grid_width=rect_width,
-            amount_of_rectangles=4,
-            rect_gap=0,
+            amount_of_rectangles=6,
+            rect_gap=2,
             text_data={
-                "string_list": ["Test", "My", "Asshole", "test"],
+                "string_list": ["Pokèdex Number","Main Type","Secondary Type","Evolution Stage","Height","Weight"], #Should this be dynamic? I assume we can be lazy and leave it literal
                 "color": "black",
                 "font": "Arial",
                 "size": 16,
@@ -442,11 +442,11 @@ class Window(tk.Canvas):
             combined=True,
             arcs=[True, True, True, True],
         )
-
+        # Let's do this with Rab ! Logic: How to make a multi-row grid to fit all guesses? Need to add functions to GridMaker? Or append and shift all guesses after each guess?
         guesses_grid = GridMaker(
             self.parent,
             self,
-            grid_y=self.parent.window_height - 200,
+            grid_y=self.parent.window_height - 230,
             grid_width=rect_width,
             amount_of_rectangles=4,
             rect_gap=2,
@@ -457,32 +457,34 @@ class Window(tk.Canvas):
                 "size": 16,
             },
         )
-        test_rect = RabRectangle(
-            self,
-            self.parent.window_width / 2 - rect_width / 2,
-            self.parent.window_height / 2 - rect_height / 2,
-            rect_width,
-            rect_height,
-            rect_radius,
-            text_data={
-                "string": "Test",
-                "color": "black",
-                "font": "Arial",
-                "size": 16,
-            },
-            fill=rect_color,
-            button=True,
-            command=test,
-        )
+        # <---------------------------------------------------- COMMENTED OUT BIG BOX IN CENTRE ---------------------------------------------------->
+        # test_rect = RabRectangle(
+        #     self,
+        #     self.parent.window_width / 2 - rect_width / 2,
+        #     self.parent.window_height / 2 - rect_height / 2,
+        #     rect_width,
+        #     rect_height,
+        #     rect_radius,
+        #     text_data={
+        #         "string": "Test",
+        #         "color": "black",
+        #         "font": "Arial",
+        #         "size": 16,
+        #     },
+        #     fill=rect_color,
+        #     button=True,
+        #     command=test,
+        # )
 
-        entry = tk.Entry(self.parent, bd=0)
+        # User Input
+        entry = tk.Entry(self.parent, bd=0, font=("Arial",16,"normal"), fg="#999999", bg="#333333")
 
         entry_width = rect_width / 3
-        entry_height = 50
-        entry_relx = 0.5
-        entry_rely = 0.85
-        submit_button_x = (self.parent.window_width * 0.5) + (entry_width / 2)
-        submit_button_y = (self.parent.window_height * 0.85) - entry_height + 3
+        entry_height = 45
+        entry_relx = 0.47
+        entry_rely = 0.92
+        submit_button_x = (self.parent.window_width * entry_relx) + (entry_width / 2)
+        submit_button_y = (self.parent.window_height * entry_rely) - entry_height + 1
 
         submit_button = RabRectangle(
             self,
@@ -495,11 +497,11 @@ class Window(tk.Canvas):
             bottom_left_arc=False,
             text_data={
                 "string": "Submit",
-                "color": "black",
+                "color": "#999999",
                 "font": "Arial",
-                "size": 8,
+                "size": 16,
             },
-            fill="white",
+            fill="#333333",
             button=True,
             command=lambda: print("Submit Button Pressed"),
         )
@@ -508,7 +510,7 @@ class Window(tk.Canvas):
             relx=entry_relx,
             rely=entry_rely,
             width=entry_width,
-            height=50,
+            height=entry_height,
             anchor="center",
         )
 
@@ -557,7 +559,7 @@ class App(tk.Tk):
         )
 
         # title_bar = tk.Frame(self, bg="red", height=0, bd=0)
-        close_button_width = 22
+        close_button_width = 40
         close_button = RabRectangle(
             title_bar,
             self.window_width - (close_button_width * 0.8),
