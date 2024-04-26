@@ -55,6 +55,20 @@ def resizeImage(image, width=False, height=False, resize_resolution=10):
 
 
 class Guess:
+    """
+    Represents a game guess.
+
+    Attributes:
+    - correct_pokemon: The correct Pokemon object for the guess.
+    - guessed_pokemon_list: A list of guessed Pokemon objects.
+
+    Methods:
+    - compare_range: Compares a guessed value with the correct value for a given key.
+    - compare_boolean: Compares a guessed value with the correct value for a given key (boolean type).
+    - guess_display: Displays the guessed Pokemon and their results.
+    - guess: Performs a guess and updates the guessed Pokemon list.
+    """
+
     def __init__(self, correct_pokemon):
         self.correct_pokemon = correct_pokemon
         self.guessed_pokemon_list = []
@@ -76,23 +90,34 @@ class Guess:
             return False
 
     def guess_display(self):
-        # display = []
+        """
+        Displays the guessed Pokemon and their results.
+
+        Each guessed Pokemon in the guessed_pokemon_list is displayed along with its results.
+        """
         for guessed_pokemon in self.guessed_pokemon_list:
             for category in guess_display_order:
                 print(category)
                 if guessed_pokemon["results"]["Correct"]:
                     print("Correct")
                 else:
-
                     print(guessed_pokemon["results"][category])
                 print("\n")
 
     def guess(self, guessed_pokemon_name):
+        """
+        Performs a guess and updates the guessed Pokemon list.
+
+        Args:
+        - guessed_pokemon_name: The name of the guessed Pokemon.
+
+        Returns:
+        - The updated guessed_pokemon_list.
+        """
         result = {}
         guessed_pokemon = Pokemon(
             (guessed_pokemon_name, pokemon_data[guessed_pokemon_name])
         )
-        # print(guessed_pokemon)
         if self.correct_pokemon.number == guessed_pokemon.number:
             result = {"Correct": True}
         else:
@@ -168,6 +193,53 @@ def test():
 
 
 class RabRectangle:
+    """
+    A class representing a custom rectangle shape.
+
+    Args:
+        parent: The parent canvas object.
+        x: The x-coordinate of the top-left corner of the rectangle.
+        y: The y-coordinate of the top-left corner of the rectangle.
+        width: The width of the rectangle.
+        height: The height of the rectangle.
+        corner_radius: The radius of the rounded corners of the rectangle.
+        fill: The fill color of the rectangle.
+        text_data: Optional text data for displaying text within the rectangle.
+        button: A boolean indicating whether the rectangle is a button.
+        input: A boolean indicating whether the rectangle is an input field.
+        command: The command to be executed when the button is clicked.
+        top_left_arc: A boolean indicating whether the top-left corner has an arc.
+        top_right_arc: A boolean indicating whether the top-right corner has an arc.
+        bottom_left_arc: A boolean indicating whether the bottom-left corner has an arc.
+        bottom_right_arc: A boolean indicating whether the bottom-right corner has an arc.
+        rect_outline: A boolean indicating whether the rectangle has an outline.
+
+    Attributes:
+        canvas: The parent canvas object.
+        x: The x-coordinate of the top-left corner of the rectangle.
+        y: The y-coordinate of the top-left corner of the rectangle.
+        width: The width of the rectangle.
+        height: The height of the rectangle.
+        corner_radius: The radius of the rounded corners of the rectangle.
+        fill: The fill color of the rectangle.
+        top_left_arc: A boolean indicating whether the top-left corner has an arc.
+        top_right_arc: A boolean indicating whether the top-right corner has an arc.
+        bottom_left_arc: A boolean indicating whether the bottom-left corner has an arc.
+        bottom_right_arc: A boolean indicating whether the bottom-right corner has an arc.
+        text_data: Optional text data for displaying text within the rectangle.
+        rect_outline: A boolean indicating whether the rectangle has an outline.
+        input: A boolean indicating whether the rectangle is an input field.
+        button: A boolean indicating whether the rectangle is a button.
+        command: The command to be executed when the button is clicked.
+        rectangle: The rectangle shape created on the canvas.
+        text_id: The ID of the text object created on the canvas (if text_data is provided).
+
+    Methods:
+        make_rectangle: Creates the polygon shape of the rectangle.
+        _on_press: Event handler for the button press event.
+        _on_release: Event handler for the button release event.
+    """
+
     def __init__(
         self,
         parent,
@@ -220,9 +292,14 @@ class RabRectangle:
             self.canvas.tag_bind(self.rectangle, "<ButtonRelease-1>", self._on_release)
 
     def make_rectangle(self):
+        """
+        Creates the polygon shape of the rectangle.
+
+        Returns:
+            The ID of the rectangle shape created on the canvas.
+        """
         points = []
         if self.top_left_arc:
-            # print("Top Left Arc")
             # Top left arc
             for i in range(180, 271):
                 a = math.radians(i)
@@ -233,15 +310,10 @@ class RabRectangle:
                     ]
                 )
         else:
-            # print("Top Left No Arc")
             points.extend([self.x, self.y, self.x, self.y])
-
-        # points.extend([self.x + self.width, self.y])  # Top right corner
-        # print("Top Right Corner")
 
         if self.top_right_arc:
             # Top right arc
-            # print("Top Right Arc")
             for i in range(270, 361):
                 a = math.radians(i)
                 points.extend(
@@ -254,17 +326,10 @@ class RabRectangle:
                     ]
                 )
         else:
-            # print("Top Right No Arc")
             points.extend([self.x + self.width, self.y])
-
-        # points.extend(
-        #     [self.x + self.width, self.y + self.height]
-        # )  # Bottom right corner
-        # print("Bottom Right Corner")
 
         if self.bottom_right_arc:
             # Bottom right arc
-            # print("Bottom Right Arc")
             for i in range(0, 91):
                 a = math.radians(i)
                 points.extend(
@@ -280,15 +345,10 @@ class RabRectangle:
                     ]
                 )
         else:
-            # print("Bottom Right No Arc")
             points.extend([self.x + self.width, self.y + self.height])
-
-        # points.extend([self.x, self.y + self.height])  # Bottom left corner
-        # print("Bottom Left Corner")
 
         if self.bottom_left_arc:
             # Bottom left arc
-            # print("Bottom Left Arc")
             for i in range(90, 181):
                 a = math.radians(i)
                 points.extend(
@@ -302,10 +362,8 @@ class RabRectangle:
                 )
 
         else:
-            # print("Bottom Left No Arc")
             points.extend([self.x, self.y + self.height])
 
-        # points.extend([self.x, self.y])  # Top left corner
         if self.rect_outline:
             return self.canvas.create_polygon(
                 points,
@@ -321,9 +379,15 @@ class RabRectangle:
             )
 
     def _on_press(self, event):
+        """
+        Event handler for the button press event.
+        """
         self.canvas.configure(relief="sunken")
 
     def _on_release(self, event):
+        """
+        Event handler for the button release event.
+        """
         self.canvas.configure(relief="raised")
         if self.command is not None:
             self.command()
@@ -342,7 +406,7 @@ class GridMaker:
         arcs=[True, True, True, True],
         grid_height=50,
         grid_y=0,
-        fill="black"
+        fill="black",
     ):
         self.parent = parent
         self.canvas = canvas
@@ -394,6 +458,18 @@ class GridMaker:
 
 
 class Window(tk.Canvas):
+    """
+    Represents a custom window for the game.
+
+    Args:
+        parent: The parent widget.
+        *args: Additional positional arguments.
+        **kwargs: Additional keyword arguments.
+
+    Attributes:
+        parent: The parent widget.
+    """
+
     def __init__(self, parent, *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
         self.parent = parent
@@ -413,13 +489,13 @@ class Window(tk.Canvas):
         antialias_b = int((rect_color_rgb[2] + background_color_rgb[2] * cw) / (cw + 1))
         antialias_color_hex = rgb_to_hex(antialias_r, antialias_g, antialias_b)
 
-        # print(f"Title-Bar is : {self.parent.title_bar_height}")
+        # print(f"Title-Bar is : {self.parent.title_bar_y}")
         background = RabRectangle(
             self,
             0,
             0,
             self.parent.window_width,
-            self.parent.window_height - self.parent.title_bar_height,
+            self.parent.window_height - self.parent.title_bar_y,
             20,
             fill=background_color,
             top_left_arc=False,
@@ -437,7 +513,14 @@ class Window(tk.Canvas):
             rect_gap=2,
             fill="#CCCCCC",
             text_data={
-                "string_list": ["Pokèdex Number","Main Type","Secondary Type","Evolution Stage","Height","Weight"], #Should this be dynamic? I assume we can be lazy and leave it literal
+                "string_list": [
+                    "Pokèdex Number",
+                    "Main Type",
+                    "Secondary Type",
+                    "Evolution Stage",
+                    "Height",
+                    "Weight",
+                ],  # Should this be dynamic? I assume we can be lazy and leave it literal
                 "color": "black",
                 "font": "Arial",
                 "size": 16,
@@ -460,7 +543,7 @@ class Window(tk.Canvas):
                 "size": 16,
             },
         )
-        '''<---------------------------------------------------- COMMENTED OUT BIG BOX IN CENTRE : SHOULD CHANGE BOX TO POKEMON PICTURE ---------------------------------------------------->
+        """<---------------------------------------------------- COMMENTED OUT BIG BOX IN CENTRE : SHOULD CHANGE BOX TO POKEMON PICTURE ---------------------------------------------------->
         test_rect = RabRectangle(
             self,
             self.parent.window_width / 2 - rect_width / 2,
@@ -477,10 +560,12 @@ class Window(tk.Canvas):
             fill=rect_color,
             button=True,
             command=test,
-        )'''
+        )"""
 
         # User Input
-        entry = tk.Entry(self.parent, bd=0, font=("Arial",16,"normal"), fg="#999999", bg="#CCCCCC")
+        entry = tk.Entry(
+            self.parent, bd=0, font=("Arial", 16, "normal"), fg="#999999", bg="#CCCCCC"
+        )
 
         entry_width = rect_width / 3
         entry_height = 45
@@ -527,6 +612,26 @@ class Window(tk.Canvas):
 
 
 class App(tk.Tk):
+    """
+    Represents the main application window.
+
+    Args:
+        *args: Variable length argument list.
+        **kwargs: Arbitrary keyword arguments.
+
+    Attributes:
+        mouse_x (int): The x-coordinate of the mouse.
+        mouse_y (int): The y-coordinate of the mouse.
+        window_width (int): The width of the application window.
+        window_height (int): The height of the application window.
+        title_bar_y (int): The y-coordinate of the title bar.
+
+    Methods:
+        __init__(self, *args, **kwargs): Initializes the App class.
+        start_move_window(self, event): Moves the window based on the mouse event coordinates.
+        move_window(self, event): Moves the window based on the mouse event coordinates.
+    """
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -544,11 +649,11 @@ class App(tk.Tk):
         # self.wm_attributes("-topmost", 1)
         self.wm_attributes("-transparentcolor", "DarkOliveGreen4")
         # <---------------------------------------------------------- How to add text to title bar/exit button without alloc error? ---------------------------------------------------------->
-        title_bar = tk.Canvas(
+        title_bar_canvas = tk.Canvas(
             bd=0, highlightthickness=0, bg="DarkOliveGreen4", height=22, width=0
         )
-        RabRectangle(
-            title_bar,
+        title_bar = RabRectangle(
+            title_bar_canvas,
             0,
             0,
             self.window_width,
@@ -561,10 +666,9 @@ class App(tk.Tk):
             bottom_right_arc=False,
         )
 
-        # title_bar = tk.Frame(self, bg="red", height=0, bd=0)
         close_button_width = 40
         close_button = RabRectangle(
-            title_bar,
+            title_bar_canvas,
             self.window_width - (close_button_width * 0.8),
             0,
             close_button_width,
@@ -578,26 +682,43 @@ class App(tk.Tk):
             bottom_left_arc=False,
             bottom_right_arc=False,
         )
-        # close_button.pack(side="right")
 
-        # pack the widgets
-        title_bar.pack(expand=False, fill="x", side="top")
-        self.title_bar_height = title_bar.winfo_reqheight()
-        # print(f"Title-Bar is : {self.title_bar_height}")
+        title_bar_canvas.pack(expand=False, fill="x", side="top")  # Pack the title bar
+        self.title_bar_y = (
+            title_bar_canvas.winfo_reqheight()
+        )  # Get the y of the title bar
 
         # Create an instance of WindowCanvas
         window = Window(self, bg="DarkOliveGreen4", bd=0, highlightthickness=0)
         window.pack(expand=True, fill="both", side="top")
 
-        # bind title bar motion to the move window function
-        title_bar.bind("<ButtonPress-1>", self.start_move_window)
-        title_bar.bind("<B1-Motion>", self.move_window)
+        # bind title bar drag to the move window function
+        title_bar_canvas.bind("<ButtonPress-1>", self.start_move_window)
+        title_bar_canvas.bind("<B1-Motion>", self.move_window)
 
     def start_move_window(self, event):
+        """
+        Moves the window based on the mouse event coordinates.
+
+        Args:
+            event (MouseEvent): The mouse event that triggered the method.
+
+        Returns:
+            None
+        """
         self.mouse_x = event.x
         self.mouse_y = event.y
 
     def move_window(self, event):
+        """
+        Moves the window based on the mouse event coordinates.
+
+        Args:
+            event (MouseEvent): The mouse event that triggered the method.
+
+        Returns:
+            None
+        """
         self.geometry(f"+{event.x_root - self.mouse_x}+{event.y_root - self.mouse_y}")
 
 
