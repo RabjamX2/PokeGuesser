@@ -342,6 +342,7 @@ class GridMaker:
         arcs=[True, True, True, True],
         grid_height=50,
         grid_y=0,
+        fill="black"
     ):
         self.parent = parent
         self.canvas = canvas
@@ -355,6 +356,7 @@ class GridMaker:
         self.arcs = arcs
         self.grid_height = grid_height
         self.grid_y = grid_y
+        self.fill = fill
 
         self.rect_width = (
             self.grid_width - (self.amount_of_rectangles - 1) * self.rect_gap
@@ -370,7 +372,7 @@ class GridMaker:
                 self.rect_width,
                 self.grid_height,
                 10,
-                fill="blue",
+                self.fill,
                 text_data={
                     "string": self.test_data["string_list"][i],
                     "color": self.test_data["color"],
@@ -402,7 +404,7 @@ class Window(tk.Canvas):
         rect_height = 200
         rect_radius = 40
         rect_color = "#0000FF"
-        background_color = "#000033"
+        background_color = "#333333"
         cw = 2
         rect_color_rgb = hex_to_rgb(rect_color)
         background_color_rgb = hex_to_rgb(background_color)
@@ -433,6 +435,7 @@ class Window(tk.Canvas):
             grid_width=rect_width,
             amount_of_rectangles=6,
             rect_gap=2,
+            fill="#CCCCCC",
             text_data={
                 "string_list": ["Pokèdex Number","Main Type","Secondary Type","Evolution Stage","Height","Weight"], #Should this be dynamic? I assume we can be lazy and leave it literal
                 "color": "black",
@@ -457,27 +460,27 @@ class Window(tk.Canvas):
                 "size": 16,
             },
         )
-        # <---------------------------------------------------- COMMENTED OUT BIG BOX IN CENTRE ---------------------------------------------------->
-        # test_rect = RabRectangle(
-        #     self,
-        #     self.parent.window_width / 2 - rect_width / 2,
-        #     self.parent.window_height / 2 - rect_height / 2,
-        #     rect_width,
-        #     rect_height,
-        #     rect_radius,
-        #     text_data={
-        #         "string": "Test",
-        #         "color": "black",
-        #         "font": "Arial",
-        #         "size": 16,
-        #     },
-        #     fill=rect_color,
-        #     button=True,
-        #     command=test,
-        # )
+        '''<---------------------------------------------------- COMMENTED OUT BIG BOX IN CENTRE : SHOULD CHANGE BOX TO POKEMON PICTURE ---------------------------------------------------->
+        test_rect = RabRectangle(
+            self,
+            self.parent.window_width / 2 - rect_width / 2,
+            self.parent.window_height / 2 - rect_height / 2,
+            rect_width,
+            rect_height,
+            rect_radius,
+            text_data={
+                "string": "Test",
+                "color": "black",
+                "font": "Arial",
+                "size": 16,
+            },
+            fill=rect_color,
+            button=True,
+            command=test,
+        )'''
 
         # User Input
-        entry = tk.Entry(self.parent, bd=0, font=("Arial",16,"normal"), fg="#999999", bg="#333333")
+        entry = tk.Entry(self.parent, bd=0, font=("Arial",16,"normal"), fg="#999999", bg="#CCCCCC")
 
         entry_width = rect_width / 3
         entry_height = 45
@@ -497,11 +500,11 @@ class Window(tk.Canvas):
             bottom_left_arc=False,
             text_data={
                 "string": "Submit",
-                "color": "#999999",
+                "color": "black",
                 "font": "Arial",
-                "size": 16,
+                "size": 15,
             },
-            fill="#333333",
+            fill="#CCCCCC",
             button=True,
             command=lambda: print("Submit Button Pressed"),
         )
@@ -540,7 +543,7 @@ class App(tk.Tk):
 
         # self.wm_attributes("-topmost", 1)
         self.wm_attributes("-transparentcolor", "DarkOliveGreen4")
-
+        # <---------------------------------------------------------- How to add text to title bar/exit button without alloc error? ---------------------------------------------------------->
         title_bar = tk.Canvas(
             bd=0, highlightthickness=0, bg="DarkOliveGreen4", height=22, width=0
         )
