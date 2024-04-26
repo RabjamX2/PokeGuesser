@@ -35,7 +35,20 @@ guess_display_order = [
 ]
 
 
-def resizeImage(image, width=False, height=False, resize_resolution=10):
+def resize_image(image, width=False, height=False, resize_resolution=10):
+    """
+    Resize the given image based on the specified width, height, and resize resolution.
+
+    Args:
+        image: The image to be resized.
+        width (optional): The desired width of the image. If not provided, the width will not be changed.
+        height (optional): The desired height of the image. If not provided, the height will not be changed.
+        resize_resolution (optional): The resolution used for resizing the image. Default is 10.
+
+    Returns:
+        The resized image.
+
+    """
     original_width = image.width()
     original_height = image.height()
     print(f"Original Size: {original_width, original_height}")
@@ -74,6 +87,16 @@ class Guess:
         self.guessed_pokemon_list = []
 
     def compare_range(self, guessed_value, key):
+        """
+        Compare the guessed value with the correct value for a given key.
+
+        Parameters:
+        - guessed_value (int): The value guessed by the player.
+        - key (str): The key representing the attribute of the correct value.
+
+        Returns:
+        - str: The result of the comparison. Possible values are "Equal", "Greater", "Less", or "Error".
+        """
         correct_value = self.correct_pokemon.key(key)
         if correct_value == guessed_value:
             return "Equal"
@@ -84,6 +107,16 @@ class Guess:
         return "Error"
 
     def compare_boolean(self, guessed_value, key):
+        """
+        Compare the guessed value with the correct value for the given key.
+
+        Parameters:
+        - guessed_value (bool): The value guessed by the player.
+        - key (str): The key representing the attribute of the Pokemon.
+
+        Returns:
+        - bool: True if the guessed value matches the correct value, False otherwise.
+        """
         if self.correct_pokemon.key(key) == guessed_value:
             return True
         else:
@@ -147,6 +180,14 @@ class Guess:
 
 
 class Pokemon:
+    """
+    Represents a Pokemon object.
+
+    Attributes:
+        name (str): The name of the Pokemon.
+        data (dict): The data associated with the Pokemon.
+    """
+
     def __init__(self, pokemon_tuple):
         self.name = pokemon_tuple[0]
         self.data = pokemon_tuple[1]
@@ -155,6 +196,15 @@ class Pokemon:
         return self.data[better_pokemon_data_keys_dict[attr_name]["key"]]
 
     def key(self, key):
+        """
+        Retrieves the value from the `data` dictionary based on the given `key`.
+
+        Parameters:
+        key (str): The key to retrieve the value for.
+
+        Returns:
+        The value associated with the given key in the `data` dictionary.
+        """
         return self.data[better_pokemon_data_keys_dict[key]["key"]]
 
 
@@ -394,6 +444,24 @@ class RabRectangle:
 
 
 class GridMaker:
+    """
+    A class that represents a grid maker.
+
+    Attributes:
+        parent (object): The parent object.
+        canvas (object): The canvas object.
+        grid_width (int): The width of the grid.
+        amount_of_rectangles (int): The number of rectangles in the grid.
+        rect_gap (int): The gap between rectangles.
+        arcs (list): The arcs for the corners of the rectangles.
+        text_data (dict): The data for the text in the rectangles.
+        combined (bool): Whether the rectangles are combined.
+        arcs (list): The arcs for the corners of the rectangles.
+        grid_height (int): The height of the grid.
+        grid_y (int): The y-coordinate of the grid.
+        fill (str): The fill color of the rectangles.
+    """
+
     def __init__(
         self,
         parent,
@@ -462,7 +530,7 @@ class Window(tk.Canvas):
     Represents a custom window for the game.
 
     Args:
-        parent: The parent widget.
+        parent (object): The parent widget.
         *args: Additional positional arguments.
         **kwargs: Additional keyword arguments.
 
@@ -528,7 +596,11 @@ class Window(tk.Canvas):
             combined=True,
             arcs=[True, True, True, True],
         )
-        # Let's do this with Rab ! Logic: How to make a multi-row grid to fit all guesses? Need to add functions to GridMaker? Or append and shift all guesses after each guess?
+        # ! Let's do this with Rab
+        # ? Logic: How to make a multi-row grid to fit all guesses?
+        # ? Need to add functions to GridMaker?
+        # ? Or append and shift all guesses after each guess?
+
         guesses_grid = GridMaker(
             self.parent,
             self,
@@ -543,7 +615,7 @@ class Window(tk.Canvas):
                 "size": 16,
             },
         )
-        """<---------------------------------------------------- COMMENTED OUT BIG BOX IN CENTRE : SHOULD CHANGE BOX TO POKEMON PICTURE ---------------------------------------------------->
+        """ TODO: COMMENTED OUT BIG BOX IN CENTRE : SHOULD CHANGE BOX TO POKEMON PICTURE
         test_rect = RabRectangle(
             self,
             self.parent.window_width / 2 - rect_width / 2,
