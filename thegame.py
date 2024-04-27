@@ -26,7 +26,6 @@ better_pokemon_data_keys_dict = {
 }
 
 guess_display_order = [
-    "number",
     "type_main",
     "type_secondary",
     "evolution_stage",
@@ -130,12 +129,8 @@ class Guess:
         """
         for guessed_pokemon in self.guessed_pokemon_list:
             for category in guess_display_order:
-                print(category)
-                if guessed_pokemon["results"]["Correct"]:
-                    print("Correct")
-                else:
-                    print(guessed_pokemon["results"][category])
-                print("\n")
+                # print(category)
+                pass
 
     def guess(self, guessed_pokemon_name):
         """
@@ -159,11 +154,13 @@ class Guess:
                 guessed_value = guessed_pokemon.key(key)
                 if value["data_type"] == "range":
                     result[key] = {
+                        "data_type": value["data_type"],
                         "guessed_value": guessed_value,
                         "result": self.compare_range(guessed_value, key),
                     }
                 elif value["data_type"] == "boolean":
                     result[key] = {
+                        "data_type": value["data_type"],
                         "guessed_value": guessed_value,
                         "result": self.compare_boolean(guessed_value, key),
                     }
@@ -223,7 +220,8 @@ correctPokemon = Pokemon(target_pokemon)
 # Create a Guess object
 guess = Guess(correctPokemon)
 
-# guess.guess("Bulbasaur")
+guess.guess("Ivysaur")
+# print(f"LIST: {guess.guessed_pokemon_list}")
 
 
 def hex_to_rgb(value):
@@ -327,7 +325,7 @@ class RabRectangle:
         self.rectangle = self.make_rectangle()
 
         if self.text_data:
-            print(f'Creating Text: {self.text_data["string"]}')
+            # print(f'Creating Text: {self.text_data["string"]}')
             self.text_id = self.canvas.create_text(
                 self.x + self.width / 2,
                 self.y + self.height / 2,
@@ -340,6 +338,33 @@ class RabRectangle:
             self.command = command
             self.canvas.tag_bind(self.rectangle, "<ButtonPress-1>", self._on_press)
             self.canvas.tag_bind(self.rectangle, "<ButtonRelease-1>", self._on_release)
+
+    def __setattr__(self, name, value):
+        if hasattr(self, "canvas") and hasattr(self, "rectangle"):
+            # self.canvas.moveto(self.text.id, self.x, self.y)
+            if name == "x" or name == "y":
+                self.canvas.moveto(
+                    self.rectangle,
+                    value if name == "x" else self.x,
+                    value if name == "y" else self.y,
+                )
+
+                if name == "x":
+                    delta_x = value - self.x
+                else:
+                    delta_x = 0
+                if name == "y":
+                    delta_y = value - self.y
+                else:
+                    delta_y = 0
+
+                self.canvas.move(self.text_id, delta_x, delta_y)
+
+                object.__setattr__(self, name, value)
+            else:
+                object.__setattr__(self, name, value)
+        else:
+            object.__setattr__(self, name, value)
 
     def make_rectangle(self):
         """
@@ -442,6 +467,14 @@ class RabRectangle:
         if self.command is not None:
             self.command()
 
+    def move_rect(self, delta_x, delta_y):
+        # self.x = int(self.x + delta_x)
+        # self.y = int(self.y + delta_y)
+        print(f"Moving Rectangle at {self.x}, {self.y} ")
+        self.x = self.x + delta_x
+        self.y = self.y + delta_y
+        print(f"Moving Rectangle to {self.x}, {self.y} because of {delta_x}, {delta_y}")
+
 
 class GridMaker:
     """
@@ -479,7 +512,8 @@ class GridMaker:
         self.parent = parent
         self.canvas = canvas
         self.grid_width = grid_width
-        self.grid_starting_x = (self.parent.window_width - self.grid_width) / 2
+        self.grid_starting_x = int((self.parent.window_width - self.grid_width) / 2)
+        self.grid_y = grid_y
         self.amount_of_rectangles = amount_of_rectangles
         self.rect_gap = rect_gap
         self.list_of_rectangles = []
@@ -487,19 +521,20 @@ class GridMaker:
         self.combined = combined
         self.arcs = arcs
         self.grid_height = grid_height
-        self.grid_y = grid_y
+
         self.fill = fill
 
         self.rect_width = (
-            self.grid_width - (self.amount_of_rectangles - 1) * self.rect_gap
-        ) / self.amount_of_rectangles
+            int(self.grid_width - (self.amount_of_rectangles - 1) * self.rect_gap)
+            / self.amount_of_rectangles
+        )
 
         self.rect_height = 50
 
         for i in range(self.amount_of_rectangles):
             rect = RabRectangle(
                 self.canvas,
-                (self.grid_starting_x + (i * rect_gap) + (i * self.rect_width)),
+                self.grid_starting_x + (i * rect_gap) + (i * self.rect_width),
                 self.grid_y,
                 self.rect_width,
                 self.grid_height,
@@ -523,6 +558,30 @@ class GridMaker:
                 ),
             )
             self.list_of_rectangles.append(rect)
+
+    def __setattr__(self, name, value):
+        if hasattr(self, "canvas") and hasattr(self, "list_of_rectangles"):
+            if len(self.list_of_rectangles) > 0:
+                if hasattr(self, "grid_starting_x") and name == "grid_starting_x":
+                    print(
+                        f"Moving Grid Horizontally to {value} from {self.grid_starting_x}"
+                    )
+                    delta_x = value - self.grid_starting_x  # !ROUND
+                    object.__setattr__(self, name, value)
+                    for rectangle in self.list_of_rectangles:
+                        rectangle.move_rect(int(delta_x), 0)
+                elif hasattr(self, "grid_y") and name == "grid_y":
+                    print(f"Moving Grid Vertically to {value} from {self.grid_y}")
+                    delta_y = value - self.grid_y  # !ROUND
+                    object.__setattr__(self, name, value)
+                    for rectangle in self.list_of_rectangles:
+                        rectangle.move_rect(0, int(delta_y))
+                else:
+                    object.__setattr__(self, name, value)
+            else:
+                object.__setattr__(self, name, value)
+        else:
+            object.__setattr__(self, name, value)
 
 
 class Window(tk.Canvas):
@@ -582,13 +641,13 @@ class Window(tk.Canvas):
             fill="#CCCCCC",
             text_data={
                 "string_list": [
-                    "Pokèdex Number",
+                    "Pokèmon",
                     "Main Type",
                     "Secondary Type",
                     "Evolution Stage",
                     "Height",
                     "Weight",
-                ],  # Should this be dynamic? I assume we can be lazy and leave it literal
+                ],  # TODO: Should this be dynamic? I assume we can be lazy and leave it literal
                 "color": "black",
                 "font": "Arial",
                 "size": 16,
@@ -601,38 +660,58 @@ class Window(tk.Canvas):
         # ? Need to add functions to GridMaker?
         # ? Or append and shift all guesses after each guess?
 
+        def display_guess():
+            list = guess.guessed_pokemon_list
+            results = [list[0]["guess_pokemon"]]
+            for header in guess_display_order:
+                results.append(list[0]["results"][header]["guessed_value"])
+            return results
+
+        display = display_guess()
+
         guesses_grid = GridMaker(
             self.parent,
             self,
             grid_y=self.parent.window_height - 230,
             grid_width=rect_width,
-            amount_of_rectangles=4,
+            amount_of_rectangles=len(display),
             rect_gap=2,
+            fill="#CCCCCC",
             text_data={
-                "string_list": ["Rawr", "Hehe", "X3", "uwu"],
+                "string_list": display,
                 "color": "black",
                 "font": "Arial",
                 "size": 16,
             },
         )
-        """ TODO: COMMENTED OUT BIG BOX IN CENTRE : SHOULD CHANGE BOX TO POKEMON PICTURE
-        test_rect = RabRectangle(
-            self,
-            self.parent.window_width / 2 - rect_width / 2,
-            self.parent.window_height / 2 - rect_height / 2,
-            rect_width,
-            rect_height,
-            rect_radius,
-            text_data={
-                "string": "Test",
-                "color": "black",
-                "font": "Arial",
-                "size": 16,
-            },
-            fill=rect_color,
-            button=True,
-            command=test,
-        )"""
+
+        # guesses_grid.grid_starting_x = 0
+        print(f"Grid X: {guesses_grid.grid_starting_x}")
+        guesses_grid.grid_y = 100
+        print(f"Grid X: {guesses_grid.grid_starting_x}")
+
+        # TODO: COMMENTED OUT BIG BOX IN CENTRE : SHOULD CHANGE BOX TO POKEMON PICTURE
+        # test_rect = RabRectangle(
+        #     self,
+        #     self.parent.window_width / 2 - rect_width / 2,
+        #     self.parent.window_height / 2 - rect_height / 2,
+        #     rect_width,
+        #     rect_height,
+        #     rect_radius,
+        #     text_data={
+        #         "string": "Test",
+        #         "color": "black",
+        #         "font": "Arial",
+        #         "size": 16,
+        #     },
+        #     fill=rect_color,
+        #     button=True,
+        #     command=test,
+        # )
+
+        # test_rect.x = 0
+        # test_rect.y = 0
+        # test_rect.move(0, 0)
 
         # User Input
         entry = tk.Entry(
@@ -720,7 +799,7 @@ class App(tk.Tk):
 
         # self.wm_attributes("-topmost", 1)
         self.wm_attributes("-transparentcolor", "DarkOliveGreen4")
-        # <---------------------------------------------------------- How to add text to title bar/exit button without alloc error? ---------------------------------------------------------->
+        # TODO: How to add text to title bar/exit button without alloc error?
         title_bar_canvas = tk.Canvas(
             bd=0, highlightthickness=0, bg="DarkOliveGreen4", height=22, width=0
         )
