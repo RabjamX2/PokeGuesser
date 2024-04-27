@@ -1,3 +1,8 @@
-import math
+test = [
+    "asf",
+    "asd",
+    "hc",
+]
 
-print(round(1.4))
+for i, t in enumerate(test):
+    print(f"Test {i}: {t}")

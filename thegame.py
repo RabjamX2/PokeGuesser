@@ -1,4 +1,5 @@
 import tkinter as tk
+import tkinter.ttk as ttk
 import math
 import json
 import random
@@ -98,7 +99,7 @@ class Guess:
         """
         correct_value = self.correct_pokemon.key(key)
         if correct_value == guessed_value:
-            return "Equal"
+            return "True"
         if correct_value > guessed_value:
             return "Greater"
         if correct_value < guessed_value:
@@ -117,20 +118,9 @@ class Guess:
         - bool: True if the guessed value matches the correct value, False otherwise.
         """
         if self.correct_pokemon.key(key) == guessed_value:
-            return True
+            return "True"
         else:
-            return False
-
-    def guess_display(self):
-        """
-        Displays the guessed Pokemon and their results.
-
-        Each guessed Pokemon in the guessed_pokemon_list is displayed along with its results.
-        """
-        for guessed_pokemon in self.guessed_pokemon_list:
-            for category in guess_display_order:
-                # print(category)
-                pass
+            return "False"
 
     def guess(self, guessed_pokemon_name):
         """
@@ -150,20 +140,20 @@ class Guess:
             result = {"Correct": True}
         else:
             result = {"Correct": False}
-            for key, value in better_pokemon_data_keys_dict.items():
-                guessed_value = guessed_pokemon.key(key)
-                if value["data_type"] == "range":
-                    result[key] = {
-                        "data_type": value["data_type"],
-                        "guessed_value": guessed_value,
-                        "result": self.compare_range(guessed_value, key),
-                    }
-                elif value["data_type"] == "boolean":
-                    result[key] = {
-                        "data_type": value["data_type"],
-                        "guessed_value": guessed_value,
-                        "result": self.compare_boolean(guessed_value, key),
-                    }
+        for key, value in better_pokemon_data_keys_dict.items():
+            guessed_value = guessed_pokemon.key(key)
+            if value["data_type"] == "range":
+                result[key] = {
+                    "data_type": value["data_type"],
+                    "guessed_value": guessed_value,
+                    "result": self.compare_range(guessed_value, key),
+                }
+            elif value["data_type"] == "boolean":
+                result[key] = {
+                    "data_type": value["data_type"],
+                    "guessed_value": guessed_value,
+                    "result": self.compare_boolean(guessed_value, key),
+                }
 
         self.guessed_pokemon_list.append(
             {
@@ -172,7 +162,6 @@ class Guess:
                 "results": result,
             }
         )
-        # self.guess_display()
         # return self.guessed_pokemon_list
 
 
@@ -211,16 +200,16 @@ with open("Pokemon.json", encoding="utf-8") as file:
 
 # Select a random Pokemon
 pokemon_data = pokemon_data[0]
-# target_pokemon = random.choice(list(pokemon_data.items()))
-target_pokemon = ("Bulbasaur", pokemon_data["Bulbasaur"])
+target_pokemon = random.choice(list(pokemon_data.items()))
+# target_pokemon = ("Bulbasaur", pokemon_data["Bulbasaur"])
 # print(target_pokemon)
 correctPokemon = Pokemon(target_pokemon)
 # print(f"Correct Pokemon: {correctPokemon.name}")
 
 # Create a Guess object
-guess = Guess(correctPokemon)
+guess_attempt = Guess(correctPokemon)
 
-guess.guess("Ivysaur")
+# guess_attempt.guess("Ivysaur")
 # print(f"LIST: {guess.guessed_pokemon_list}")
 
 
@@ -338,6 +327,11 @@ class RabRectangle:
             self.command = command
             self.canvas.tag_bind(self.rectangle, "<ButtonPress-1>", self._on_press)
             self.canvas.tag_bind(self.rectangle, "<ButtonRelease-1>", self._on_release)
+            if hasattr(self, "text_id"):
+                self.canvas.tag_bind(self.text_id, "<ButtonPress-1>", self._on_press)
+                self.canvas.tag_bind(
+                    self.text_id, "<ButtonRelease-1>", self._on_release
+                )
 
     def __setattr__(self, name, value):
         if hasattr(self, "canvas") and hasattr(self, "rectangle"):
@@ -504,6 +498,7 @@ class GridMaker:
         grid_height=50,
         grid_y=0,
         fill="black",
+        fill_list=[],
     ):
         self.parent = parent
         self.canvas = canvas
@@ -517,6 +512,7 @@ class GridMaker:
         self.combined = combined
         self.arcs = arcs
         self.grid_height = grid_height
+        self.fill_list = fill_list
 
         self.fill = fill
 
@@ -528,6 +524,10 @@ class GridMaker:
         self.rect_height = 50
 
         for i in range(self.amount_of_rectangles):
+            if self.fill_list:
+                rect_fill = self.fill_list[i]
+            else:
+                rect_fill = self.fill
             rect = RabRectangle(
                 self.canvas,
                 self.grid_starting_x + (i * rect_gap) + (i * self.rect_width),
@@ -535,7 +535,7 @@ class GridMaker:
                 self.rect_width,
                 self.grid_height,
                 10,
-                self.fill,
+                rect_fill,
                 text_data={
                     "string": self.test_data["string_list"][i],
                     "color": self.test_data["color"],
@@ -562,13 +562,13 @@ class GridMaker:
                     print(
                         f"Moving Grid Horizontally to {value} from {self.grid_starting_x}"
                     )
-                    delta_x = value - self.grid_starting_x  # !ROUND
+                    delta_x = value - self.grid_starting_x
                     object.__setattr__(self, name, value)
                     for rectangle in self.list_of_rectangles:
                         rectangle.move_rect(int(delta_x), 0)
                 elif hasattr(self, "grid_y") and name == "grid_y":
                     print(f"Moving Grid Vertically to {value} from {self.grid_y}")
-                    delta_y = value - self.grid_y  # !ROUND
+                    delta_y = value - self.grid_y
                     object.__setattr__(self, name, value)
                     for rectangle in self.list_of_rectangles:
                         rectangle.move_rect(0, int(delta_y))
@@ -659,82 +659,78 @@ class Window(tk.Canvas):
         # ? Or append and shift all guesses after each guess?
 
         def display_guess():
-            list = guess.guessed_pokemon_list
-            results = [" ", list[0]["guess_pokemon"]]
-            for header in guess_display_order:
-                results.append(list[0]["results"][header]["guessed_value"])
-            return results
+            list = guess_attempt.guessed_pokemon_list
+            all_results = []
+            for attempt in list:
+                attempt_names = [" ", attempt["guess_pokemon"]]
+                attempt_results = ["gray"]
+                if attempt["results"]["Correct"]:
+                    attempt_results.append("green")
+                else:
+                    attempt_results.append("red")
+                for header in guess_display_order:
+                    attempt_names.append(attempt["results"][header]["guessed_value"])
+                    attemp_result_value = attempt["results"][header]["result"]
+                    if attemp_result_value == "True":
+                        attempt_results.append("green")
+                    elif attemp_result_value == "False":
+                        attempt_results.append("red")
+                    elif (
+                        attemp_result_value == "Greater"
+                        or attemp_result_value == "Less"
+                    ):
+                        attempt_results.append("orange")
 
-        display = display_guess()
+                all_results.append([attempt_names, attempt_results])
 
-        guesses_grid = GridMaker(
-            self.parent,
-            self,
-            grid_y=self.parent.window_height - 230,
-            grid_width=rect_width,
-            amount_of_rectangles=len(display),
-            rect_gap=2,
-            fill="#CCCCCC",
-            text_data={
-                "string_list": display,
-                "color": "black",
-                "font": "Arial",
-                "size": 16,
-            },
-        )
+            return all_results
 
         def make_grid_maker():
+            list_of_guess_results = display_guess()
+            for i, guess_results in enumerate(list_of_guess_results):
+                grid = GridMaker(
+                    self.parent,
+                    self,
+                    grid_y=(self.parent.window_height - 200) - (i * 51),
+                    grid_width=rect_width,
+                    amount_of_rectangles=len(guess_results[0]),
+                    rect_gap=2,
+                    fill="#CCCCCC",
+                    fill_list=guess_results[1],
+                    text_data={
+                        "string_list": guess_results[0],
+                        "color": "black",
+                        "font": "Arial",
+                        "size": 16,
+                    },
+                )
 
-            display = display_guess()
-            
-            guesses_grid2 = GridMaker(
-                self.parent,
-                self,
-                grid_y=self.parent.window_height - 200,
-                grid_width=rect_width,
-                amount_of_rectangles=len(display),
-                rect_gap=2,
-                fill="#CCCCCC",
-                text_data={
-                    "string_list": display,
-                    "color": "black",
-                    "font": "Arial",
-                    "size": 16,
-                },
-            )
+        # make_grid_maker()
 
         # guesses_grid.grid_starting_x = 0
-        print(f"Grid X: {guesses_grid.grid_starting_x}")
-        guesses_grid.grid_y = 100
-        print(f"Grid X: {guesses_grid.grid_starting_x}")
-
-        # TODO: COMMENTED OUT BIG BOX IN CENTRE : SHOULD CHANGE BOX TO POKEMON PICTURE
-        # test_rect = RabRectangle(
-        #     self,
-        #     self.parent.window_width / 2 - rect_width / 2,
-        #     self.parent.window_height / 2 - rect_height / 2,
-        #     rect_width,
-        #     rect_height,
-        #     rect_radius,
-        #     text_data={
-        #         "string": "Test",
-        #         "color": "black",
-        #         "font": "Arial",
-        #         "size": 16,
-        #     },
-        #     fill=rect_color,
-        #     button=True,
-        #     command=test,
-        # )
-
-        # test_rect.x = 0
-        # test_rect.y = 0
-        # test_rect.move(0, 0)
+        # print(f"Grid X: {guesses_grid.grid_starting_x}")
+        # guesses_grid.grid_y = 100
+        # print(f"Grid X: {guesses_grid.grid_starting_x}")
 
         # User Input
-        entry = tk.Entry(
-            self.parent, bd=0, font=("Arial", 16, "normal"), fg="#999999", bg="#CCCCCC"
+        user_input = tk.StringVar()
+        ttk.Style().configure("pad.TEntry", padding="5 1 1 1")
+
+        entry = ttk.Entry(
+            self.parent,
+            # bd=0,
+            font=("Arial", 16, "normal"),
+            # fg="black",
+            # bg="#CCCCCC",
+            textvariable=user_input,
+            style="pad.TEntry",
         )
+
+        def submit_input():
+            print("sa")
+            input = user_input.get()
+            guess_attempt.guess(input)
+            make_grid_maker()
 
         entry_width = rect_width / 3
         entry_height = 45
@@ -760,7 +756,7 @@ class Window(tk.Canvas):
             },
             fill="#CCCCCC",
             button=True,
-            command=lambda: print("Submit Button Pressed"),
+            command=submit_input,
         )
 
         entry.place(
