@@ -468,12 +468,8 @@ class RabRectangle:
             self.command()
 
     def move_rect(self, delta_x, delta_y):
-        # self.x = int(self.x + delta_x)
-        # self.y = int(self.y + delta_y)
-        print(f"Moving Rectangle at {self.x}, {self.y} ")
-        self.x = self.x + delta_x
-        self.y = self.y + delta_y
-        print(f"Moving Rectangle to {self.x}, {self.y} because of {delta_x}, {delta_y}")
+        self.x = int(self.x + delta_x)
+        self.y = int(self.y + delta_y)
 
 
 class GridMaker:
@@ -544,7 +540,7 @@ class GridMaker:
                     "string": self.test_data["string_list"][i],
                     "color": self.test_data["color"],
                     "font": self.test_data["font"],
-                    "size": 16,
+                    "size": self.test_data["size"],
                 },
                 button=True,
                 command=test,
@@ -636,25 +632,27 @@ class Window(tk.Canvas):
             self,
             grid_y=50,
             grid_width=rect_width,
-            amount_of_rectangles=6,
+            amount_of_rectangles=7,
             rect_gap=2,
             fill="#CCCCCC",
             text_data={
                 "string_list": [
+                    "Picture",
                     "Pokèmon",
                     "Main Type",
                     "Secondary Type",
-                    "Evolution Stage",
+                    "Evo Stage",
                     "Height",
                     "Weight",
-                ],  # TODO: Should this be dynamic? I assume we can be lazy and leave it literal
+                ],  # TODO: Make this dynamic
                 "color": "black",
                 "font": "Arial",
-                "size": 16,
+                "size": 14,
             },
             combined=True,
             arcs=[True, True, True, True],
         )
+        header_grid.grid_y = 49
         # ! Let's do this with Rab
         # ? Logic: How to make a multi-row grid to fit all guesses?
         # ? Need to add functions to GridMaker?
@@ -662,7 +660,7 @@ class Window(tk.Canvas):
 
         def display_guess():
             list = guess.guessed_pokemon_list
-            results = [list[0]["guess_pokemon"]]
+            results = [" ", list[0]["guess_pokemon"]]
             for header in guess_display_order:
                 results.append(list[0]["results"][header]["guessed_value"])
             return results
@@ -684,6 +682,26 @@ class Window(tk.Canvas):
                 "size": 16,
             },
         )
+
+        def make_grid_maker():
+
+            display = display_guess()
+            
+            guesses_grid2 = GridMaker(
+                self.parent,
+                self,
+                grid_y=self.parent.window_height - 200,
+                grid_width=rect_width,
+                amount_of_rectangles=len(display),
+                rect_gap=2,
+                fill="#CCCCCC",
+                text_data={
+                    "string_list": display,
+                    "color": "black",
+                    "font": "Arial",
+                    "size": 16,
+                },
+            )
 
         # guesses_grid.grid_starting_x = 0
         print(f"Grid X: {guesses_grid.grid_starting_x}")
