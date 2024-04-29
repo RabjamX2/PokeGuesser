@@ -559,15 +559,11 @@ class GridMaker:
         if hasattr(self, "canvas") and hasattr(self, "list_of_rectangles"):
             if len(self.list_of_rectangles) > 0:
                 if hasattr(self, "grid_starting_x") and name == "grid_starting_x":
-                    print(
-                        f"Moving Grid Horizontally to {value} from {self.grid_starting_x}"
-                    )
                     delta_x = value - self.grid_starting_x
                     object.__setattr__(self, name, value)
                     for rectangle in self.list_of_rectangles:
                         rectangle.move_rect(int(delta_x), 0)
                 elif hasattr(self, "grid_y") and name == "grid_y":
-                    print(f"Moving Grid Vertically to {value} from {self.grid_y}")
                     delta_y = value - self.grid_y
                     object.__setattr__(self, name, value)
                     for rectangle in self.list_of_rectangles:
@@ -702,6 +698,13 @@ class Window(tk.Canvas):
                 )
 
         # User Input
+        entry_width = rect_width / 3
+        entry_height = 45
+        entry_relx = 0.47
+        entry_rely = 0.92
+        submit_button_x = (self.parent.window_width * entry_relx) + (entry_width / 2)
+        submit_button_y = (self.parent.window_height * entry_rely) - entry_height + 1
+
         user_input = tk.StringVar()
         ttk.Style().configure("pad.TEntry", padding="5 1 1 1")
 
@@ -727,7 +730,6 @@ class Window(tk.Canvas):
                 name = input + event.char if event.keycode != 8 else input[:-1]
 
             if name:
-                print(name)
                 pokemon_name_list = sorted(
                     [pokemon_name.lower() for pokemon_name in pokemon_data]
                 )
@@ -738,8 +740,8 @@ class Window(tk.Canvas):
 
                 self.dropdown_Frame = tk.Frame(self)
                 self.dropdown_Frame.place(
-                    x=100, y=500, relx=0.1, rely=0.1, anchor="s"
-                )  # TODO: Move self.dropdown_Frame
+                    relx=entry_relx, rely=0.888, anchor="s"
+                )
 
                 matched_pokemon_lists = []
                 for i in range(len(pokemon_name_list)):
@@ -755,21 +757,20 @@ class Window(tk.Canvas):
                 matched_pokemon_lists.reverse()
 
                 for matched_pokemon in matched_pokemon_lists:
-
                     dropdown_label = tk.Label(
-                        self.dropdown_Frame, text=matched_pokemon.title()
+                        self.dropdown_Frame, text=matched_pokemon.title(), font="Arial 16", relief="groove", width=29,
                     )
                     dropdown_label.bind(
                         "<Button-1>",
                         lambda event, current_matched=matched_pokemon: replace_text(
-                            current_matched
+                            current_matched.capitalize()
                         ),
                     )
 
                     dropdown_label.pack(side="top")
 
         def submit_input(input):
-            print("Submitted")
+            print(f"Submitted: {input}")
             guess_attempt.guess(input)
             make_grid_maker()
 
@@ -785,13 +786,7 @@ class Window(tk.Canvas):
         entry.bind("<Key>", lambda event: make_dropdown(event, user_input.get()))
         entry.bind("<Return>", lambda event: submit_input(user_input.get()))
 
-        entry_width = rect_width / 3
-        entry_height = 45
-        entry_relx = 0.47
-        entry_rely = 0.92
-        submit_button_x = (self.parent.window_width * entry_relx) + (entry_width / 2)
-        submit_button_y = (self.parent.window_height * entry_rely) - entry_height + 1
-
+        # TODO: Fix submit button error
         submit_button = RabRectangle(
             self,
             submit_button_x,
