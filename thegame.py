@@ -201,7 +201,7 @@ with open("Pokemon.json", encoding="utf-8") as file:
 # Select a random Pokemon
 pokemon_data = pokemon_data[0]
 target_pokemon = random.choice(list(pokemon_data.items()))
-# target_pokemon = ("Bulbasaur", pokemon_data["Bulbasaur"])
+
 # print(target_pokemon)
 correctPokemon = Pokemon(target_pokemon)
 # print(f"Correct Pokemon: {correctPokemon.name}")
@@ -653,10 +653,6 @@ class Window(tk.Canvas):
             arcs=[True, True, True, True],
         )
         header_grid.grid_y = 49
-        # ! Let's do this with Rab
-        # ? Logic: How to make a multi-row grid to fit all guesses?
-        # ? Need to add functions to GridMaker?
-        # ? Or append and shift all guesses after each guess?
 
         def display_guess():
             list = guess_attempt.guessed_pokemon_list
@@ -705,32 +701,89 @@ class Window(tk.Canvas):
                     },
                 )
 
-        # make_grid_maker()
-
-        # guesses_grid.grid_starting_x = 0
-        # print(f"Grid X: {guesses_grid.grid_starting_x}")
-        # guesses_grid.grid_y = 100
-        # print(f"Grid X: {guesses_grid.grid_starting_x}")
-
         # User Input
         user_input = tk.StringVar()
         ttk.Style().configure("pad.TEntry", padding="5 1 1 1")
 
         entry = ttk.Entry(
             self.parent,
-            # bd=0,
             font=("Arial", 16, "normal"),
-            # fg="black",
-            # bg="#CCCCCC",
             textvariable=user_input,
             style="pad.TEntry",
         )
 
-        def submit_input():
-            print("sa")
-            input = user_input.get()
+        def replace_text(input):
+            entry.delete(0, len(input))
+            entry.insert(0, input)
+
+        def make_dropdown(event, input):
+            if len(input) == 1 and event.keysym == "BackSpace":
+                self.dropdown_Frame.destroy()
+                return
+
+            if event == "bitch":
+                name = input
+            elif event.keycode == 8 or (event.keycode >= 65 and event.keycode <= 90):
+                name = input + event.char if event.keycode != 8 else input[:-1]
+
+            if name:
+                print(name)
+                pokemon_name_list = sorted(
+                    [pokemon_name.lower() for pokemon_name in pokemon_data]
+                )
+
+                # Destroy existing dropdown frame if it exists
+                if hasattr(self, "dropdown_Frame"):
+                    self.dropdown_Frame.destroy()
+
+                self.dropdown_Frame = tk.Frame(self)
+                self.dropdown_Frame.place(
+                    x=100, y=500, relx=0.1, rely=0.1, anchor="s"
+                )  # TODO: Move self.dropdown_Frame
+
+                matched_pokemon_lists = []
+                for i in range(len(pokemon_name_list)):
+                    if pokemon_name_list[i].startswith(name):
+                        new_top = pokemon_name_list[i:]
+                        pokemon_name_list[i:] = []
+                        pokemon_name_list = new_top + pokemon_name_list
+                        break
+
+                for pokemon in pokemon_name_list:
+                    if name.lower() in pokemon:
+                        matched_pokemon_lists.append(pokemon)
+                matched_pokemon_lists.reverse()
+
+                for matched_pokemon in matched_pokemon_lists:
+
+                    dropdown_label = tk.Label(
+                        self.dropdown_Frame, text=matched_pokemon.title()
+                    )
+                    dropdown_label.bind(
+                        "<Button-1>",
+                        lambda event, current_matched=matched_pokemon: replace_text(
+                            current_matched
+                        ),
+                    )
+
+                    dropdown_label.pack(side="top")
+
+        def submit_input(input):
+            print("Submitted")
             guess_attempt.guess(input)
             make_grid_maker()
+
+        def entry_focused(event):
+            if event.type == "9":
+                make_dropdown("bitch", user_input.get())
+            if event.type == "10":
+                if hasattr(self, "dropdown_Frame"):
+                    self.dropdown_Frame.destroy()
+
+        entry.bind("<FocusIn>", entry_focused)
+        entry.bind("<FocusOut>", entry_focused)
+        entry.bind("<Key>", lambda event: make_dropdown(event, user_input.get()))
+        entry.bind("<Return>", lambda event: submit_input(user_input.get()))
 
         entry_width = rect_width / 3
         entry_height = 45
@@ -813,6 +866,8 @@ class App(tk.Tk):
 
         # self.wm_attributes("-topmost", 1)
         self.wm_attributes("-transparentcolor", "DarkOliveGreen4")
+        self.bind_all("<Button-1>", lambda event: event.widget.focus_set())
+
         # TODO: How to add text to title bar/exit button without alloc error?
         title_bar_canvas = tk.Canvas(
             bd=0, highlightthickness=0, bg="DarkOliveGreen4", height=22, width=0
