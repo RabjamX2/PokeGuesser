@@ -288,6 +288,7 @@ class RabRectangle:
         fill,
         text_data=None,
         button=False,
+        symbol=False,
         input=False,
         command=None,
         top_left_arc=True,
@@ -310,8 +311,20 @@ class RabRectangle:
         self.text_data = text_data
         self.rect_outline = rect_outline
         self.input = input
+        self.rect_symbol = symbol
+        if self.rect_symbol:
+            self.fill = "orange"
 
         self.rectangle = self.make_rectangle()
+
+        if self.rect_symbol:
+            symbol = self.canvas.create_text(
+                self.x + self.width / 2,
+                self.y + self.height / 2,
+                text=self.rect_symbol,
+                fill="red",
+                font=("Arial", 16),
+            )
 
         if self.text_data:
             # print(f'Creating Text: {self.text_data["string"]}')
@@ -524,8 +537,14 @@ class GridMaker:
         self.rect_height = 50
 
         for i in range(self.amount_of_rectangles):
+            rect_symbol = False
             if self.fill_list:
-                rect_fill = self.fill_list[i]
+                if self.fill_list[i] == "Greater":
+                    rect_symbol = "^"
+                elif self.fill_list[i] == "Less":
+                    rect_symbol = "v"
+                else:
+                    rect_fill = self.fill_list[i]
             else:
                 rect_fill = self.fill
             rect = RabRectangle(
@@ -544,6 +563,7 @@ class GridMaker:
                 },
                 button=True,
                 command=test,
+                symbol=rect_symbol,
                 top_left_arc=self.arcs[0] if i == 0 else False,
                 top_right_arc=(
                     self.arcs[1] if i == self.amount_of_rectangles - 1 else False
@@ -667,11 +687,10 @@ class Window(tk.Canvas):
                         attempt_results.append("green")
                     elif attemp_result_value == "False":
                         attempt_results.append("red")
-                    elif (
-                        attemp_result_value == "Greater"
-                        or attemp_result_value == "Less"
-                    ):
-                        attempt_results.append("orange")
+                    elif attemp_result_value == "Greater":
+                        attempt_results.append("Greater")
+                    elif attemp_result_value == "Less":
+                        attempt_results.append("Less")
 
                 all_results.append([attempt_names, attempt_results])
 
@@ -723,7 +742,7 @@ class Window(tk.Canvas):
             if len(input) == 1 and event.keysym == "BackSpace":
                 self.dropdown_Frame.destroy()
                 return
-
+            name = False
             if event == "bitch":
                 name = input
             elif event.keycode == 8 or (event.keycode >= 65 and event.keycode <= 90):
@@ -739,9 +758,7 @@ class Window(tk.Canvas):
                     self.dropdown_Frame.destroy()
 
                 self.dropdown_Frame = tk.Frame(self)
-                self.dropdown_Frame.place(
-                    relx=entry_relx, rely=0.888, anchor="s"
-                )
+                self.dropdown_Frame.place(relx=entry_relx, rely=0.888, anchor="s")
 
                 matched_pokemon_lists = []
                 for i in range(len(pokemon_name_list)):
@@ -758,7 +775,11 @@ class Window(tk.Canvas):
 
                 for matched_pokemon in matched_pokemon_lists:
                     dropdown_label = tk.Label(
-                        self.dropdown_Frame, text=matched_pokemon.title(), font="Arial 16", relief="groove", width=29,
+                        self.dropdown_Frame,
+                        text=matched_pokemon.title(),
+                        font="Arial 16",
+                        relief="groove",
+                        width=29,
                     )
                     dropdown_label.bind(
                         "<Button-1>",
@@ -769,7 +790,8 @@ class Window(tk.Canvas):
 
                     dropdown_label.pack(side="top")
 
-        def submit_input(input):
+        def submit_input():
+            input = user_input.get().title()
             print(f"Submitted: {input}")
             guess_attempt.guess(input)
             make_grid_maker()
@@ -784,7 +806,7 @@ class Window(tk.Canvas):
         entry.bind("<FocusIn>", entry_focused)
         entry.bind("<FocusOut>", entry_focused)
         entry.bind("<Key>", lambda event: make_dropdown(event, user_input.get()))
-        entry.bind("<Return>", lambda event: submit_input(user_input.get()))
+        entry.bind("<Return>", lambda event: submit_input())
 
         # TODO: Fix submit button error
         submit_button = RabRectangle(
