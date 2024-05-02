@@ -3,6 +3,7 @@ import tkinter.ttk as ttk
 import math
 import json
 import random
+from PIL import Image, ImageTk
 
 better_pokemon_data_keys_dict = {
     "type_main": {"key": "Type I", "data_type": "boolean"},
@@ -136,6 +137,9 @@ class Guess:
         guessed_pokemon = Pokemon(
             (guessed_pokemon_name, pokemon_data[guessed_pokemon_name])
         )
+        guessed_pokemon_number = guessed_pokemon.key("number")
+        guessed_pokemon_sprite_path = f"assets/sprites/{guessed_pokemon_number}.png"
+
         if self.correct_pokemon.number == guessed_pokemon.number:
             result = {"Correct": True}
         else:
@@ -159,6 +163,7 @@ class Guess:
             {
                 "guess_number": len(self.guessed_pokemon_list),
                 "guess_pokemon": guessed_pokemon.name,
+                "sprite": guessed_pokemon_sprite_path,
                 "results": result,
             }
         )
@@ -318,12 +323,45 @@ class RabRectangle:
         self.rectangle = self.make_rectangle()
 
         if self.rect_symbol:
-            symbol = self.canvas.create_text(
+            self.pil_image = Image.open(self.rect_symbol)
+
+            if "/sprites/" in self.rect_symbol:
+                temp = self.pil_image.getbbox()
+
+                pil_width = temp[2] - temp[0]
+                pil_height = temp[3] - temp[1]
+                pil_box_width_offset = 0
+                pil_box_height_offset = 0
+
+                pil_box = pil_width if pil_width > pil_height else pil_height
+
+                if pil_box == pil_height:
+                    pil_box_width_offset = (temp[0] + pil_box - temp[2]) / 2
+                if pil_box == pil_width:
+                    pil_box_height_offset = (temp[1] + pil_box - temp[3]) / 2
+
+                self.pil_image = self.pil_image.crop(
+                    (
+                        temp[0] - pil_box_width_offset,
+                        temp[1] - pil_box_height_offset,
+                        temp[2] + pil_box_width_offset,
+                        temp[3] + pil_box_height_offset,
+                    )
+                )
+                self.pil_image = self.pil_image.resize(
+                    (int(self.height), int(self.height)), Image.Resampling.LANCZOS
+                )
+            else:
+                self.pil_image = self.pil_image.resize(
+                    (int(self.width), int(self.height))
+                )
+
+            self.symbol = ImageTk.PhotoImage(self.pil_image)
+            self.image = self.canvas.create_image(
                 self.x + self.width / 2,
                 self.y + self.height / 2,
-                text=self.rect_symbol,
-                fill="red",
-                font=("Arial", 16),
+                image=self.symbol,
+                anchor="center",
             )
 
         if self.text_data:
@@ -534,19 +572,18 @@ class GridMaker:
             / self.amount_of_rectangles
         )
 
-        self.rect_height = 50
-
         for i in range(self.amount_of_rectangles):
             rect_symbol = False
+            rect_fill = self.fill
             if self.fill_list:
-                if self.fill_list[i] == "Greater":
-                    rect_symbol = "^"
+                if self.fill_list[i][0] == "/":
+                    rect_symbol = self.fill_list[i][1:]
+                elif self.fill_list[i] == "Greater":
+                    rect_symbol = "assets/upArrow.png"
                 elif self.fill_list[i] == "Less":
-                    rect_symbol = "v"
+                    rect_symbol = "assets/downArrow.png"
                 else:
                     rect_fill = self.fill_list[i]
-            else:
-                rect_fill = self.fill
             rect = RabRectangle(
                 self.canvas,
                 self.grid_starting_x + (i * rect_gap) + (i * self.rect_width),
@@ -675,11 +712,12 @@ class Window(tk.Canvas):
             all_results = []
             for attempt in list:
                 attempt_names = [" ", attempt["guess_pokemon"]]
-                attempt_results = ["gray"]
+                attempt_results = [f"/{attempt['sprite']}"]
                 if attempt["results"]["Correct"]:
                     attempt_results.append("green")
                 else:
                     attempt_results.append("red")
+
                 for header in guess_display_order:
                     attempt_names.append(attempt["results"][header]["guessed_value"])
                     attemp_result_value = attempt["results"][header]["result"]
@@ -697,12 +735,14 @@ class Window(tk.Canvas):
             return all_results
 
         def make_grid_maker():
+            grid_height = 70
             list_of_guess_results = display_guess()
             for i, guess_results in enumerate(list_of_guess_results):
                 grid = GridMaker(
                     self.parent,
                     self,
-                    grid_y=(self.parent.window_height - 200) - (i * 51),
+                    grid_y=(self.parent.window_height - 200) - (i * (grid_height + 1)),
+                    grid_height=grid_height,
                     grid_width=rect_width,
                     amount_of_rectangles=len(guess_results[0]),
                     rect_gap=2,
@@ -809,7 +849,6 @@ class Window(tk.Canvas):
         entry.bind("<Return>", lambda event: submit_input())
 
         # TODO: Fix submit button error
-        # TODO: Fix problem with Ho-Oh
         submit_button = RabRectangle(
             self,
             submit_button_x,
