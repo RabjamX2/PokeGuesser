@@ -204,7 +204,7 @@ target_pokemon = random.choice(list(pokemon_data.items()))
 
 # print(target_pokemon)
 correctPokemon = Pokemon(target_pokemon)
-# print(f"Correct Pokemon: {correctPokemon.name}")
+print(f"Correct Pokemon: {correctPokemon.name}")
 
 # Create a Guess object
 guess_attempt = Guess(correctPokemon)
@@ -784,7 +784,7 @@ class Window(tk.Canvas):
                     dropdown_label.bind(
                         "<Button-1>",
                         lambda event, current_matched=matched_pokemon: replace_text(
-                            current_matched.capitalize()
+                            current_matched.title()
                         ),
                     )
 
@@ -809,6 +809,7 @@ class Window(tk.Canvas):
         entry.bind("<Return>", lambda event: submit_input())
 
         # TODO: Fix submit button error
+        # TODO: Fix problem with Ho-Oh
         submit_button = RabRectangle(
             self,
             submit_button_x,
