@@ -1,24 +1,42 @@
 * {
+	background: #494848;
+
 	font-family: "Source Code Pro", monospace;
 	font-optical-sizing: auto;
 	font-weight: 450;
 	font-style: normal;
-	background: #494848;
 	color: white;
+
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 header {
-	margin-top: auto;
-	margin-left: auto;
+	width: max-content;
 	text-align: center;
+}
+
+header h1 {
+	font-size: 2.5rem;
 	text-decoration: underline;
 }
 
 main {
 	display: flex;
 	flex-direction: column;
-	/* align-items: flex-start; */
-	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#results-table th {
+	padding: 1rem;
+	text-decoration: underline;
 }
 
 .guess-input-wrapper {
@@ -54,15 +72,19 @@ main {
 	width: 0;
 }
 
-/* Footer styles */
-/* ? Footer doesn't extend to the left? */
-footer p{
+/* Footer style */
+footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
 	height: 5%;
 	margin: 0;
+	left: 0;
 	background-color: #252525;
 	text-align: center;
 	font-size: 14px;
+}
+
+footer p {
+	background-color: inherit;
 }
