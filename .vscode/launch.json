@@ -13,9 +13,21 @@
 		{
 			"name": "Firefox",
 			"type": "firefox",
+			"profile": "Debugger",
+			"keepProfileChanges": true,
 			"request": "launch",
 			"reAttach": true,
-			"file": "${workspaceFolder}/index.html"
+			"url": "http://127.0.0.1:5500",
+			"webRoot": "${workspaceFolder}",
+
+			"reloadOnChange": {
+				"watch": [
+					"${workspaceFolder}/*.html",
+					"${workspaceFolder}/assets/css/*.css",
+					"${workspaceFolder}/assets/project/**/*.js"
+				],
+				"ignore": ["${workspaceFolder}/node_modules/**"]
+			}
 		}
 	]
 }
