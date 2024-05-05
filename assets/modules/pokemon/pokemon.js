@@ -1,65 +1,94 @@
-import { getRandomObjectKeyPair } from "/assets/js/utils.js";
+//@ts-check
+import { getRandomObjectKeyPair } from "../../js/utils.js";
+/** @typedef {import("../../js/utils.js").Character} Character */
 
 fetch("/assets/modules/pokemon/pokemon.json")
 	.then((response) => response.json())
 	.then((data) => {
+		// * This is where main code should go
+		/** @type {Character} */
 		const allPokemon = data;
 		const pokemonNames = Object.keys(data);
 
-		console.log(getRandomObjectKeyPair(allPokemon));
+		const randomPokemon = getRandomObjectKeyPair(allPokemon);
+		console.log(Object.keys(randomPokemon)[0]);
+		const gameOne = new Game(randomPokemon, allPokemon);
+		// gameOne.submitGuess(pokemonNames[0]);
 	})
 	.catch((error) => {
-		console.error("Error fetching JSON:", error);
+		console.error("Error:", error);
 	});
 
 class Game {
-	constructor(correctPokemon) {
+	/**
+	 * @param {Character} correctPokemon
+	 * @param {Character} allPokemon
+	 */
+	constructor(correctPokemon, allPokemon) {
+		/**
+		 * @type {Character}
+		 * @private */
 		this.correctPokemon = correctPokemon;
+		/**
+		 * @type {string}
+		 * @private */
+		this.correctPokemonName = Object.keys(correctPokemon)[0];
+		/** @type {Character} */
+		this.allPokemon = allPokemon;
+		/** @type {Character[]} */
 		this.guessedPokemonList = [];
+
+		this.lookup = ["Type I", "Type II", "Evolution Stage", "Height (m)", "Weight (kg)", "Catch Rate"];
 	}
 
-	compareRange(guessedValue, key) {
-		const correctValue = this.correctPokemon[betterPokemonDataKeysDict[key]["key"]];
-		if (correctValue === guessedValue) {
-			return "True";
-		} else if (correctValue > guessedValue) {
-			return "Greater";
-		} else if (correctValue < guessedValue) {
-			return "Less";
-		} else {
-			return "Error";
-		}
+	get guessedCount() {
+		return this.guessedPokemonList.length;
 	}
 
-	compareBoolean(guessedValue, key) {
-		return this.correctPokemon[betterPokemonDataKeysDict[key]["key"]] === guessedValue;
-	}
+	// compareRange(guessedValue, key) {
+	// 	const correctValue = this.correctPokemon[];
+	// 	if (correctValue === guessedValue) {
+	// 		return "True";
+	// 	} else if (correctValue > guessedValue) {
+	// 		return "Greater";
+	// 	} else if (correctValue < guessedValue) {
+	// 		return "Less";
+	// 	} else {
+	// 		return "Error";
+	// 	}
+	// }
 
+	// compareBoolean(guessedValue, key) {
+	// 	return this.correctPokemon[betterPokemonDataKeysDict[key]["key"]] === guessedValue;
+	// }
+
+	/**
+	 * @param {string} guessedPokemonName The name of the Pokemon guessed by the player
+	 */
 	submitGuess(guessedPokemonName) {
 		const result = {};
-		const guessedPokemon = new Pokemon(pokemonData[guessedPokemonName]);
-		const guessedPokemonNumber = guessedPokemon.number;
+		const guessedPokemon = this.allPokemon[guessedPokemonName];
 
-		// Assuming "assets/sprites/" exists, adjust path if needed
-		const guessedPokemonSpritePath = `assets/sprites/${guessedPokemonNumber}.png`;
+		const guessedPokemonSpritePath = `sprites/${guessedPokemon["#"]}.png`;
+		console.log(guessedPokemonSpritePath);
 
-		result["Correct"] = this.correctPokemon.number === guessedPokemon.number;
+		result["Correct"] = this.correctPokemon === guessedPokemon;
 
-		for (const key in betterPokemonDataKeysDict) {
-			const value = betterPokemonDataKeysDict[key];
+		for (const key of this.lookup) {
+			const value = this.correctPokemon[key];
 			const guessedValue = guessedPokemon[key];
 
 			if (value["data_type"] === "range") {
 				result[key] = {
 					data_type: value["data_type"],
 					guessed_value: guessedValue,
-					result: this.compareRange(guessedValue, key),
+					// result: this.compareRange(guessedValue, key),
 				};
 			} else if (value["data_type"] === "boolean") {
 				result[key] = {
 					data_type: value["data_type"],
 					guessed_value: guessedValue,
-					result: this.compareBoolean(guessedValue, key),
+					// result: this.compareBoolean(guessedValue, key),
 				};
 			}
 		}
@@ -70,21 +99,5 @@ class Game {
 			sprite: guessedPokemonSpritePath,
 			results: result,
 		});
-	}
-}
-
-class Pokemon {
-	constructor(pokemonTuple) {
-		this.name = pokemonTuple[0];
-		this.data = pokemonTuple[1];
-	}
-
-	// Simulating Python's __getattr__ behavior
-	get(key) {
-		return this.data[betterPokemonDataKeysDict[key]["key"]];
-	}
-
-	key(key) {
-		return this.data[betterPokemonDataKeysDict[key]["key"]];
 	}
 }
