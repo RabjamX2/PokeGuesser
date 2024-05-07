@@ -2,12 +2,10 @@
 	--incorrect: rgb(255, 0, 0);
 	--correct: rgb(0, 177, 0);
 	--less: rgb(255, 208, 0);
-	--greater: rgb(255, 208, 0);
+	--greater: rgb(255, 0, 0);
 }
 
 * {
-	background: #494848;
-
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
 	font-style: normal;
@@ -23,6 +21,7 @@ body {
 	align-items: center;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	background: #494848;
 }
 
 header {
@@ -54,15 +53,16 @@ main {
 
 #results-table th {
 	padding: 0.5rem;
-	text-decoration: underline;
+	font-weight: 550;
 	position: sticky;
 	top: 0;
 	z-index: 1;
 }
 
 #results-table td {
-	padding: 0.2rem 0.5rem;
+	/* padding: 0.2rem 0.5rem; */
 	border: 1px white solid;
+	-webkit-text-stroke: 1px black;
 }
 
 #results-table .sprite-cell {
@@ -71,12 +71,12 @@ main {
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-#results-table td[guess-result="greater"] {
+/* #results-table td[guess-result="greater"] {
 	background-image: url(../images/upArrow.png);
 }
 #results-table td[guess-result="less"] {
 	background-image: url(../images/downArrow.png);
-}
+} */
 #results-table td[guess-result="greater"],
 #results-table td[guess-result="less"] {
 	background-position: center;
@@ -84,8 +84,6 @@ main {
 	background-repeat: no-repeat;
 	font-size: 2rem;
 	color: white;
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: black;
 }
 
 .guess-wrapper {
@@ -113,6 +111,12 @@ main {
 	border: 0px;
 }
 
+#guess-input:focus {
+	outline: none;
+	background-color: rgb(243, 230, 215);
+	-webkit-transition: background-color 0.5s;
+}
+
 #suggestionsList {
 	display: none; /* Hidden by default */
 	border: 1px solid #ccc;
@@ -125,6 +129,7 @@ main {
 #suggestionsList li {
 	padding: 5px;
 	cursor: pointer;
+	background: #494848;
 }
 
 #suggestionsList li:hover {
@@ -141,11 +146,13 @@ main {
 	color: black;
 	font-size: 20px;
 	border: 0px;
+	cursor: pointer;
+	-webkit-transition: background-color 1s;
 }
 
 #guess-input-button:hover {
 	background-color: rgb(150, 134, 114);
-	transition: 0.5s;
+	-webkit-transition: background-color 0.2s;
 }
 
 #submit-div {
