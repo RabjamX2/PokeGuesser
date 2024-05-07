@@ -1,14 +1,6 @@
 //@ts-check
-import { getRandomObjectKeyPair } from "../../js/utils.js";
+import { getRandomObjectKeyPair, titleCase } from "../../js/utils.js";
 /** @typedef {import("../../js/utils.js").Character} Character */
-
-function titleCase(string) {
-	return string
-		.toLowerCase()
-		.split(" ")
-		.map((/** @type {string} */ word) => word.charAt(0).toUpperCase() + word.slice(1))
-		.join(" ");
-}
 
 fetch("/assets/modules/pokemon/pokemon.json")
 	.then((response) => response.json())
@@ -17,6 +9,7 @@ fetch("/assets/modules/pokemon/pokemon.json")
 		/** @type {Character} */
 		const allPokemon = data;
 		let pokemonNames = Object.keys(data);
+
 		const lookup = [
 			{ key: "Type I", title: "Main Type", dataType: "boolean", matchType: "partial", matches: ["Type II"] },
 			{ key: "Type II", title: "Second Type", dataType: "boolean", matchType: "partial", matches: ["Type I"] },
@@ -30,11 +23,9 @@ fetch("/assets/modules/pokemon/pokemon.json")
 		const table = document.getElementById("results-table");
 		const tableHead = table.getElementsByTagName("thead")[0];
 		const headerRow = tableHead.insertRow();
-		const name = headerRow.insertCell();
-		name.innerHTML = "Pokemon";
+		headerRow.innerHTML = "<th>Pokemon</th>";
 		for (const valueData of lookup) {
-			const cell = headerRow.insertCell();
-			cell.innerHTML = valueData["title"];
+			headerRow.innerHTML += `<th>${valueData["title"]}</th>`;
 		}
 
 		const randomPokemon = getRandomObjectKeyPair(allPokemon);
@@ -56,6 +47,7 @@ fetch("/assets/modules/pokemon/pokemon.json")
 					listItem.onclick = function () {
 						// @ts-ignore
 						inputField.value = suggestion;
+						inputField.focus(); // prevents the need to click the input field again after selecting a suggestion
 						suggestionsList.style.display = "none";
 					};
 					listItem.textContent = suggestion;
@@ -69,11 +61,19 @@ fetch("/assets/modules/pokemon/pokemon.json")
 		});
 
 		const submitButton = document.getElementById("guess-input-button");
-		submitButton.onclick = function () {
+		function submitInputField() {
 			// @ts-ignore
-			const guess = inputField.value;
+			const guess = titleCase(inputField.value);
 			pokemonNames = gameOne.submitGuess(guess, pokemonNames);
-		};
+			// @ts-ignore
+			inputField.value = "";
+		}
+		submitButton.onclick = submitInputField;
+		inputField.addEventListener("keydown", function (event) {
+			if (event.key === "Enter") {
+				submitInputField();
+			}
+		});
 	})
 	.catch((error) => {
 		console.error("Error:", error);
@@ -130,7 +130,7 @@ class Game {
 			pokemonNames.splice(pokemonNames.indexOf(guessedPokemonName), 1);
 		}
 		const guessedPokemonValues = this.allPokemon[guessedPokemonName];
-		const guessedPokemonSpritePath = `assets/modules/pokemon/sprites/${guessedPokemonValues["#"]}.png`;
+		const guessedPokemonSpritePath = `../modules/pokemon/sprites/${guessedPokemonValues["#"]}.png`;
 		let guessInfo = { name: guessedPokemonName, spritePath: guessedPokemonSpritePath };
 		const guessIsCorrect = this.correctPokemonName === guessedPokemonName;
 		/** @type {{[value : string]: string | number}} */
@@ -139,13 +139,13 @@ class Game {
 		let guessResults = {};
 
 		for (const valueData of this.lookup) {
-			console.log(this.correctPokemonValues);
+			// console.log(this.correctPokemonValues);
 			const correctValue = this.correctPokemonValues[valueData["key"]];
 			const guessedValue = guessedPokemonValues[valueData["key"]];
 			guessValues[valueData["key"]] = guessedValue;
 			if (valueData["dataType"] === "boolean") {
-				const isGuessCorrect = correctValue === guessedValue;
-				if (isGuessCorrect) {
+				const isGuessedValueCorrect = correctValue === guessedValue;
+				if (isGuessedValueCorrect) {
 					guessResults[valueData["key"]] = "correct";
 				} else if (valueData["matchType"] === "partial") {
 					let partialMatch = false;
@@ -156,6 +156,8 @@ class Game {
 						}
 					}
 					guessResults[valueData["key"]] = partialMatch ? "partial" : "incorrect";
+				} else {
+					guessResults[valueData["key"]] = "incorrect";
 				}
 			} else if (valueData["dataType"] === "range") {
 				if (correctValue === guessedValue) {
@@ -184,20 +186,29 @@ class Game {
 	/**
 	 * TODO: Make this universal and move to utils.js
 	 * TODO: Make it so it checks and adds to table instead of redrawing it everytime a guess is made
+	 * @param {{ guessIsCorrect: boolean; guessValues: any; guessResults: any; name?: string; spritePath: string; }} guessedPokemon
 	 */
 	drawResults(guessedPokemon) {
 		const table = document.getElementById("results-table");
 		const tableBody = table.getElementsByTagName("tbody")[0];
 		const row = tableBody.insertRow();
 		const spriteCell = row.insertCell(0);
-		spriteCell.innerHTML = `<img src="${guessedPokemon.spritePath}" alt="${guessedPokemon.name}" style="width: 50px; height: 50px;">`;
+		spriteCell.classList.add("sprite-cell");
+		spriteCell.setAttribute(
+			"style",
+			`--bg-image: url('${guessedPokemon.spritePath}'); background-color: var(${
+				guessedPokemon.guessIsCorrect ? "--correct" : "--incorrect"
+			});`
+		);
+		spriteCell.setAttribute("guess-result", guessedPokemon.guessIsCorrect ? "correct" : "incorrect");
 		for (const [index, valueData] of this.lookup.entries()) {
 			const key = valueData["key"];
 			const value = guessedPokemon.guessValues[key];
 			const cell = row.insertCell();
-			cell.innerHTML = value;
+			cell.innerHTML = value ?? "None";
 			const result = guessedPokemon.guessResults[key];
 			cell.setAttribute("guess-result", result);
+			cell.setAttribute("style", `background-color: var(--${result})`);
 		}
 	}
 }

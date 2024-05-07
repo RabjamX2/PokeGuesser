@@ -12,3 +12,16 @@ export function getRandomObjectKeyPair(allCharacters) {
 
 	return { [randomKey]: allCharacters[randomKey] };
 }
+
+/**
+ * Converts a string to title case.
+ *
+ * @param {string} myString - The string to convert to title case.
+ * @returns {string} The converted string in title case.
+ */
+export function titleCase(myString) {
+	const myRegex = /\b(?<!')[a-z]/g;
+	return myString.toLowerCase().replace(myRegex, function (x) {
+		return x.toUpperCase();
+	});
+}

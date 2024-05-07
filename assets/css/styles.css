@@ -1,12 +1,18 @@
+:root {
+	--incorrect: rgb(255, 0, 0);
+	--correct: rgb(0, 177, 0);
+	--less: rgb(255, 208, 0);
+	--greater: rgb(255, 208, 0);
+}
+
 * {
 	background: #494848;
 
-	font-family: "Source Code Pro", monospace;
-	font-optical-sizing: auto;
-	font-weight: 450;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
 	font-style: normal;
-	color: white;
 
+	color: white;
 	margin: 0;
 	padding: 0;
 }
@@ -15,6 +21,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 header {
@@ -32,42 +40,52 @@ main {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	margin-bottom: 5%;
 }
 
-/* ? Does th still exist?
-#results-table th {
-	padding: 1rem;
-	text-decoration: underline;
-} */
+.guess-results {
+	font-size: 2rem;
+}
 
-#results-table td, tr {
+#results-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#results-table th {
+	padding: 0.5rem;
+	text-decoration: underline;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+#results-table td {
 	padding: 0.2rem 0.5rem;
 	border: 1px white solid;
-	
 }
 
-#results-table td[guess-result="correct"] {
-	background-color: rgb(0, 177, 0);
-}
-#results-table td[guess-result="incorrect"] {
-	background-color: rgb(255, 0, 0);
-}
-#results-table td[guess-result="partial"] {
-	background-color: rgb(255, 208, 0);
+#results-table .sprite-cell {
+	background-image: var(--bg-image);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 #results-table td[guess-result="greater"] {
-	background-color: red;
 	background-image: url(../images/upArrow.png);
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
 }
 #results-table td[guess-result="less"] {
-	background-color: red;
 	background-image: url(../images/downArrow.png);
+}
+#results-table td[guess-result="greater"],
+#results-table td[guess-result="less"] {
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
+	font-size: 2rem;
+	color: white;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;
 }
 
 .guess-wrapper {
@@ -92,6 +110,7 @@ main {
 	border-radius: 25px;
 	color: black;
 	font-size: large;
+	border: 0px;
 }
 
 #suggestionsList {
@@ -113,6 +132,7 @@ main {
 }
 
 #guess-input-button {
+	margin-top: 0.1rem;
 	background-color: antiquewhite;
 	margin-left: 0.2rem;
 	width: 8rem;
@@ -120,7 +140,12 @@ main {
 	border-radius: 25px;
 	color: black;
 	font-size: 20px;
-	cursor: pointer;
+	border: 0px;
+}
+
+#guess-input-button:hover {
+	background-color: rgb(150, 134, 114);
+	transition: 0.5s;
 }
 
 #submit-div {

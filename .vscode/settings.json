@@ -1,4 +1,3 @@
 {
-	"liveshare.allowGuestDebugControl": true,
-	"liveServer.settings.ignoreFiles": ["**/**"]
+	"liveshare.allowGuestDebugControl": true
 }
