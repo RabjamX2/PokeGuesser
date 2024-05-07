@@ -70,7 +70,7 @@ fetch("/assets/modules/pokemon/pokemon.json")
 			inputField.value = "";
 			window.scrollBy({
 				top: table.offsetHeight,
-				behavior: 'smooth'
+				behavior: "smooth",
 			});
 		}
 		submitButton.onclick = submitInputField;
@@ -197,7 +197,7 @@ class Game {
 		const table = document.getElementById("results-table");
 		const tableBody = table.getElementsByTagName("tbody")[0];
 		const row = tableBody.insertRow();
-		row.style.height = "1px"
+		row.style.height = "1px";
 		const spriteCell = row.insertCell(0);
 		spriteCell.classList.add("sprite-cell");
 		spriteCell.setAttribute(
@@ -211,21 +211,18 @@ class Game {
 			const key = valueData["key"];
 			const value = guessedPokemon.guessValues[key];
 			const cell = row.insertCell();
-			
-			// content.style.position = "absolute";
+
 			const result = guessedPokemon.guessResults[key];
-			if (result === "less") {
+			if (result === "less" || result === "greater") {
 				const content = document.createElement("div");
-				content.style.height = "100%";
-				content.innerHTML = `<div>${value ?? "None"}</div>`;
+				content.classList.add("range-cell-wrapper");
+				content.innerHTML = `<div class="range">${value ?? "None"}</div>`;
 				content.innerHTML += `
-				<svg width=100 height=100 >
+				<svg class="${result}" width=100 height=100 >
 					<polygon fill="red"
-						points="75,0 25,0 25,50 0,50 50,100 100,50 75,50" />
-				</svg>`
+						points="75,0 25,0 25,50 0,50 50,100 100,50 75,50"/>
+				</svg>`;
 				cell.appendChild(content);
-			} else if (result === "greater") {
-				
 			} else {
 				cell.innerHTML = value ?? "None";
 			}
