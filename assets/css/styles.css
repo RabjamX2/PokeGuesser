@@ -39,12 +39,25 @@ main {
 	text-decoration: underline;
 }
 
-.guess-input-wrapper {
+#results-table td[guess-result="correct"] {
+	background-color: green;
+}
+#results-table td[guess-result="incorrect"] {
+	background-color: red;
+}
+
+.guess-wrapper {
 	align-self: center;
 	width: 70%;
 	display: flex;
-	align-items: center;
+	align-items: start;
 	justify-content: center;
+}
+
+#guess-input-wrapper {
+	display: flex;
+	flex-direction: column;
+	overflow: visible;
 }
 
 #guess-input {

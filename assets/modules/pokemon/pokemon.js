@@ -2,23 +2,46 @@
 import { getRandomObjectKeyPair } from "../../js/utils.js";
 /** @typedef {import("../../js/utils.js").Character} Character */
 
+function titleCase(string) {
+	return string
+		.toLowerCase()
+		.split(" ")
+		.map((/** @type {string} */ word) => word.charAt(0).toUpperCase() + word.slice(1))
+		.join(" ");
+}
+
 fetch("/assets/modules/pokemon/pokemon.json")
 	.then((response) => response.json())
 	.then((data) => {
 		// * This is where main code should go
 		/** @type {Character} */
 		const allPokemon = data;
-		const pokemonNames = Object.keys(data);
+		let pokemonNames = Object.keys(data);
+		const lookup = [
+			{ key: "Type I", title: "Main Type", dataType: "boolean", matchType: "partial", matches: ["Type II"] },
+			{ key: "Type II", title: "Second Type", dataType: "boolean", matchType: "partial", matches: ["Type I"] },
+			{ key: "Evolution Stage", title: "Evolution Stage", dataType: "range" },
+			{ key: "Height (m)", title: "Height", dataType: "range" },
+			{ key: "Weight (kg)", title: "Weight", dataType: "range" },
+			{ key: "Catch Rate", title: "Catch Rate", dataType: "range" },
+		];
+
+		const table = document.getElementById("results-table");
+		const tableHead = table.getElementsByTagName("thead")[0];
+		const headerRow = tableHead.insertRow();
+		const name = headerRow.insertCell();
+		name.innerHTML = "Pokemon";
+		for (const valueData of lookup) {
+			const cell = headerRow.insertCell();
+			cell.innerHTML = valueData["title"];
+		}
 
 		const randomPokemon = getRandomObjectKeyPair(allPokemon);
-		console.log(Object.keys(randomPokemon)[0]);
-		const gameOne = new Game(randomPokemon, allPokemon);
-		gameOne.submitGuess(pokemonNames[0]);
-		gameOne.drawResults();
+		// console.log(Object.keys(randomPokemon)[0]); // Name of the random pokemon
+		const gameOne = new Game(randomPokemon, allPokemon, lookup);
 
 		const inputField = document.getElementById("guess-input");
 		const suggestionsList = document.getElementById("suggestionsList");
-
 		inputField.addEventListener("keyup", function () {
 			// @ts-ignore
 			const inputValue = inputField.value.toLowerCase();
@@ -29,6 +52,11 @@ fetch("/assets/modules/pokemon/pokemon.json")
 
 				suggestions.forEach((suggestion) => {
 					const listItem = document.createElement("li");
+					listItem.onclick = function () {
+						// @ts-ignore
+						inputField.value = suggestion;
+						suggestionsList.style.display = "none";
+					};
 					listItem.textContent = suggestion;
 					suggestionsList.appendChild(listItem);
 				});
@@ -38,6 +66,13 @@ fetch("/assets/modules/pokemon/pokemon.json")
 				suggestionsList.style.display = "none"; // Hide if input is empty
 			}
 		});
+
+		const submitButton = document.getElementById("guess-input-button");
+		submitButton.onclick = function () {
+			// @ts-ignore
+			const guess = inputField.value;
+			pokemonNames = gameOne.submitGuess(guess, pokemonNames);
+		};
 	})
 	.catch((error) => {
 		console.error("Error:", error);
@@ -48,7 +83,7 @@ class Game {
 	 * @param {Character} correctPokemon
 	 * @param {Character} allPokemon
 	 */
-	constructor(correctPokemon, allPokemon) {
+	constructor(correctPokemon, allPokemon, lookup) {
 		/**
 		 * @type {Character}
 		 * @private */
@@ -78,14 +113,7 @@ class Game {
 		 */
 		this.guessedPokemonList = [];
 
-		this.lookup = [
-			{ key: "Type I", title: "Main Type", dataType: "boolean", matchType: "partial", matches: ["Type II"] },
-			{ key: "Type II", title: "Second Type", dataType: "boolean", matchType: "partial", matches: ["Type I"] },
-			{ key: "Evolution Stage", title: "Evolution Stage", dataType: "range" },
-			{ key: "Height (m)", title: "Height", dataType: "range" },
-			{ key: "Weight (kg)", title: "Weight", dataType: "range" },
-			{ key: "Catch Rate", title: "Catch Rate", dataType: "range" },
-		];
+		this.lookup = lookup;
 	}
 
 	get guessedCount() {
@@ -96,7 +124,10 @@ class Game {
 	 * TODO: Make this universal and move to utils.js
 	 * @param {string} guessedPokemonName The name of the Pokemon guessed by the player
 	 */
-	submitGuess(guessedPokemonName) {
+	submitGuess(guessedPokemonName, pokemonNames) {
+		if (pokemonNames.includes(guessedPokemonName)) {
+			pokemonNames.splice(pokemonNames.indexOf(guessedPokemonName), 1);
+		}
 		const guessedPokemonValues = this.allPokemon[guessedPokemonName];
 		const guessedPokemonSpritePath = `assets/modules/pokemon/sprites/${guessedPokemonValues["#"]}.png`;
 		let guessInfo = { name: guessedPokemonName, spritePath: guessedPokemonSpritePath };
@@ -145,37 +176,27 @@ class Game {
 			guessResults: guessResults,
 		};
 		this.guessedPokemonList.push(output);
-		return output;
+		this.drawResults(output);
+		return pokemonNames;
 	}
 
 	/**
 	 * TODO: Make this universal and move to utils.js
 	 * TODO: Make it so it checks and adds to table instead of redrawing it everytime a guess is made
 	 */
-	drawResults() {
+	drawResults(guessedPokemon) {
 		const table = document.getElementById("results-table");
-		const tableHead = table.getElementsByTagName("thead")[0];
-		const headerRow = tableHead.insertRow();
-		const name = headerRow.insertCell();
-		name.innerHTML = "Pokemon";
-		for (const valueData of this.lookup) {
-			const cell = headerRow.insertCell();
-			cell.innerHTML = valueData["title"];
-		}
 		const tableBody = table.getElementsByTagName("tbody")[0];
-		for (const guessedPokemon of this.guessedPokemonList) {
-			const row = tableBody.insertRow();
-			const spriteCell = row.insertCell(0);
-			spriteCell.innerHTML = `<img src="${guessedPokemon.spritePath}" alt="${guessedPokemon.name}" style="width: 50px; height: 50px;">`;
-			for (const [index, valueData] of this.lookup.entries()) {
-				const key = valueData["key"];
-				const value = guessedPokemon.guessValues[key];
-				const cell = row.insertCell();
-				cell.innerHTML = value.toString();
-				const result = guessedPokemon.guessResults[key];
-			}
+		const row = tableBody.insertRow();
+		const spriteCell = row.insertCell(0);
+		spriteCell.innerHTML = `<img src="${guessedPokemon.spritePath}" alt="${guessedPokemon.name}" style="width: 50px; height: 50px;">`;
+		for (const [index, valueData] of this.lookup.entries()) {
+			const key = valueData["key"];
+			const value = guessedPokemon.guessValues[key];
+			const cell = row.insertCell();
+			cell.innerHTML = value;
+			const result = guessedPokemon.guessResults[key];
+			cell.setAttribute("guess-result", result);
 		}
 	}
-
-	dropdown() {}
 }
