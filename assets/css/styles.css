@@ -34,16 +34,40 @@ main {
 	text-align: center;
 }
 
+/* ? Does th still exist?
 #results-table th {
 	padding: 1rem;
 	text-decoration: underline;
+} */
+
+#results-table td, tr {
+	padding: 0.2rem 0.5rem;
+	border: 1px white solid;
+	
 }
 
 #results-table td[guess-result="correct"] {
-	background-color: green;
+	background-color: rgb(0, 177, 0);
 }
 #results-table td[guess-result="incorrect"] {
+	background-color: rgb(255, 0, 0);
+}
+#results-table td[guess-result="partial"] {
+	background-color: rgb(255, 208, 0);
+}
+#results-table td[guess-result="greater"] {
 	background-color: red;
+	background-image: url(../images/upArrow.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#results-table td[guess-result="less"] {
+	background-color: red;
+	background-image: url(../images/downArrow.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .guess-wrapper {

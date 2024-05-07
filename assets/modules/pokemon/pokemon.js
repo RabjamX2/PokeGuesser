@@ -20,12 +20,13 @@ fetch("/assets/modules/pokemon/pokemon.json")
 		const lookup = [
 			{ key: "Type I", title: "Main Type", dataType: "boolean", matchType: "partial", matches: ["Type II"] },
 			{ key: "Type II", title: "Second Type", dataType: "boolean", matchType: "partial", matches: ["Type I"] },
-			{ key: "Evolution Stage", title: "Evolution Stage", dataType: "range" },
+			{ key: "Evolution Stage", title: "Evolution", dataType: "boolean" },
 			{ key: "Height (m)", title: "Height", dataType: "range" },
 			{ key: "Weight (kg)", title: "Weight", dataType: "range" },
 			{ key: "Catch Rate", title: "Catch Rate", dataType: "range" },
 		];
 
+		// Table Headers
 		const table = document.getElementById("results-table");
 		const tableHead = table.getElementsByTagName("thead")[0];
 		const headerRow = tableHead.insertRow();
@@ -37,7 +38,7 @@ fetch("/assets/modules/pokemon/pokemon.json")
 		}
 
 		const randomPokemon = getRandomObjectKeyPair(allPokemon);
-		// console.log(Object.keys(randomPokemon)[0]); // Name of the random pokemon
+		console.log(Object.keys(randomPokemon)[0]); // Name of the random pokemon
 		const gameOne = new Game(randomPokemon, allPokemon, lookup);
 
 		const inputField = document.getElementById("guess-input");
