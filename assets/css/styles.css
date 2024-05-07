@@ -57,6 +57,24 @@ main {
 	font-size: large;
 }
 
+#suggestionsList {
+	display: none; /* Hidden by default */
+	border: 1px solid #ccc;
+	background-color: #fff;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#suggestionsList li {
+	padding: 5px;
+	cursor: pointer;
+}
+
+#suggestionsList li:hover {
+	background-color: #eee;
+}
+
 #guess-input-button {
 	background-color: antiquewhite;
 	margin-left: 0.2rem;
