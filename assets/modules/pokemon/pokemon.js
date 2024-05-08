@@ -5,7 +5,6 @@ import { getRandomObjectKeyPair, titleCase } from "../../js/utils.js";
 fetch("/assets/modules/pokemon/pokemon.json")
 	.then((response) => response.json())
 	.then((data) => {
-		// * This is where main code should go
 		/** @type {Character} */
 		const allPokemon = data;
 		let pokemonNames = Object.keys(data);
@@ -14,6 +13,7 @@ fetch("/assets/modules/pokemon/pokemon.json")
 			{ key: "Type I", title: "Main Type", dataType: "boolean", matchType: "partial", matches: ["Type II"] },
 			{ key: "Type II", title: "Second Type", dataType: "boolean", matchType: "partial", matches: ["Type I"] },
 			{ key: "Evolution Stage", title: "Evolution", dataType: "boolean" },
+			{ key: "Generation", title: "Generation", dataType: "boolean" },
 			{ key: "Height (m)", title: "Height", dataType: "range" },
 			{ key: "Weight (kg)", title: "Weight", dataType: "range" },
 			{ key: "Catch Rate", title: "Catch Rate", dataType: "range" },
@@ -34,6 +34,14 @@ fetch("/assets/modules/pokemon/pokemon.json")
 
 		const inputField = document.getElementById("guess-input");
 		const suggestionsList = document.getElementById("suggestionsList");
+		inputField.addEventListener("focus", function () {
+			suggestionsList.style.display = "block";
+		});
+		inputField.addEventListener("blur", function () {
+			setTimeout(() => {
+				suggestionsList.style.display = "none";
+			}, 200);
+		});
 		inputField.addEventListener("keyup", function () {
 			// @ts-ignore
 			const inputValue = inputField.value.toLowerCase();
@@ -41,19 +49,25 @@ fetch("/assets/modules/pokemon/pokemon.json")
 
 			if (inputValue.length > 0) {
 				const suggestions = pokemonNames.filter((name) => name.toLowerCase().startsWith(inputValue));
-
-				suggestions.forEach((suggestion) => {
+				const maxSuggestions = 10;
+				for (let i = 0; i < suggestions.length; i++) {
+					if (i >= maxSuggestions) {
+						break;
+					}
 					const listItem = document.createElement("li");
+					listItem.textContent = suggestions[i];
+					listItem.innerHTML = `<img src="assets/modules/pokemon/sprites/${
+						allPokemon[suggestions[i]]["#"]
+					}.png" alt="" style="fit"/><span>${suggestions[i]}</span>`;
 					listItem.onclick = function () {
 						// @ts-ignore
-						inputField.value = suggestion;
+						inputField.value = suggestions[i];
 						inputField.focus(); // prevents the need to click the input field again after selecting a suggestion
 						suggestionsList.style.display = "none";
 					};
-					listItem.textContent = suggestion;
-					suggestionsList.appendChild(listItem);
-				});
 
+					suggestionsList.appendChild(listItem);
+				}
 				suggestionsList.style.display = "block"; // Show suggestions
 			} else {
 				suggestionsList.style.display = "none"; // Hide if input is empty
@@ -90,6 +104,18 @@ class Game {
 	 * @param {Character} allPokemon
 	 */
 	constructor(correctPokemon, allPokemon, lookup) {
+		this.lookup = lookup;
+		this.pokemonGenerationClues = [
+			{ First: 1, Last: 151, Title: "I", Number: 1, Game: "Red and Blue/Green" },
+			{ First: 152, Last: 251, Title: "II", Number: 2, Game: "Gold and Silver" },
+			{ First: 252, Last: 386, Title: "III", Number: 3, Game: "Ruby and Sapphire" },
+			{ First: 387, Last: 493, Title: "IV", Number: 4, Game: "Diamond and Pearl" },
+			{ First: 494, Last: 649, Title: "V", Number: 5, Game: "Black and White" },
+			{ First: 650, Last: 721, Title: "VI", Number: 6, Game: "X and Y" },
+			{ First: 722, Last: 809, Title: "VII", Number: 7, Game: "Sun and Moon" },
+			{ First: 810, Last: 905, Title: "VIII", Number: 8, Game: "Sword and Shield" },
+			{ First: 906, Last: 1008, Title: "IX", Number: 9, Game: "Legends: Arceus" },
+		];
 		/**
 		 * @type {Character}
 		 * @private */
@@ -102,6 +128,7 @@ class Game {
 		 * @type {{[value: string]: string | number}}
 		 * @private */
 		this.correctPokemonValues = correctPokemon[this.correctPokemonName];
+		this.correctPokemonValues["Generation"] = this.getGenerationClue(this.correctPokemonValues["#"])["Title"];
 		/**
 		 * @type {string}
 		 * @private */
@@ -110,20 +137,21 @@ class Game {
 		this.allPokemon = allPokemon;
 		/** @type {string[]} */
 		this.allPokemonNames = Object.keys(allPokemon);
-		/**
-		 * guessValues: {"Type I": "Fire", "Type II": None, "Evolution Stage": 0, ...}
-		 * guessResults: {"Type I": "partial", "Type II": "false", "Evolution Stage": "Greater", ...}
-		 *
-		 * @type {{name: string, spritePath: string, guessIsCorrect: boolean, guessValues:{[value : string]: string | number}, guessResults: {[value : string]: string}}[]}
-		 *
-		 */
+		/** @type {{name: string, spritePath: string, guessIsCorrect: boolean, guessValues:{[value : string]: string | number}, guessResults: {[value : string]: string}}[]} */
 		this.guessedPokemonList = [];
-
-		this.lookup = lookup;
 	}
 
 	get guessedCount() {
 		return this.guessedPokemonList.length;
+	}
+
+	getGenerationClue(pokemonNumber) {
+		for (const generation of this.pokemonGenerationClues) {
+			if (generation.First <= pokemonNumber && pokemonNumber <= generation.Last) {
+				return generation;
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -134,7 +162,8 @@ class Game {
 		if (pokemonNames.includes(guessedPokemonName)) {
 			pokemonNames.splice(pokemonNames.indexOf(guessedPokemonName), 1);
 		}
-		const guessedPokemonValues = this.allPokemon[guessedPokemonName];
+		let guessedPokemonValues = this.allPokemon[guessedPokemonName];
+		guessedPokemonValues["Generation"] = this.getGenerationClue(guessedPokemonValues["#"])["Title"];
 		const guessedPokemonSpritePath = `../modules/pokemon/sprites/${guessedPokemonValues["#"]}.png`;
 		let guessInfo = { name: guessedPokemonName, spritePath: guessedPokemonSpritePath };
 		const guessIsCorrect = this.correctPokemonName === guessedPokemonName;
@@ -145,6 +174,7 @@ class Game {
 
 		for (const valueData of this.lookup) {
 			// console.log(this.correctPokemonValues);
+
 			const correctValue = this.correctPokemonValues[valueData["key"]];
 			const guessedValue = guessedPokemonValues[valueData["key"]];
 			guessValues[valueData["key"]] = guessedValue;
