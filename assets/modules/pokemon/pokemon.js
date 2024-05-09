@@ -10,13 +10,13 @@ fetch("/assets/modules/pokemon/pokemon.json")
 		let pokemonNames = Object.keys(data);
 
 		const lookup = [
-			{ key: "Type I", title: "Main Type", dataType: "boolean", matchType: "partial", matches: ["Type II"] },
-			{ key: "Type II", title: "Second Type", dataType: "boolean", matchType: "partial", matches: ["Type I"] },
-			{ key: "Evolution Stage", title: "Evolution", dataType: "boolean" },
-			{ key: "Generation", title: "Generation", dataType: "boolean" },
-			{ key: "Height (m)", title: "Height", dataType: "range" },
-			{ key: "Weight (kg)", title: "Weight", dataType: "range" },
-			{ key: "Catch Rate", title: "Catch Rate", dataType: "range" },
+			{ key: "Type I", title: "Main Type", resultType: "boolean", matchType: "partial", matches: ["Type II"] },
+			{ key: "Type II", title: "Second Type", resultType: "boolean", matchType: "partial", matches: ["Type I"] },
+			{ key: "Evolution Stage", title: "Evolution", resultType: "boolean" },
+			{ key: "Generation", title: "Generation", resultType: "boolean" },
+			{ key: "Height (m)", title: "Height", resultType: "range" },
+			{ key: "Weight (kg)", title: "Weight", resultType: "range" },
+			{ key: "Catch Rate", title: "Catch Rate", resultType: "range" },
 		];
 
 		// Table Headers
@@ -178,7 +178,7 @@ class Game {
 			const correctValue = this.correctPokemonValues[valueData["key"]];
 			const guessedValue = guessedPokemonValues[valueData["key"]];
 			guessValues[valueData["key"]] = guessedValue;
-			if (valueData["dataType"] === "boolean") {
+			if (valueData["resultType"] === "boolean") {
 				const isGuessedValueCorrect = correctValue === guessedValue;
 				if (isGuessedValueCorrect) {
 					guessResults[valueData["key"]] = "correct";
@@ -194,7 +194,7 @@ class Game {
 				} else {
 					guessResults[valueData["key"]] = "incorrect";
 				}
-			} else if (valueData["dataType"] === "range") {
+			} else if (valueData["resultType"] === "range") {
 				if (correctValue === guessedValue) {
 					guessResults[valueData["key"]] = "correct";
 				} else if (correctValue > guessedValue) {

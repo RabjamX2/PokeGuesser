@@ -116,6 +116,7 @@ main {
 	align-self: center;
 	width: 70%;
 	display: flex;
+	margin-top: 60px;
 	align-items: start;
 	justify-content: center;
 }
