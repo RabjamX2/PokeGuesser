@@ -26,6 +26,29 @@ export function titleCase(myString) {
 	});
 }
 
+/**
+ * Removes accents from a string.
+ * @param {string} text - The string from which to remove accents.
+ * @returns {string} The string without accents.
+ */
+export function removeAccent(text) {
+	var on_accent = "öøüóőúéáàãäűíÖÜÓŐÚÉÁÀŰÍçÇ";
+	var off_accent = "oouooueaaaauiOUOOUEAAUIcC";
+	var idoff = -1,
+		new_text = "";
+	var lentext = text.toString().length - 1;
+
+	for (let i = 0; i <= lentext; i++) {
+		idoff = on_accent.search(text.charAt(i));
+		if (idoff == -1) {
+			new_text = new_text + text.charAt(i);
+		} else {
+			new_text = new_text + off_accent.charAt(idoff);
+		}
+	}
+	return new_text;
+}
+
 export default class Game {
 	/**
 	 * @param {string} gameName
@@ -34,7 +57,7 @@ export default class Game {
 	 * @param {{ key: string; title: string, resultType: string; matchType?: string; matches?: string[]; }[]} valueLookup
 	 */
 	constructor(gameInfo, correctCharacter, allCharacters, valueLookup) {
-		/** @type {{ title: string; gameId: string; modulePath: string; spriteID: string;}} */ // !LEFT OFF HERE
+		/** @type {{ title: string; gameID: string; modulePath: string; spriteExtension: string;}} */ // !LEFT OFF HERE
 		this.gameInfo = gameInfo;
 		this.valueLookup = valueLookup;
 		/**
@@ -52,7 +75,7 @@ export default class Game {
 		/**
 		 * @type {string}
 		 * @private */
-		this.correctSpritePath = `../modules/${this.gameInfo.gameName}/sprites/${correctCharacter["#"]}.png`;
+		this.correctSpritePath = `../modules/${this.gameInfo.gameName}/sprites/${this.correctValues.spriteID}.${this.gameInfo.spriteExtension}`;
 		/** @type {Character} */
 		this.allCharacters = allCharacters;
 		/** @type {string[]} */
@@ -67,6 +90,8 @@ export default class Game {
 
 	/**
 	 * @param {string} guessedName The name of the Pokemon guessed by the player
+	 * @param {string[]} namesNotGuessed The list of Pokemon names that have not been guessed
+	 * @returns {string[]} The updated list of Pokemon names that have not been guessed
 	 */
 	submitGuess(guessedName, namesNotGuessed) {
 		if (namesNotGuessed.includes(guessedName)) {
@@ -74,15 +99,15 @@ export default class Game {
 		}
 		let guessedValues = this.allCharacters[guessedName];
 
-		const guessedSpritePath = `../modules/${this.gameInfo.gameName}/sprites/${guessedValues[this.gameInfo.spriteID]}.png`;
-
-		let guessInfo = { name: guessedName, spritePath: guessedSpritePath };
+		const guessedSpritePath = `assets/modules/${this.gameInfo.gameID}/sprites/${guessedValues.spriteID}.${this.gameInfo.spriteExtension}`;
 		const guessIsCorrect = this.correctCharacterName === guessedName;
+		let guessInfo = { name: guessedName, spritePath: guessedSpritePath, guessIsCorrect: guessIsCorrect };
 
 		/** @type {{[value : string]: string | number}} */
 		let guessValues = {};
 		/** @type {{[value : string]: string}} */
 		let guessResults = {};
+		let guessTypes = {};
 
 		for (const valueData of this.valueLookup) {
 			// console.log(this.correctPokemonValues);
@@ -90,6 +115,7 @@ export default class Game {
 			const correctValue = this.correctValues[valueData["key"]];
 			const guessedValue = guessedValues[valueData["key"]];
 			guessValues[valueData["key"]] = guessedValue;
+			guessTypes[valueData["key"]] = valueData["resultType"];
 			if (valueData["resultType"] === "boolean") {
 				const isGuessedValueCorrect = correctValue === guessedValue;
 				if (isGuessedValueCorrect) {
@@ -97,7 +123,7 @@ export default class Game {
 				} else if (valueData["matchType"] === "partial") {
 					let partialMatch = false;
 					for (const match of valueData["matches"]) {
-						partialMatch = correctValue === guessedValues[match];
+						partialMatch = guessedValue === this.correctValues[match];
 						if (partialMatch) {
 							break;
 						}
@@ -121,9 +147,9 @@ export default class Game {
 		}
 		let output = {
 			...guessInfo,
-			guessIsCorrect: guessIsCorrect,
 			guessValues: guessValues,
 			guessResults: guessResults,
+			guessTypes: guessTypes,
 		};
 		this.guessedList.push(output);
 		this.drawResults(output);
@@ -143,30 +169,30 @@ export default class Game {
 		spriteCell.classList.add("sprite-cell");
 		spriteCell.setAttribute(
 			"style",
-			`--bg-image: url('${guessedCharacter.spritePath}'); background-color: var(${
-				guessedCharacter.guessIsCorrect ? "--correct" : "--incorrect"
-			});`
+			`background-color: var(${guessedCharacter.guessIsCorrect ? "--correct" : "--incorrect"});`
 		);
 		spriteCell.setAttribute("guess-result", guessedCharacter.guessIsCorrect ? "correct" : "incorrect");
+		spriteCell.innerHTML = `<div class="sprite" style="background-image: url('${guessedCharacter.spritePath}')"></div>`;
 		for (const [index, valueData] of this.valueLookup.entries()) {
 			const key = valueData["key"];
 			const value = guessedCharacter.guessValues[key];
 			const cell = row.insertCell();
 
 			const result = guessedCharacter.guessResults[key];
-			if (result === "less" || result === "greater") {
+			if (guessedCharacter.guessTypes[key] === "range") {
+				cell.classList.add("range-cell");
 				const content = document.createElement("div");
-				content.classList.add("range-cell-wrapper");
-				content.innerHTML = `<div class="range">${value ?? "None"}</div>`;
-				content.innerHTML += `
-				<svg class="${result}" width=100 height=100 >
-					<polygon fill="red"
-						points="75,0 25,0 25,50 0,50 50,100 100,50 75,50"/>
-				</svg>`;
+				content.classList.add("range");
+				content.setAttribute(
+					"style",
+					`background-image: url('assets/images/${result === "less" ? "downArrow" : "upArrow"}.svg')`
+				);
+				content.innerHTML = `${value ?? "None"}`;
 				cell.appendChild(content);
 			} else {
 				cell.innerHTML = value ?? "None";
 			}
+
 			cell.setAttribute("guess-result", result);
 			cell.setAttribute("style", `height: inherit; width:inherit; background-color: var(--${result})`);
 		}

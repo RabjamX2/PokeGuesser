@@ -1,16 +1,16 @@
 //@ts-check
-import { getRandomObjectKeyPair, titleCase } from "../../js/utils.js";
+import { getRandomObjectKeyPair, titleCase, removeAccent } from "../../js/utils.js";
 import Game from "../../js/utils.js";
 /** @typedef {import("../../js/utils.js").Character} Character */
 
 const gameInfo = {
 	title: "Rainbow Six Siege",
-	gameId: "r6",
+	gameID: "r6",
 	modulePath: "assets/modules/r6",
-	spriteID: "Name (formatted)",
+	spriteExtension: "svg",
 };
 
-fetch("/assets/modules/r6/r6.json")
+fetch(`/assets/modules/${gameInfo.gameID}/data.json`)
 	.then((response) => response.json())
 	.then((data) => {
 		/** @type {Character} */
@@ -40,7 +40,8 @@ fetch("/assets/modules/r6/r6.json")
 			headerRow.innerHTML += `<th>${valueData["title"]}</th>`;
 		}
 
-		const randomOperator = getRandomObjectKeyPair(allOperators);
+		// const randomOperator = getRandomObjectKeyPair(allOperators);
+		const randomOperator = { mira: allOperators["mira"] };
 		console.log(Object.keys(randomOperator)[0]); // Name of the random pokemon
 		const gameOne = new RainbowSix(gameInfo, randomOperator, allOperators, lookup);
 
@@ -56,24 +57,27 @@ fetch("/assets/modules/r6/r6.json")
 		});
 		inputField.addEventListener("keyup", function () {
 			// @ts-ignore
-			const inputValue = inputField.value.toLowerCase();
+			const inputValue = inputField.value;
+			let formattedInput = removeAccent(inputValue.toLowerCase());
+
 			suggestionsList.innerHTML = ""; // Clear previous suggestions
 
-			if (inputValue.length > 0) {
-				const suggestions = operatorNames.filter((name) => name.toLowerCase().startsWith(inputValue));
+			if (formattedInput.length > 0) {
+				const suggestions = operatorNames.filter((name) => name.startsWith(formattedInput));
 				const maxSuggestions = 10;
-				for (let i = 0; i < suggestions.length; i++) {
-					if (i >= maxSuggestions) {
+				for (let i = 0; i < maxSuggestions; i++) {
+					if (i >= suggestions.length) {
 						break;
 					}
 					const listItem = document.createElement("li");
-					listItem.textContent = suggestions[i];
-					listItem.innerHTML = `<img src="${gameInfo.modulePath}/sprites/${
-						allOperators[suggestions[i]][gameInfo.spriteID]
-					}.png" alt="" style="fit"/><span>${suggestions[i]}</span>`;
+
+					listItem.innerHTML = `<div class="sprite" style="background-image: url('${gameInfo.modulePath}/sprites/${
+						allOperators[suggestions[i]]["spriteID"]
+					}.${gameInfo.spriteExtension}')"></div><span>${allOperators[suggestions[i]]["Name"]}</span>`;
+
 					listItem.onclick = function () {
 						// @ts-ignore
-						inputField.value = suggestions[i];
+						inputField.value = allOperators[suggestions[i]]["Name"];
 						inputField.focus(); // prevents the need to click the input field again after selecting a suggestion
 						suggestionsList.style.display = "none";
 					};
@@ -90,14 +94,23 @@ fetch("/assets/modules/r6/r6.json")
 		function submitInputField() {
 			const table = document.getElementById("results-table");
 			// @ts-ignore
-			const guess = titleCase(inputField.value);
-			operatorNames = gameOne.submitGuess(guess, operatorNames);
-			// @ts-ignore
-			inputField.value = "";
-			window.scrollBy({
-				top: table.offsetHeight,
-				behavior: "smooth",
-			});
+			const inputValue = inputField.value;
+			let formattedInput = removeAccent(inputValue.toLowerCase());
+
+			var operatorNameSet = new Set(operatorNames);
+			if (operatorNameSet.has(formattedInput)) {
+				console.log(`Submitting: ${formattedInput}`);
+				// operatorNames = gameOne.submitGuess(formattedInput, operatorNames);
+				operatorNames = gameOne.submitGuess(formattedInput, operatorNames);
+				// @ts-ignore
+				inputField.value = "";
+				window.scrollBy({
+					top: table.offsetHeight,
+					behavior: "smooth",
+				});
+			} else {
+				console.error(`Not found: ${formattedInput}`);
+			}
 		}
 		submitButton.onclick = submitInputField;
 		inputField.addEventListener("keydown", function (event) {

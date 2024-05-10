@@ -1,6 +1,7 @@
 {
-	"Deimos": {
-		"Name (formatted)": "deimos",
+	"deimos": {
+		"spriteID": "deimos",
+		"Name": "Deimos",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -16,8 +17,9 @@
 		"Year": 9,
 		"Season": 1
 	},
-	"Tubarão": {
-		"Name (formatted)": "tubarao",
+	"tubarao": {
+		"spriteID": "tubarao",
+		"Name": "Tubarão",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -33,8 +35,9 @@
 		"Year": 8,
 		"Season": 4
 	},
-	"Ram": {
-		"Name (formatted)": "ram",
+	"ram": {
+		"spriteID": "ram",
+		"Name": "Ram",
 		"Position": "Attacker",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -50,8 +53,9 @@
 		"Year": 8,
 		"Season": 3
 	},
-	"Fenrir": {
-		"Name (formatted)": "fenrir",
+	"fenrir": {
+		"spriteID": "fenrir",
+		"Name": "Fenrir",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -67,8 +71,9 @@
 		"Year": 8,
 		"Season": 2
 	},
-	"Brava": {
-		"Name (formatted)": "brava",
+	"brava": {
+		"spriteID": "brava",
+		"Name": "Brava",
 		"Position": "Attacker",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -84,8 +89,9 @@
 		"Year": 8,
 		"Season": 1
 	},
-	"Solis": {
-		"Name (formatted)": "solis",
+	"solis": {
+		"spriteID": "solis",
+		"Name": "Solis",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -101,8 +107,9 @@
 		"Year": 7,
 		"Season": 4
 	},
-	"Grim": {
-		"Name (formatted)": "grim",
+	"grim": {
+		"spriteID": "grim",
+		"Name": "Grim",
 		"Position": "Attacker",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -118,8 +125,9 @@
 		"Year": 7,
 		"Season": 3
 	},
-	"Sens": {
-		"Name (formatted)": "sens",
+	"sens": {
+		"spriteID": "sens",
+		"Name": "Sens",
 		"Position": "Attacker",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -135,8 +143,9 @@
 		"Year": 7,
 		"Season": 2
 	},
-	"Azami": {
-		"Name (formatted)": "azami",
+	"azami": {
+		"spriteID": "azami",
+		"Name": "Azami",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -152,8 +161,9 @@
 		"Year": 7,
 		"Season": 1
 	},
-	"Thorn": {
-		"Name (formatted)": "thorn",
+	"thorn": {
+		"spriteID": "thorn",
+		"Name": "Thorn",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -169,8 +179,9 @@
 		"Year": 6,
 		"Season": 4
 	},
-	"Osa": {
-		"Name (formatted)": "osa",
+	"osa": {
+		"spriteID": "osa",
+		"Name": "Osa",
 		"Position": "Attacker",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -186,8 +197,9 @@
 		"Year": 6,
 		"Season": 3
 	},
-	"Thunderbird": {
-		"Name (formatted)": "thunderbird",
+	"thunderbird": {
+		"spriteID": "thunderbird",
+		"Name": "Thunderbird",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -203,8 +215,9 @@
 		"Year": 6,
 		"Season": 2
 	},
-	"Flores": {
-		"Name (formatted)": "flores",
+	"flores": {
+		"spriteID": "flores",
+		"Name": "Flores",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -220,8 +233,9 @@
 		"Year": 6,
 		"Season": 1
 	},
-	"Aruni": {
-		"Name (formatted)": "aruni",
+	"aruni": {
+		"spriteID": "aruni",
+		"Name": "Aruni",
 		"Position": "Defender",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -237,8 +251,9 @@
 		"Year": 5,
 		"Season": 4
 	},
-	"Zero": {
-		"Name (formatted)": "zero",
+	"zero": {
+		"spriteID": "zero",
+		"Name": "Zero",
 		"Position": "Attacker",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -254,8 +269,9 @@
 		"Year": 5,
 		"Season": 3
 	},
-	"Ace": {
-		"Name (formatted)": "ace",
+	"ace": {
+		"spriteID": "ace",
+		"Name": "Ace",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -271,8 +287,9 @@
 		"Year": 5,
 		"Season": 2
 	},
-	"Melusi": {
-		"Name (formatted)": "melusi",
+	"melusi": {
+		"spriteID": "melusi",
+		"Name": "Melusi",
 		"Position": "Defender",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -288,8 +305,9 @@
 		"Year": 5,
 		"Season": 2
 	},
-	"Oryx": {
-		"Name (formatted)": "oryx",
+	"oryx": {
+		"spriteID": "oryx",
+		"Name": "Oryx",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -305,8 +323,9 @@
 		"Year": 5,
 		"Season": 1
 	},
-	"Iana": {
-		"Name (formatted)": "iana",
+	"iana": {
+		"spriteID": "iana",
+		"Name": "Iana",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -322,8 +341,9 @@
 		"Year": 5,
 		"Season": 1
 	},
-	"Wamai": {
-		"Name (formatted)": "wamai",
+	"wamai": {
+		"spriteID": "wamai",
+		"Name": "Wamai",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -339,8 +359,9 @@
 		"Year": 4,
 		"Season": 4
 	},
-	"Kali": {
-		"Name (formatted)": "kali",
+	"kali": {
+		"spriteID": "kali",
+		"Name": "Kali",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -356,8 +377,9 @@
 		"Year": 4,
 		"Season": 4
 	},
-	"Amaru": {
-		"Name (formatted)": "amaru",
+	"amaru": {
+		"spriteID": "amaru",
+		"Name": "Amaru",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -373,8 +395,9 @@
 		"Year": 4,
 		"Season": 3
 	},
-	"Goyo": {
-		"Name (formatted)": "goyo",
+	"goyo": {
+		"spriteID": "goyo",
+		"Name": "Goyo",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -390,8 +413,9 @@
 		"Year": 4,
 		"Season": 3
 	},
-	"Nøkk": {
-		"Name (formatted)": "nokk",
+	"nokk": {
+		"spriteID": "nokk",
+		"Name": "Nøkk",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -407,8 +431,9 @@
 		"Year": 4,
 		"Season": 2
 	},
-	"Warden": {
-		"Name (formatted)": "warden",
+	"warden": {
+		"spriteID": "warden",
+		"Name": "Warden",
 		"Position": "Defender",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -424,8 +449,9 @@
 		"Year": 4,
 		"Season": 2
 	},
-	"Mozzie": {
-		"Name (formatted)": "mozzie",
+	"mozzie": {
+		"spriteID": "mozzie",
+		"Name": "Mozzie",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -441,8 +467,9 @@
 		"Year": 4,
 		"Season": 1
 	},
-	"Gridlock": {
-		"Name (formatted)": "gridlock",
+	"gridlock": {
+		"spriteID": "gridlock",
+		"Name": "Gridlock",
 		"Position": "Attacker",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -458,8 +485,9 @@
 		"Year": 4,
 		"Season": 1
 	},
-	"Nomad": {
-		"Name (formatted)": "nomad",
+	"nomad": {
+		"spriteID": "nomad",
+		"Name": "Nomad",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -475,8 +503,9 @@
 		"Year": 3,
 		"Season": 4
 	},
-	"Kaid": {
-		"Name (formatted)": "kaid",
+	"kaid": {
+		"spriteID": "kaid",
+		"Name": "Kaid",
 		"Position": "Defender",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -492,8 +521,9 @@
 		"Year": 3,
 		"Season": 4
 	},
-	"Clash": {
-		"Name (formatted)": "clash",
+	"clash": {
+		"spriteID": "clash",
+		"Name": "Clash",
 		"Position": "Defender",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -509,8 +539,9 @@
 		"Year": 3,
 		"Season": 3
 	},
-	"Maverick": {
-		"Name (formatted)": "maverick",
+	"maverick": {
+		"spriteID": "maverick",
+		"Name": "Maverick",
 		"Position": "Attacker",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -526,8 +557,9 @@
 		"Year": 3,
 		"Season": 3
 	},
-	"Maestro": {
-		"Name (formatted)": "maestro",
+	"maestro": {
+		"spriteID": "maestro",
+		"Name": "Maestro",
 		"Position": "Defender",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -543,8 +575,9 @@
 		"Year": 3,
 		"Season": 2
 	},
-	"Alibi": {
-		"Name (formatted)": "alibi",
+	"alibi": {
+		"spriteID": "alibi",
+		"Name": "Alibi",
 		"Position": "Defender",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -560,8 +593,9 @@
 		"Year": 3,
 		"Season": 2
 	},
-	"Lion": {
-		"Name (formatted)": "lion",
+	"lion": {
+		"spriteID": "lion",
+		"Name": "Lion",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -577,8 +611,9 @@
 		"Year": 3,
 		"Season": 1
 	},
-	"Finka": {
-		"Name (formatted)": "finka",
+	"finka": {
+		"spriteID": "finka",
+		"Name": "Finka",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -594,8 +629,9 @@
 		"Year": 3,
 		"Season": 1
 	},
-	"Vigil": {
-		"Name (formatted)": "vigil",
+	"vigil": {
+		"spriteID": "vigil",
+		"Name": "Vigil",
 		"Position": "Defender",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -611,8 +647,9 @@
 		"Year": 2,
 		"Season": 4
 	},
-	"Dokkaebi": {
-		"Name (formatted)": "dokkaebi",
+	"dokkaebi": {
+		"spriteID": "dokkaebi",
+		"Name": "Dokkaebi",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -628,8 +665,9 @@
 		"Year": 2,
 		"Season": 4
 	},
-	"Zofia": {
-		"Name (formatted)": "zofia",
+	"zofia": {
+		"spriteID": "zofia",
+		"Name": "Zofia",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -645,8 +683,9 @@
 		"Year": 2,
 		"Season": 4
 	},
-	"Ela": {
-		"Name (formatted)": "ela",
+	"ela": {
+		"spriteID": "ela",
+		"Name": "Ela",
 		"Position": "Defender",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -662,8 +701,9 @@
 		"Year": 2,
 		"Season": 3
 	},
-	"Ying": {
-		"Name (formatted)": "ying",
+	"ying": {
+		"spriteID": "ying",
+		"Name": "Ying",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -679,8 +719,9 @@
 		"Year": 2,
 		"Season": 3
 	},
-	"Lesion": {
-		"Name (formatted)": "lesion",
+	"lesion": {
+		"spriteID": "lesion",
+		"Name": "Lesion",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -696,8 +737,9 @@
 		"Year": 2,
 		"Season": 3
 	},
-	"Mira": {
-		"Name (formatted)": "mira",
+	"mira": {
+		"spriteID": "mira",
+		"Name": "Mira",
 		"Position": "Defender",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -713,8 +755,9 @@
 		"Year": 2,
 		"Season": 1
 	},
-	"Jackal": {
-		"Name (formatted)": "jackal",
+	"jackal": {
+		"spriteID": "jackal",
+		"Name": "Jackal",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -730,8 +773,9 @@
 		"Year": 2,
 		"Season": 1
 	},
-	"Hibana": {
-		"Name (formatted)": "hibana",
+	"hibana": {
+		"spriteID": "hibana",
+		"Name": "Hibana",
 		"Position": "Attacker",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -747,8 +791,9 @@
 		"Year": 1,
 		"Season": 4
 	},
-	"Echo": {
-		"Name (formatted)": "echo",
+	"echo": {
+		"spriteID": "echo",
+		"Name": "Echo",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -764,8 +809,9 @@
 		"Year": 1,
 		"Season": 4
 	},
-	"Caveira": {
-		"Name (formatted)": "caveira",
+	"caveira": {
+		"spriteID": "caveira",
+		"Name": "Caveira",
 		"Position": "Defender",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -781,8 +827,9 @@
 		"Year": 1,
 		"Season": 3
 	},
-	"Capitão": {
-		"Name (formatted)": "capitao",
+	"capitao": {
+		"spriteID": "capitao",
+		"Name": "Capitão",
 		"Position": "Attacker",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -798,8 +845,9 @@
 		"Year": 1,
 		"Season": 3
 	},
-	"Blackbeard": {
-		"Name (formatted)": "blackbeard",
+	"blackbeard": {
+		"spriteID": "blackbeard",
+		"Name": "Blackbeard",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -815,8 +863,9 @@
 		"Year": 1,
 		"Season": 2
 	},
-	"Valkyrie": {
-		"Name (formatted)": "valkyrie",
+	"valkyrie": {
+		"spriteID": "valkyrie",
+		"Name": "Valkyrie",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -832,8 +881,9 @@
 		"Year": 1,
 		"Season": 2
 	},
-	"Buck": {
-		"Name (formatted)": "buck",
+	"buck": {
+		"spriteID": "buck",
+		"Name": "Buck",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -849,8 +899,9 @@
 		"Year": 1,
 		"Season": 1
 	},
-	"Frost": {
-		"Name (formatted)": "frost",
+	"frost": {
+		"spriteID": "frost",
+		"Name": "Frost",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -866,8 +917,9 @@
 		"Year": 1,
 		"Season": 1
 	},
-	"Mute": {
-		"Name (formatted)": "mute",
+	"mute": {
+		"spriteID": "mute",
+		"Name": "Mute",
 		"Position": "Defender",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -883,8 +935,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Sledge": {
-		"Name (formatted)": "sledge",
+	"sledge": {
+		"spriteID": "sledge",
+		"Name": "Sledge",
 		"Position": "Attacker",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -900,8 +953,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Smoke": {
-		"Name (formatted)": "smoke",
+	"smoke": {
+		"spriteID": "smoke",
+		"Name": "Smoke",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -917,8 +971,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Thatcher": {
-		"Name (formatted)": "thatcher",
+	"thatcher": {
+		"spriteID": "thatcher",
+		"Name": "Thatcher",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -934,8 +989,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Ash": {
-		"Name (formatted)": "ash",
+	"ash": {
+		"spriteID": "ash",
+		"Name": "Ash",
 		"Position": "Attacker",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -951,8 +1007,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Castle": {
-		"Name (formatted)": "castle",
+	"castle": {
+		"spriteID": "castle",
+		"Name": "Castle",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -968,8 +1025,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Pulse": {
-		"Name (formatted)": "pulse",
+	"pulse": {
+		"spriteID": "pulse",
+		"Name": "Pulse",
 		"Position": "Defender",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -985,8 +1043,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Thermite": {
-		"Name (formatted)": "thermite",
+	"thermite": {
+		"spriteID": "thermite",
+		"Name": "Thermite",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -1002,8 +1061,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Montagne": {
-		"Name (formatted)": "montagne",
+	"montagne": {
+		"spriteID": "montagne",
+		"Name": "Montagne",
 		"Position": "Attacker",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -1019,8 +1079,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Twitch": {
-		"Name (formatted)": "twitch",
+	"twitch": {
+		"spriteID": "twitch",
+		"Name": "Twitch",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -1036,8 +1097,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Doc": {
-		"Name (formatted)": "doc",
+	"doc": {
+		"spriteID": "doc",
+		"Name": "Doc",
 		"Position": "Defender",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -1053,8 +1115,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Rook": {
-		"Name (formatted)": "rook",
+	"rook": {
+		"spriteID": "rook",
+		"Name": "Rook",
 		"Position": "Defender",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -1070,8 +1133,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Jäger": {
-		"Name (formatted)": "jager",
+	"jager": {
+		"spriteID": "jager",
+		"Name": "Jäger",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -1087,8 +1151,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Bandit": {
-		"Name (formatted)": "bandit",
+	"bandit": {
+		"spriteID": "bandit",
+		"Name": "Bandit",
 		"Position": "Defender",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -1104,8 +1169,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Blitz": {
-		"Name (formatted)": "blitz",
+	"blitz": {
+		"spriteID": "blitz",
+		"Name": "Blitz",
 		"Position": "Attacker",
 		"Armor": "Medium",
 		"Speed": "Normal",
@@ -1121,8 +1187,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"IQ": {
-		"Name (formatted)": "iq",
+	"iq": {
+		"spriteID": "iq",
+		"Name": "IQ",
 		"Position": "Attacker",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -1138,8 +1205,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Fuze": {
-		"Name (formatted)": "fuze",
+	"fuze": {
+		"spriteID": "fuze",
+		"Name": "Fuze",
 		"Position": "Attacker",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -1155,8 +1223,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Glaz": {
-		"Name (formatted)": "glaz",
+	"glaz": {
+		"spriteID": "glaz",
+		"Name": "Glaz",
 		"Position": "Attacker",
 		"Armor": "Light",
 		"Speed": "Fast",
@@ -1172,8 +1241,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Tachanka": {
-		"Name (formatted)": "tachanka",
+	"tachanka": {
+		"spriteID": "tachanka",
+		"Name": "Tachanka",
 		"Position": "Defender",
 		"Armor": "Heavy",
 		"Speed": "Slow",
@@ -1189,8 +1259,9 @@
 		"Year": 1,
 		"Season": null
 	},
-	"Kapkan": {
-		"Name (formatted)": "kapkan",
+	"kapkan": {
+		"spriteID": "kapkan",
+		"Name": "Kapkan",
 		"Position": "Defender",
 		"Armor": "Medium",
 		"Speed": "Normal",

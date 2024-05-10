@@ -1,6 +1,8 @@
 {
-	"Bulbasaur": {
+	"bulbasaur": {
 		"#": 1,
+		"spritePath": 1,
+		"Name": "Bulbasaur",
 		"HP": 45,
 		"Atk": 49,
 		"Def": 49,
@@ -20,8 +22,10 @@
 		"Catch Rate": 45,
 		"Classification": "Seed"
 	},
-	"Ivysaur": {
+	"ivysaur": {
 		"#": 2,
+		"spritePath": 2,
+		"Name": "Ivysaur",
 		"HP": 60,
 		"Atk": 62,
 		"Def": 63,
@@ -41,8 +45,10 @@
 		"Catch Rate": 45,
 		"Classification": "Seed"
 	},
-	"Venusaur": {
+	"venusaur": {
 		"#": 3,
+		"spritePath": 3,
+		"Name": "Venusaur",
 		"HP": 80,
 		"Atk": 82,
 		"Def": 83,
@@ -62,8 +68,10 @@
 		"Catch Rate": 45,
 		"Classification": "Seed"
 	},
-	"Charmander": {
+	"charmander": {
 		"#": 4,
+		"spritePath": 4,
+		"Name": "Charmander",
 		"HP": 39,
 		"Atk": 52,
 		"Def": 43,
@@ -83,8 +91,10 @@
 		"Catch Rate": 45,
 		"Classification": "Lizard"
 	},
-	"Charmeleon": {
+	"charmeleon": {
 		"#": 5,
+		"spritePath": 5,
+		"Name": "Charmeleon",
 		"HP": 58,
 		"Atk": 64,
 		"Def": 58,
@@ -104,8 +114,10 @@
 		"Catch Rate": 45,
 		"Classification": "Flame"
 	},
-	"Charizard": {
+	"charizard": {
 		"#": 6,
+		"spritePath": 6,
+		"Name": "Charizard",
 		"HP": 78,
 		"Atk": 84,
 		"Def": 78,
@@ -125,8 +137,10 @@
 		"Catch Rate": 45,
 		"Classification": "Flame"
 	},
-	"Squirtle": {
+	"squirtle": {
 		"#": 7,
+		"spritePath": 7,
+		"Name": "Squirtle",
 		"HP": 44,
 		"Atk": 48,
 		"Def": 65,
@@ -146,8 +160,10 @@
 		"Catch Rate": 45,
 		"Classification": "Tiny Turtle"
 	},
-	"Wartortle": {
+	"wartortle": {
 		"#": 8,
+		"spritePath": 8,
+		"Name": "Wartortle",
 		"HP": 59,
 		"Atk": 63,
 		"Def": 80,
@@ -167,8 +183,10 @@
 		"Catch Rate": 45,
 		"Classification": "Turtle"
 	},
-	"Blastoise": {
+	"blastoise": {
 		"#": 9,
+		"spritePath": 9,
+		"Name": "Blastoise",
 		"HP": 79,
 		"Atk": 83,
 		"Def": 100,
@@ -188,8 +206,10 @@
 		"Catch Rate": 45,
 		"Classification": "Shellfish"
 	},
-	"Caterpie": {
+	"caterpie": {
 		"#": 10,
+		"spritePath": 10,
+		"Name": "Caterpie",
 		"HP": 45,
 		"Atk": 30,
 		"Def": 35,
@@ -209,8 +229,10 @@
 		"Catch Rate": 255,
 		"Classification": "Worm"
 	},
-	"Metapod": {
+	"metapod": {
 		"#": 11,
+		"spritePath": 11,
+		"Name": "Metapod",
 		"HP": 50,
 		"Atk": 20,
 		"Def": 55,
@@ -230,8 +252,10 @@
 		"Catch Rate": 120,
 		"Classification": "Cocoon"
 	},
-	"Butterfree": {
+	"butterfree": {
 		"#": 12,
+		"spritePath": 12,
+		"Name": "Butterfree",
 		"HP": 60,
 		"Atk": 45,
 		"Def": 50,
@@ -251,8 +275,10 @@
 		"Catch Rate": 45,
 		"Classification": "Butterfly"
 	},
-	"Weedle": {
+	"weedle": {
 		"#": 13,
+		"spritePath": 13,
+		"Name": "Weedle",
 		"HP": 40,
 		"Atk": 35,
 		"Def": 30,
@@ -272,8 +298,10 @@
 		"Catch Rate": 255,
 		"Classification": "Hairy"
 	},
-	"Kakuna": {
+	"kakuna": {
 		"#": 14,
+		"spritePath": 14,
+		"Name": "Kakuna",
 		"HP": 45,
 		"Atk": 25,
 		"Def": 50,
@@ -293,8 +321,10 @@
 		"Catch Rate": 120,
 		"Classification": "Cocoon"
 	},
-	"Beedrill": {
+	"beedrill": {
 		"#": 15,
+		"spritePath": 15,
+		"Name": "Beedrill",
 		"HP": 65,
 		"Atk": 90,
 		"Def": 40,
@@ -314,8 +344,10 @@
 		"Catch Rate": 45,
 		"Classification": "Poison Bee"
 	},
-	"Pidgey": {
+	"pidgey": {
 		"#": 16,
+		"spritePath": 16,
+		"Name": "Pidgey",
 		"HP": 40,
 		"Atk": 45,
 		"Def": 40,
@@ -335,8 +367,10 @@
 		"Catch Rate": 255,
 		"Classification": "Tiny Bird"
 	},
-	"Pidgeotto": {
+	"pidgeotto": {
 		"#": 17,
+		"spritePath": 17,
+		"Name": "Pidgeotto",
 		"HP": 63,
 		"Atk": 60,
 		"Def": 55,
@@ -356,8 +390,10 @@
 		"Catch Rate": 120,
 		"Classification": "Bird"
 	},
-	"Pidgeot": {
+	"pidgeot": {
 		"#": 18,
+		"spritePath": 18,
+		"Name": "Pidgeot",
 		"HP": 83,
 		"Atk": 80,
 		"Def": 75,
@@ -377,8 +413,10 @@
 		"Catch Rate": 45,
 		"Classification": "Bird"
 	},
-	"Rattata": {
+	"rattata": {
 		"#": 19,
+		"spritePath": 19,
+		"Name": "Rattata",
 		"HP": 30,
 		"Atk": 56,
 		"Def": 35,
@@ -398,8 +436,10 @@
 		"Catch Rate": 255,
 		"Classification": "Mouse"
 	},
-	"Raticate": {
+	"raticate": {
 		"#": 20,
+		"spritePath": 20,
+		"Name": "Raticate",
 		"HP": 55,
 		"Atk": 81,
 		"Def": 60,
@@ -419,8 +459,10 @@
 		"Catch Rate": 127,
 		"Classification": "Mouse"
 	},
-	"Spearow": {
+	"spearow": {
 		"#": 21,
+		"spritePath": 21,
+		"Name": "Spearow",
 		"HP": 40,
 		"Atk": 60,
 		"Def": 30,
@@ -440,8 +482,10 @@
 		"Catch Rate": 255,
 		"Classification": "Tiny Bird"
 	},
-	"Fearow": {
+	"fearow": {
 		"#": 22,
+		"spritePath": 22,
+		"Name": "Fearow",
 		"HP": 65,
 		"Atk": 90,
 		"Def": 65,
@@ -461,8 +505,10 @@
 		"Catch Rate": 90,
 		"Classification": "Beak"
 	},
-	"Ekans": {
+	"ekans": {
 		"#": 23,
+		"spritePath": 23,
+		"Name": "Ekans",
 		"HP": 30,
 		"Atk": 60,
 		"Def": 44,
@@ -482,8 +528,10 @@
 		"Catch Rate": 255,
 		"Classification": "Snake"
 	},
-	"Arbok": {
+	"arbok": {
 		"#": 24,
+		"spritePath": 24,
+		"Name": "Arbok",
 		"HP": 60,
 		"Atk": 95,
 		"Def": 69,
@@ -503,8 +551,10 @@
 		"Catch Rate": 90,
 		"Classification": "Cobra"
 	},
-	"Pikachu": {
+	"pikachu": {
 		"#": 25,
+		"spritePath": 25,
+		"Name": "Pikachu",
 		"HP": 35,
 		"Atk": 55,
 		"Def": 40,
@@ -524,8 +574,10 @@
 		"Catch Rate": 190,
 		"Classification": "Mouse"
 	},
-	"Raichu": {
+	"raichu": {
 		"#": 26,
+		"spritePath": 26,
+		"Name": "Raichu",
 		"HP": 60,
 		"Atk": 90,
 		"Def": 55,
@@ -545,8 +597,10 @@
 		"Catch Rate": 75,
 		"Classification": "Mouse"
 	},
-	"Sandshrew": {
+	"sandshrew": {
 		"#": 27,
+		"spritePath": 27,
+		"Name": "Sandshrew",
 		"HP": 50,
 		"Atk": 75,
 		"Def": 85,
@@ -566,8 +620,10 @@
 		"Catch Rate": 255,
 		"Classification": "Mouse"
 	},
-	"Sandslash": {
+	"sandslash": {
 		"#": 28,
+		"spritePath": 28,
+		"Name": "Sandslash",
 		"HP": 75,
 		"Atk": 100,
 		"Def": 110,
@@ -587,8 +643,10 @@
 		"Catch Rate": 90,
 		"Classification": "Mouse"
 	},
-	"Nidoran (Female)": {
+	"nidoran (female)": {
 		"#": 29,
+		"spritePath": 29,
+		"Name": "Nidoran (Female)",
 		"HP": 55,
 		"Atk": 47,
 		"Def": 52,
@@ -608,8 +666,10 @@
 		"Catch Rate": 235,
 		"Classification": "Poison Pin"
 	},
-	"Nidorina": {
+	"nidorina": {
 		"#": 30,
+		"spritePath": 30,
+		"Name": "Nidorina",
 		"HP": 70,
 		"Atk": 62,
 		"Def": 67,
@@ -629,8 +689,10 @@
 		"Catch Rate": 120,
 		"Classification": "Poison Pin"
 	},
-	"Nidoqueen": {
+	"nidoqueen": {
 		"#": 31,
+		"spritePath": 31,
+		"Name": "Nidoqueen",
 		"HP": 90,
 		"Atk": 92,
 		"Def": 87,
@@ -650,8 +712,10 @@
 		"Catch Rate": 45,
 		"Classification": "Drill"
 	},
-	"Nidoran (Male)": {
+	"nidoran (male)": {
 		"#": 32,
+		"spritePath": 32,
+		"Name": "Nidoran (Male)",
 		"HP": 46,
 		"Atk": 57,
 		"Def": 40,
@@ -671,8 +735,10 @@
 		"Catch Rate": 235,
 		"Classification": "Poison Pin"
 	},
-	"Nidorino": {
+	"nidorino": {
 		"#": 33,
+		"spritePath": 33,
+		"Name": "Nidorino",
 		"HP": 61,
 		"Atk": 72,
 		"Def": 57,
@@ -692,8 +758,10 @@
 		"Catch Rate": 120,
 		"Classification": "Poison Pin"
 	},
-	"Nidoking": {
+	"nidoking": {
 		"#": 34,
+		"spritePath": 34,
+		"Name": "Nidoking",
 		"HP": 81,
 		"Atk": 102,
 		"Def": 77,
@@ -713,8 +781,10 @@
 		"Catch Rate": 45,
 		"Classification": "Drill"
 	},
-	"Clefairy": {
+	"clefairy": {
 		"#": 35,
+		"spritePath": 35,
+		"Name": "Clefairy",
 		"HP": 70,
 		"Atk": 45,
 		"Def": 48,
@@ -734,8 +804,10 @@
 		"Catch Rate": 150,
 		"Classification": "Fairy"
 	},
-	"Clefable": {
+	"clefable": {
 		"#": 36,
+		"spritePath": 36,
+		"Name": "Clefable",
 		"HP": 95,
 		"Atk": 70,
 		"Def": 73,
@@ -755,8 +827,10 @@
 		"Catch Rate": 25,
 		"Classification": "Fairy"
 	},
-	"Vulpix": {
+	"vulpix": {
 		"#": 37,
+		"spritePath": 37,
+		"Name": "Vulpix",
 		"HP": 38,
 		"Atk": 41,
 		"Def": 40,
@@ -776,8 +850,10 @@
 		"Catch Rate": 190,
 		"Classification": "Fox"
 	},
-	"Ninetales": {
+	"ninetales": {
 		"#": 38,
+		"spritePath": 38,
+		"Name": "Ninetales",
 		"HP": 73,
 		"Atk": 76,
 		"Def": 75,
@@ -797,8 +873,10 @@
 		"Catch Rate": 75,
 		"Classification": "Fox"
 	},
-	"Jigglypuff": {
+	"jigglypuff": {
 		"#": 39,
+		"spritePath": 39,
+		"Name": "Jigglypuff",
 		"HP": 115,
 		"Atk": 45,
 		"Def": 20,
@@ -818,8 +896,10 @@
 		"Catch Rate": 170,
 		"Classification": "Balloon"
 	},
-	"Wigglytuff": {
+	"wigglytuff": {
 		"#": 40,
+		"spritePath": 40,
+		"Name": "Wigglytuff",
 		"HP": 140,
 		"Atk": 70,
 		"Def": 45,
@@ -839,8 +919,10 @@
 		"Catch Rate": 50,
 		"Classification": "Balloon"
 	},
-	"Zubat": {
+	"zubat": {
 		"#": 41,
+		"spritePath": 41,
+		"Name": "Zubat",
 		"HP": 40,
 		"Atk": 45,
 		"Def": 35,
@@ -860,8 +942,10 @@
 		"Catch Rate": 255,
 		"Classification": "Bat"
 	},
-	"Golbat": {
+	"golbat": {
 		"#": 42,
+		"spritePath": 42,
+		"Name": "Golbat",
 		"HP": 75,
 		"Atk": 80,
 		"Def": 70,
@@ -881,8 +965,10 @@
 		"Catch Rate": 90,
 		"Classification": "Bat"
 	},
-	"Oddish": {
+	"oddish": {
 		"#": 43,
+		"spritePath": 43,
+		"Name": "Oddish",
 		"HP": 45,
 		"Atk": 50,
 		"Def": 55,
@@ -902,8 +988,10 @@
 		"Catch Rate": 255,
 		"Classification": "Weed"
 	},
-	"Gloom": {
+	"gloom": {
 		"#": 44,
+		"spritePath": 44,
+		"Name": "Gloom",
 		"HP": 60,
 		"Atk": 65,
 		"Def": 70,
@@ -923,8 +1011,10 @@
 		"Catch Rate": 120,
 		"Classification": "Weed"
 	},
-	"Vileplume": {
+	"vileplume": {
 		"#": 45,
+		"spritePath": 45,
+		"Name": "Vileplume",
 		"HP": 75,
 		"Atk": 80,
 		"Def": 85,
@@ -944,8 +1034,10 @@
 		"Catch Rate": 45,
 		"Classification": "Flower"
 	},
-	"Paras": {
+	"paras": {
 		"#": 46,
+		"spritePath": 46,
+		"Name": "Paras",
 		"HP": 35,
 		"Atk": 70,
 		"Def": 55,
@@ -965,8 +1057,10 @@
 		"Catch Rate": 190,
 		"Classification": "Mushroom"
 	},
-	"Parasect": {
+	"parasect": {
 		"#": 47,
+		"spritePath": 47,
+		"Name": "Parasect",
 		"HP": 60,
 		"Atk": 95,
 		"Def": 80,
@@ -986,8 +1080,10 @@
 		"Catch Rate": 75,
 		"Classification": "Mushroom"
 	},
-	"Venonat": {
+	"venonat": {
 		"#": 48,
+		"spritePath": 48,
+		"Name": "Venonat",
 		"HP": 60,
 		"Atk": 55,
 		"Def": 50,
@@ -1007,8 +1103,10 @@
 		"Catch Rate": 190,
 		"Classification": "Insect"
 	},
-	"Venomoth": {
+	"venomoth": {
 		"#": 49,
+		"spritePath": 49,
+		"Name": "Venomoth",
 		"HP": 70,
 		"Atk": 65,
 		"Def": 60,
@@ -1028,8 +1126,10 @@
 		"Catch Rate": 75,
 		"Classification": "Poison Moth"
 	},
-	"Diglett": {
+	"diglett": {
 		"#": 50,
+		"spritePath": 50,
+		"Name": "Diglett",
 		"HP": 10,
 		"Atk": 55,
 		"Def": 25,
@@ -1049,8 +1149,10 @@
 		"Catch Rate": 255,
 		"Classification": "Mole"
 	},
-	"Dugtrio": {
+	"dugtrio": {
 		"#": 51,
+		"spritePath": 51,
+		"Name": "Dugtrio",
 		"HP": 35,
 		"Atk": 100,
 		"Def": 50,
@@ -1070,8 +1172,10 @@
 		"Catch Rate": 50,
 		"Classification": "Mole"
 	},
-	"Meowth": {
+	"meowth": {
 		"#": 52,
+		"spritePath": 52,
+		"Name": "Meowth",
 		"HP": 40,
 		"Atk": 45,
 		"Def": 35,
@@ -1091,8 +1195,10 @@
 		"Catch Rate": 255,
 		"Classification": "Scratch Cat"
 	},
-	"Persian": {
+	"persian": {
 		"#": 53,
+		"spritePath": 53,
+		"Name": "Persian",
 		"HP": 65,
 		"Atk": 70,
 		"Def": 60,
@@ -1112,8 +1218,10 @@
 		"Catch Rate": 90,
 		"Classification": "Classy Cat"
 	},
-	"Psyduck": {
+	"psyduck": {
 		"#": 54,
+		"spritePath": 54,
+		"Name": "Psyduck",
 		"HP": 50,
 		"Atk": 52,
 		"Def": 48,
@@ -1133,8 +1241,10 @@
 		"Catch Rate": 190,
 		"Classification": "Duck"
 	},
-	"Golduck": {
+	"golduck": {
 		"#": 55,
+		"spritePath": 55,
+		"Name": "Golduck",
 		"HP": 80,
 		"Atk": 82,
 		"Def": 78,
@@ -1154,8 +1264,10 @@
 		"Catch Rate": 75,
 		"Classification": "Duck"
 	},
-	"Mankey": {
+	"mankey": {
 		"#": 56,
+		"spritePath": 56,
+		"Name": "Mankey",
 		"HP": 40,
 		"Atk": 80,
 		"Def": 35,
@@ -1175,8 +1287,10 @@
 		"Catch Rate": 190,
 		"Classification": "Pig Monkey"
 	},
-	"Primeape": {
+	"primeape": {
 		"#": 57,
+		"spritePath": 57,
+		"Name": "Primeape",
 		"HP": 65,
 		"Atk": 105,
 		"Def": 60,
@@ -1196,8 +1310,10 @@
 		"Catch Rate": 75,
 		"Classification": "Pig Monkey"
 	},
-	"Growlithe": {
+	"growlithe": {
 		"#": 58,
+		"spritePath": 58,
+		"Name": "Growlithe",
 		"HP": 55,
 		"Atk": 70,
 		"Def": 45,
@@ -1217,8 +1333,10 @@
 		"Catch Rate": 190,
 		"Classification": "Puppy"
 	},
-	"Arcanine": {
+	"arcanine": {
 		"#": 59,
+		"spritePath": 59,
+		"Name": "Arcanine",
 		"HP": 90,
 		"Atk": 110,
 		"Def": 80,
@@ -1238,8 +1356,10 @@
 		"Catch Rate": 75,
 		"Classification": "Legendary"
 	},
-	"Poliwag": {
+	"poliwag": {
 		"#": 60,
+		"spritePath": 60,
+		"Name": "Poliwag",
 		"HP": 40,
 		"Atk": 50,
 		"Def": 40,
@@ -1259,8 +1379,10 @@
 		"Catch Rate": 255,
 		"Classification": "Tadpole"
 	},
-	"Poliwhirl": {
+	"poliwhirl": {
 		"#": 61,
+		"spritePath": 61,
+		"Name": "Poliwhirl",
 		"HP": 65,
 		"Atk": 65,
 		"Def": 65,
@@ -1280,8 +1402,10 @@
 		"Catch Rate": 120,
 		"Classification": "Tadpole"
 	},
-	"Poliwrath": {
+	"poliwrath": {
 		"#": 62,
+		"spritePath": 62,
+		"Name": "Poliwrath",
 		"HP": 90,
 		"Atk": 95,
 		"Def": 95,
@@ -1301,8 +1425,10 @@
 		"Catch Rate": 45,
 		"Classification": "Tadpole"
 	},
-	"Abra": {
+	"abra": {
 		"#": 63,
+		"spritePath": 63,
+		"Name": "Abra",
 		"HP": 25,
 		"Atk": 20,
 		"Def": 15,
@@ -1322,8 +1448,10 @@
 		"Catch Rate": 200,
 		"Classification": "Psi"
 	},
-	"Kadabra": {
+	"kadabra": {
 		"#": 64,
+		"spritePath": 64,
+		"Name": "Kadabra",
 		"HP": 40,
 		"Atk": 35,
 		"Def": 30,
@@ -1343,8 +1471,10 @@
 		"Catch Rate": 100,
 		"Classification": "Psi"
 	},
-	"Alakazam": {
+	"alakazam": {
 		"#": 65,
+		"spritePath": 65,
+		"Name": "Alakazam",
 		"HP": 55,
 		"Atk": 50,
 		"Def": 45,
@@ -1364,8 +1494,10 @@
 		"Catch Rate": 50,
 		"Classification": "Psi"
 	},
-	"Machop": {
+	"machop": {
 		"#": 66,
+		"spritePath": 66,
+		"Name": "Machop",
 		"HP": 70,
 		"Atk": 80,
 		"Def": 50,
@@ -1385,8 +1517,10 @@
 		"Catch Rate": 180,
 		"Classification": "Superpower"
 	},
-	"Machoke": {
+	"machoke": {
 		"#": 67,
+		"spritePath": 67,
+		"Name": "Machoke",
 		"HP": 80,
 		"Atk": 100,
 		"Def": 70,
@@ -1406,8 +1540,10 @@
 		"Catch Rate": 90,
 		"Classification": "Superpower"
 	},
-	"Machamp": {
+	"machamp": {
 		"#": 68,
+		"spritePath": 68,
+		"Name": "Machamp",
 		"HP": 90,
 		"Atk": 130,
 		"Def": 80,
@@ -1427,8 +1563,10 @@
 		"Catch Rate": 45,
 		"Classification": "Superpower"
 	},
-	"Bellsprout": {
+	"bellsprout": {
 		"#": 69,
+		"spritePath": 69,
+		"Name": "Bellsprout",
 		"HP": 50,
 		"Atk": 75,
 		"Def": 35,
@@ -1448,8 +1586,10 @@
 		"Catch Rate": 255,
 		"Classification": "Flower"
 	},
-	"Weepinbell": {
+	"weepinbell": {
 		"#": 70,
+		"spritePath": 70,
+		"Name": "Weepinbell",
 		"HP": 65,
 		"Atk": 90,
 		"Def": 50,
@@ -1469,8 +1609,10 @@
 		"Catch Rate": 120,
 		"Classification": "Flycatcher"
 	},
-	"Victreebel": {
+	"victreebel": {
 		"#": 71,
+		"spritePath": 71,
+		"Name": "Victreebel",
 		"HP": 80,
 		"Atk": 105,
 		"Def": 65,
@@ -1490,8 +1632,10 @@
 		"Catch Rate": 45,
 		"Classification": "Flycatcher"
 	},
-	"Tentacool": {
+	"tentacool": {
 		"#": 72,
+		"spritePath": 72,
+		"Name": "Tentacool",
 		"HP": 40,
 		"Atk": 40,
 		"Def": 35,
@@ -1511,8 +1655,10 @@
 		"Catch Rate": 190,
 		"Classification": "Jellyfish"
 	},
-	"Tentacruel": {
+	"tentacruel": {
 		"#": 73,
+		"spritePath": 73,
+		"Name": "Tentacruel",
 		"HP": 80,
 		"Atk": 70,
 		"Def": 65,
@@ -1532,8 +1678,10 @@
 		"Catch Rate": 60,
 		"Classification": "Jellyfish"
 	},
-	"Geodude": {
+	"geodude": {
 		"#": 74,
+		"spritePath": 74,
+		"Name": "Geodude",
 		"HP": 40,
 		"Atk": 80,
 		"Def": 100,
@@ -1553,8 +1701,10 @@
 		"Catch Rate": 255,
 		"Classification": "Rock"
 	},
-	"Graveler": {
+	"graveler": {
 		"#": 75,
+		"spritePath": 75,
+		"Name": "Graveler",
 		"HP": 55,
 		"Atk": 95,
 		"Def": 115,
@@ -1574,8 +1724,10 @@
 		"Catch Rate": 120,
 		"Classification": "Rock"
 	},
-	"Golem": {
+	"golem": {
 		"#": 76,
+		"spritePath": 76,
+		"Name": "Golem",
 		"HP": 80,
 		"Atk": 120,
 		"Def": 130,
@@ -1595,8 +1747,10 @@
 		"Catch Rate": 45,
 		"Classification": "Megaton"
 	},
-	"Ponyta": {
+	"ponyta": {
 		"#": 77,
+		"spritePath": 77,
+		"Name": "Ponyta",
 		"HP": 50,
 		"Atk": 85,
 		"Def": 55,
@@ -1616,8 +1770,10 @@
 		"Catch Rate": 190,
 		"Classification": "Fire Horse"
 	},
-	"Rapidash": {
+	"rapidash": {
 		"#": 78,
+		"spritePath": 78,
+		"Name": "Rapidash",
 		"HP": 65,
 		"Atk": 100,
 		"Def": 70,
@@ -1637,8 +1793,10 @@
 		"Catch Rate": 60,
 		"Classification": "Fire Horse"
 	},
-	"Slowpoke": {
+	"slowpoke": {
 		"#": 79,
+		"spritePath": 79,
+		"Name": "Slowpoke",
 		"HP": 90,
 		"Atk": 65,
 		"Def": 65,
@@ -1658,8 +1816,10 @@
 		"Catch Rate": 190,
 		"Classification": "Dopey"
 	},
-	"Slowbro": {
+	"slowbro": {
 		"#": 80,
+		"spritePath": 80,
+		"Name": "Slowbro",
 		"HP": 95,
 		"Atk": 75,
 		"Def": 110,
@@ -1679,8 +1839,10 @@
 		"Catch Rate": 75,
 		"Classification": "Hermit Crab"
 	},
-	"Magnemite": {
+	"magnemite": {
 		"#": 81,
+		"spritePath": 81,
+		"Name": "Magnemite",
 		"HP": 25,
 		"Atk": 35,
 		"Def": 70,
@@ -1700,8 +1862,10 @@
 		"Catch Rate": 190,
 		"Classification": "Magnet"
 	},
-	"Magneton": {
+	"magneton": {
 		"#": 82,
+		"spritePath": 82,
+		"Name": "Magneton",
 		"HP": 50,
 		"Atk": 60,
 		"Def": 95,
@@ -1721,8 +1885,10 @@
 		"Catch Rate": 60,
 		"Classification": "Magnet"
 	},
-	"Farfetch'd": {
+	"farfetch'd": {
 		"#": 83,
+		"spritePath": 83,
+		"Name": "Farfetch'd",
 		"HP": 52,
 		"Atk": 90,
 		"Def": 55,
@@ -1742,8 +1908,10 @@
 		"Catch Rate": 45,
 		"Classification": "Wild Duck"
 	},
-	"Doduo": {
+	"doduo": {
 		"#": 84,
+		"spritePath": 84,
+		"Name": "Doduo",
 		"HP": 35,
 		"Atk": 85,
 		"Def": 45,
@@ -1763,8 +1931,10 @@
 		"Catch Rate": 190,
 		"Classification": "Twin Bird"
 	},
-	"Dodrio": {
+	"dodrio": {
 		"#": 85,
+		"spritePath": 85,
+		"Name": "Dodrio",
 		"HP": 60,
 		"Atk": 110,
 		"Def": 70,
@@ -1784,8 +1954,10 @@
 		"Catch Rate": 45,
 		"Classification": "Triple Bird"
 	},
-	"Seel": {
+	"seel": {
 		"#": 86,
+		"spritePath": 86,
+		"Name": "Seel",
 		"HP": 65,
 		"Atk": 45,
 		"Def": 55,
@@ -1805,8 +1977,10 @@
 		"Catch Rate": 190,
 		"Classification": "Sea Lion"
 	},
-	"Dewgong": {
+	"dewgong": {
 		"#": 87,
+		"spritePath": 87,
+		"Name": "Dewgong",
 		"HP": 90,
 		"Atk": 70,
 		"Def": 80,
@@ -1826,8 +2000,10 @@
 		"Catch Rate": 75,
 		"Classification": "Sea Lion"
 	},
-	"Grimer": {
+	"grimer": {
 		"#": 88,
+		"spritePath": 88,
+		"Name": "Grimer",
 		"HP": 80,
 		"Atk": 80,
 		"Def": 50,
@@ -1847,8 +2023,10 @@
 		"Catch Rate": 190,
 		"Classification": "Sludge"
 	},
-	"Muk": {
+	"muk": {
 		"#": 89,
+		"spritePath": 89,
+		"Name": "Muk",
 		"HP": 105,
 		"Atk": 105,
 		"Def": 75,
@@ -1868,8 +2046,10 @@
 		"Catch Rate": 75,
 		"Classification": "Sludge"
 	},
-	"Shellder": {
+	"shellder": {
 		"#": 90,
+		"spritePath": 90,
+		"Name": "Shellder",
 		"HP": 30,
 		"Atk": 65,
 		"Def": 100,
@@ -1889,8 +2069,10 @@
 		"Catch Rate": 190,
 		"Classification": "Bivalve"
 	},
-	"Cloyster": {
+	"cloyster": {
 		"#": 91,
+		"spritePath": 91,
+		"Name": "Cloyster",
 		"HP": 50,
 		"Atk": 95,
 		"Def": 180,
@@ -1910,8 +2092,10 @@
 		"Catch Rate": 60,
 		"Classification": "Bivalve"
 	},
-	"Gastly": {
+	"gastly": {
 		"#": 92,
+		"spritePath": 92,
+		"Name": "Gastly",
 		"HP": 30,
 		"Atk": 35,
 		"Def": 30,
@@ -1931,8 +2115,10 @@
 		"Catch Rate": 190,
 		"Classification": "Gas"
 	},
-	"Haunter": {
+	"haunter": {
 		"#": 93,
+		"spritePath": 93,
+		"Name": "Haunter",
 		"HP": 45,
 		"Atk": 50,
 		"Def": 45,
@@ -1952,8 +2138,10 @@
 		"Catch Rate": 90,
 		"Classification": "Gas"
 	},
-	"Gengar": {
+	"gengar": {
 		"#": 94,
+		"spritePath": 94,
+		"Name": "Gengar",
 		"HP": 60,
 		"Atk": 65,
 		"Def": 60,
@@ -1973,8 +2161,10 @@
 		"Catch Rate": 45,
 		"Classification": "Shadow"
 	},
-	"Onix": {
+	"onix": {
 		"#": 95,
+		"spritePath": 95,
+		"Name": "Onix",
 		"HP": 35,
 		"Atk": 45,
 		"Def": 160,
@@ -1994,8 +2184,10 @@
 		"Catch Rate": 45,
 		"Classification": "Rock Snake"
 	},
-	"Drowzee": {
+	"drowzee": {
 		"#": 96,
+		"spritePath": 96,
+		"Name": "Drowzee",
 		"HP": 60,
 		"Atk": 48,
 		"Def": 45,
@@ -2015,8 +2207,10 @@
 		"Catch Rate": 190,
 		"Classification": "Hypnosis"
 	},
-	"Hypno": {
+	"hypno": {
 		"#": 97,
+		"spritePath": 97,
+		"Name": "Hypno",
 		"HP": 85,
 		"Atk": 73,
 		"Def": 70,
@@ -2036,8 +2230,10 @@
 		"Catch Rate": 75,
 		"Classification": "Hypnosis"
 	},
-	"Krabby": {
+	"krabby": {
 		"#": 98,
+		"spritePath": 98,
+		"Name": "Krabby",
 		"HP": 30,
 		"Atk": 105,
 		"Def": 90,
@@ -2057,8 +2253,10 @@
 		"Catch Rate": 225,
 		"Classification": "River Crab"
 	},
-	"Kingler": {
+	"kingler": {
 		"#": 99,
+		"spritePath": 99,
+		"Name": "Kingler",
 		"HP": 55,
 		"Atk": 130,
 		"Def": 115,
@@ -2078,8 +2276,10 @@
 		"Catch Rate": 60,
 		"Classification": "Pincer"
 	},
-	"Voltorb": {
+	"voltorb": {
 		"#": 100,
+		"spritePath": 100,
+		"Name": "Voltorb",
 		"HP": 40,
 		"Atk": 30,
 		"Def": 50,
@@ -2099,8 +2299,10 @@
 		"Catch Rate": 190,
 		"Classification": "Ball"
 	},
-	"Electrode": {
+	"electrode": {
 		"#": 101,
+		"spritePath": 101,
+		"Name": "Electrode",
 		"HP": 60,
 		"Atk": 50,
 		"Def": 70,
@@ -2120,8 +2322,10 @@
 		"Catch Rate": 60,
 		"Classification": "Ball"
 	},
-	"Exeggcute": {
+	"exeggcute": {
 		"#": 102,
+		"spritePath": 102,
+		"Name": "Exeggcute",
 		"HP": 60,
 		"Atk": 40,
 		"Def": 80,
@@ -2141,8 +2345,10 @@
 		"Catch Rate": 90,
 		"Classification": "Egg"
 	},
-	"Exeggutor": {
+	"exeggutor": {
 		"#": 103,
+		"spritePath": 103,
+		"Name": "Exeggutor",
 		"HP": 95,
 		"Atk": 95,
 		"Def": 85,
@@ -2162,8 +2368,10 @@
 		"Catch Rate": 45,
 		"Classification": "Coconut"
 	},
-	"Cubone": {
+	"cubone": {
 		"#": 104,
+		"spritePath": 104,
+		"Name": "Cubone",
 		"HP": 50,
 		"Atk": 50,
 		"Def": 95,
@@ -2183,8 +2391,10 @@
 		"Catch Rate": 190,
 		"Classification": "Lonely"
 	},
-	"Marowak": {
+	"marowak": {
 		"#": 105,
+		"spritePath": 105,
+		"Name": "Marowak",
 		"HP": 60,
 		"Atk": 80,
 		"Def": 110,
@@ -2204,8 +2414,10 @@
 		"Catch Rate": 75,
 		"Classification": "Bone Keeper"
 	},
-	"Hitmonlee": {
+	"hitmonlee": {
 		"#": 106,
+		"spritePath": 106,
+		"Name": "Hitmonlee",
 		"HP": 50,
 		"Atk": 120,
 		"Def": 53,
@@ -2225,8 +2437,10 @@
 		"Catch Rate": 45,
 		"Classification": "Kicking"
 	},
-	"Hitmonchan": {
+	"hitmonchan": {
 		"#": 107,
+		"spritePath": 107,
+		"Name": "Hitmonchan",
 		"HP": 50,
 		"Atk": 105,
 		"Def": 79,
@@ -2246,8 +2460,10 @@
 		"Catch Rate": 45,
 		"Classification": "Punching"
 	},
-	"Lickitung": {
+	"lickitung": {
 		"#": 108,
+		"spritePath": 108,
+		"Name": "Lickitung",
 		"HP": 90,
 		"Atk": 55,
 		"Def": 75,
@@ -2267,8 +2483,10 @@
 		"Catch Rate": 45,
 		"Classification": "Licking"
 	},
-	"Koffing": {
+	"koffing": {
 		"#": 109,
+		"spritePath": 109,
+		"Name": "Koffing",
 		"HP": 40,
 		"Atk": 65,
 		"Def": 95,
@@ -2288,8 +2506,10 @@
 		"Catch Rate": 190,
 		"Classification": "Poison Gas"
 	},
-	"Weezing": {
+	"weezing": {
 		"#": 110,
+		"spritePath": 110,
+		"Name": "Weezing",
 		"HP": 65,
 		"Atk": 90,
 		"Def": 120,
@@ -2309,8 +2529,10 @@
 		"Catch Rate": 60,
 		"Classification": "Poison Gas"
 	},
-	"Rhyhorn": {
+	"rhyhorn": {
 		"#": 111,
+		"spritePath": 111,
+		"Name": "Rhyhorn",
 		"HP": 80,
 		"Atk": 85,
 		"Def": 95,
@@ -2330,8 +2552,10 @@
 		"Catch Rate": 120,
 		"Classification": "Spikes"
 	},
-	"Rhydon": {
+	"rhydon": {
 		"#": 112,
+		"spritePath": 112,
+		"Name": "Rhydon",
 		"HP": 105,
 		"Atk": 130,
 		"Def": 120,
@@ -2351,8 +2575,10 @@
 		"Catch Rate": 60,
 		"Classification": "Drill"
 	},
-	"Chansey": {
+	"chansey": {
 		"#": 113,
+		"spritePath": 113,
+		"Name": "Chansey",
 		"HP": 250,
 		"Atk": 5,
 		"Def": 5,
@@ -2372,8 +2598,10 @@
 		"Catch Rate": 30,
 		"Classification": "Egg"
 	},
-	"Tangela": {
+	"tangela": {
 		"#": 114,
+		"spritePath": 114,
+		"Name": "Tangela",
 		"HP": 65,
 		"Atk": 55,
 		"Def": 115,
@@ -2393,8 +2621,10 @@
 		"Catch Rate": 45,
 		"Classification": "Vine"
 	},
-	"Kangaskhan": {
+	"kangaskhan": {
 		"#": 115,
+		"spritePath": 115,
+		"Name": "Kangaskhan",
 		"HP": 105,
 		"Atk": 95,
 		"Def": 80,
@@ -2414,8 +2644,10 @@
 		"Catch Rate": 45,
 		"Classification": "Parent"
 	},
-	"Horsea": {
+	"horsea": {
 		"#": 116,
+		"spritePath": 116,
+		"Name": "Horsea",
 		"HP": 30,
 		"Atk": 40,
 		"Def": 70,
@@ -2435,8 +2667,10 @@
 		"Catch Rate": 225,
 		"Classification": "Dragon"
 	},
-	"Seadra": {
+	"seadra": {
 		"#": 117,
+		"spritePath": 117,
+		"Name": "Seadra",
 		"HP": 55,
 		"Atk": 65,
 		"Def": 95,
@@ -2456,8 +2690,10 @@
 		"Catch Rate": 75,
 		"Classification": "Dragon"
 	},
-	"Goldeen": {
+	"goldeen": {
 		"#": 118,
+		"spritePath": 118,
+		"Name": "Goldeen",
 		"HP": 45,
 		"Atk": 67,
 		"Def": 60,
@@ -2477,8 +2713,10 @@
 		"Catch Rate": 225,
 		"Classification": "Goldfish"
 	},
-	"Seaking": {
+	"seaking": {
 		"#": 119,
+		"spritePath": 119,
+		"Name": "Seaking",
 		"HP": 80,
 		"Atk": 92,
 		"Def": 65,
@@ -2498,8 +2736,10 @@
 		"Catch Rate": 60,
 		"Classification": "Goldfish"
 	},
-	"Staryu": {
+	"staryu": {
 		"#": 120,
+		"spritePath": 120,
+		"Name": "Staryu",
 		"HP": 30,
 		"Atk": 45,
 		"Def": 55,
@@ -2519,8 +2759,10 @@
 		"Catch Rate": 225,
 		"Classification": "Starshape"
 	},
-	"Starmie": {
+	"starmie": {
 		"#": 121,
+		"spritePath": 121,
+		"Name": "Starmie",
 		"HP": 60,
 		"Atk": 75,
 		"Def": 85,
@@ -2540,8 +2782,10 @@
 		"Catch Rate": 60,
 		"Classification": "Mysterious"
 	},
-	"Mr. Mime": {
+	"mr. mime": {
 		"#": 122,
+		"spritePath": 122,
+		"Name": "Mr. Mime",
 		"HP": 40,
 		"Atk": 45,
 		"Def": 65,
@@ -2561,8 +2805,10 @@
 		"Catch Rate": 45,
 		"Classification": "Barrier"
 	},
-	"Scyther": {
+	"scyther": {
 		"#": 123,
+		"spritePath": 123,
+		"Name": "Scyther",
 		"HP": 70,
 		"Atk": 110,
 		"Def": 80,
@@ -2582,8 +2828,10 @@
 		"Catch Rate": 45,
 		"Classification": "Mantis"
 	},
-	"Jynx": {
+	"jynx": {
 		"#": 124,
+		"spritePath": 124,
+		"Name": "Jynx",
 		"HP": 65,
 		"Atk": 50,
 		"Def": 35,
@@ -2603,8 +2851,10 @@
 		"Catch Rate": 45,
 		"Classification": "Humanshape"
 	},
-	"Electabuzz": {
+	"electabuzz": {
 		"#": 125,
+		"spritePath": 125,
+		"Name": "Electabuzz",
 		"HP": 65,
 		"Atk": 83,
 		"Def": 57,
@@ -2624,8 +2874,10 @@
 		"Catch Rate": 45,
 		"Classification": "Electric"
 	},
-	"Magmar": {
+	"magmar": {
 		"#": 126,
+		"spritePath": 126,
+		"Name": "Magmar",
 		"HP": 65,
 		"Atk": 95,
 		"Def": 57,
@@ -2645,8 +2897,10 @@
 		"Catch Rate": 45,
 		"Classification": "Spitfire"
 	},
-	"Pinsir": {
+	"pinsir": {
 		"#": 127,
+		"spritePath": 127,
+		"Name": "Pinsir",
 		"HP": 65,
 		"Atk": 125,
 		"Def": 100,
@@ -2666,8 +2920,10 @@
 		"Catch Rate": 45,
 		"Classification": "Stagbeetle"
 	},
-	"Tauros": {
+	"tauros": {
 		"#": 128,
+		"spritePath": 128,
+		"Name": "Tauros",
 		"HP": 75,
 		"Atk": 100,
 		"Def": 95,
@@ -2687,8 +2943,10 @@
 		"Catch Rate": 45,
 		"Classification": "Wild Bull"
 	},
-	"Magikarp": {
+	"magikarp": {
 		"#": 129,
+		"spritePath": 129,
+		"Name": "Magikarp",
 		"HP": 20,
 		"Atk": 10,
 		"Def": 55,
@@ -2708,8 +2966,10 @@
 		"Catch Rate": 255,
 		"Classification": "Fish"
 	},
-	"Gyarados": {
+	"gyarados": {
 		"#": 130,
+		"spritePath": 130,
+		"Name": "Gyarados",
 		"HP": 95,
 		"Atk": 125,
 		"Def": 79,
@@ -2729,8 +2989,10 @@
 		"Catch Rate": 45,
 		"Classification": "Atrocious"
 	},
-	"Lapras": {
+	"lapras": {
 		"#": 131,
+		"spritePath": 131,
+		"Name": "Lapras",
 		"HP": 130,
 		"Atk": 85,
 		"Def": 80,
@@ -2750,8 +3012,10 @@
 		"Catch Rate": 45,
 		"Classification": "Transport"
 	},
-	"Ditto": {
+	"ditto": {
 		"#": 132,
+		"spritePath": 132,
+		"Name": "Ditto",
 		"HP": 48,
 		"Atk": 48,
 		"Def": 48,
@@ -2771,8 +3035,10 @@
 		"Catch Rate": 35,
 		"Classification": "Transform"
 	},
-	"Eevee": {
+	"eevee": {
 		"#": 133,
+		"spritePath": 133,
+		"Name": "Eevee",
 		"HP": 55,
 		"Atk": 55,
 		"Def": 50,
@@ -2792,8 +3058,10 @@
 		"Catch Rate": 45,
 		"Classification": "Evolution"
 	},
-	"Vaporeon": {
+	"vaporeon": {
 		"#": 134,
+		"spritePath": 134,
+		"Name": "Vaporeon",
 		"HP": 130,
 		"Atk": 65,
 		"Def": 60,
@@ -2813,8 +3081,10 @@
 		"Catch Rate": 45,
 		"Classification": "Bubble Jet"
 	},
-	"Jolteon": {
+	"jolteon": {
 		"#": 135,
+		"spritePath": 135,
+		"Name": "Jolteon",
 		"HP": 65,
 		"Atk": 65,
 		"Def": 60,
@@ -2834,8 +3104,10 @@
 		"Catch Rate": 45,
 		"Classification": "Lightning"
 	},
-	"Flareon": {
+	"flareon": {
 		"#": 136,
+		"spritePath": 136,
+		"Name": "Flareon",
 		"HP": 65,
 		"Atk": 130,
 		"Def": 60,
@@ -2855,8 +3127,10 @@
 		"Catch Rate": 45,
 		"Classification": "Flame"
 	},
-	"Porygon": {
+	"porygon": {
 		"#": 137,
+		"spritePath": 137,
+		"Name": "Porygon",
 		"HP": 65,
 		"Atk": 60,
 		"Def": 70,
@@ -2876,8 +3150,10 @@
 		"Catch Rate": 45,
 		"Classification": "Virtual"
 	},
-	"Omanyte": {
+	"omanyte": {
 		"#": 138,
+		"spritePath": 138,
+		"Name": "Omanyte",
 		"HP": 35,
 		"Atk": 40,
 		"Def": 100,
@@ -2897,8 +3173,10 @@
 		"Catch Rate": 45,
 		"Classification": "Spiral"
 	},
-	"Omastar": {
+	"omastar": {
 		"#": 139,
+		"spritePath": 139,
+		"Name": "Omastar",
 		"HP": 70,
 		"Atk": 60,
 		"Def": 125,
@@ -2918,8 +3196,10 @@
 		"Catch Rate": 45,
 		"Classification": "Spiral"
 	},
-	"Kabuto": {
+	"kabuto": {
 		"#": 140,
+		"spritePath": 140,
+		"Name": "Kabuto",
 		"HP": 30,
 		"Atk": 80,
 		"Def": 90,
@@ -2939,8 +3219,10 @@
 		"Catch Rate": 45,
 		"Classification": "Shellfish"
 	},
-	"Kabutops": {
+	"kabutops": {
 		"#": 141,
+		"spritePath": 141,
+		"Name": "Kabutops",
 		"HP": 60,
 		"Atk": 115,
 		"Def": 105,
@@ -2960,8 +3242,10 @@
 		"Catch Rate": 45,
 		"Classification": "Shellfish"
 	},
-	"Aerodactyl": {
+	"aerodactyl": {
 		"#": 142,
+		"spritePath": 142,
+		"Name": "Aerodactyl",
 		"HP": 80,
 		"Atk": 105,
 		"Def": 65,
@@ -2981,8 +3265,10 @@
 		"Catch Rate": 45,
 		"Classification": "Fossil"
 	},
-	"Snorlax": {
+	"snorlax": {
 		"#": 143,
+		"spritePath": 143,
+		"Name": "Snorlax",
 		"HP": 160,
 		"Atk": 110,
 		"Def": 65,
@@ -3002,8 +3288,10 @@
 		"Catch Rate": 25,
 		"Classification": "Sleeping"
 	},
-	"Articuno": {
+	"articuno": {
 		"#": 144,
+		"spritePath": 144,
+		"Name": "Articuno",
 		"HP": 90,
 		"Atk": 85,
 		"Def": 100,
@@ -3023,8 +3311,10 @@
 		"Catch Rate": 3,
 		"Classification": "Freeze"
 	},
-	"Zapdos": {
+	"zapdos": {
 		"#": 145,
+		"spritePath": 145,
+		"Name": "Zapdos",
 		"HP": 90,
 		"Atk": 90,
 		"Def": 85,
@@ -3044,8 +3334,10 @@
 		"Catch Rate": 3,
 		"Classification": "Electric"
 	},
-	"Moltres": {
+	"moltres": {
 		"#": 146,
+		"spritePath": 146,
+		"Name": "Moltres",
 		"HP": 90,
 		"Atk": 100,
 		"Def": 90,
@@ -3065,8 +3357,10 @@
 		"Catch Rate": 3,
 		"Classification": "Flame"
 	},
-	"Dratini": {
+	"dratini": {
 		"#": 147,
+		"spritePath": 147,
+		"Name": "Dratini",
 		"HP": 41,
 		"Atk": 64,
 		"Def": 45,
@@ -3086,8 +3380,10 @@
 		"Catch Rate": 45,
 		"Classification": "Dragon"
 	},
-	"Dragonair": {
+	"dragonair": {
 		"#": 148,
+		"spritePath": 148,
+		"Name": "Dragonair",
 		"HP": 61,
 		"Atk": 84,
 		"Def": 65,
@@ -3107,8 +3403,10 @@
 		"Catch Rate": 45,
 		"Classification": "Dragon"
 	},
-	"Dragonite": {
+	"dragonite": {
 		"#": 149,
+		"spritePath": 149,
+		"Name": "Dragonite",
 		"HP": 91,
 		"Atk": 134,
 		"Def": 95,
@@ -3128,8 +3426,10 @@
 		"Catch Rate": 45,
 		"Classification": "Dragon"
 	},
-	"Mewtwo": {
+	"mewtwo": {
 		"#": 150,
+		"spritePath": 150,
+		"Name": "Mewtwo",
 		"HP": 106,
 		"Atk": 110,
 		"Def": 90,
@@ -3149,8 +3449,10 @@
 		"Catch Rate": 3,
 		"Classification": "Genetic"
 	},
-	"Mew": {
+	"mew": {
 		"#": 151,
+		"spritePath": 151,
+		"Name": "Mew",
 		"HP": 100,
 		"Atk": 100,
 		"Def": 100,
@@ -3170,8 +3472,10 @@
 		"Catch Rate": 45,
 		"Classification": "New Species"
 	},
-	"Chikorita": {
+	"chikorita": {
 		"#": 152,
+		"spritePath": 152,
+		"Name": "Chikorita",
 		"HP": 45,
 		"Atk": 49,
 		"Def": 65,
@@ -3191,8 +3495,10 @@
 		"Catch Rate": 45,
 		"Classification": "Leaf"
 	},
-	"Bayleef": {
+	"bayleef": {
 		"#": 153,
+		"spritePath": 153,
+		"Name": "Bayleef",
 		"HP": 60,
 		"Atk": 62,
 		"Def": 80,
@@ -3212,8 +3518,10 @@
 		"Catch Rate": 45,
 		"Classification": "Leaf"
 	},
-	"Meganium": {
+	"meganium": {
 		"#": 154,
+		"spritePath": 154,
+		"Name": "Meganium",
 		"HP": 80,
 		"Atk": 82,
 		"Def": 100,
@@ -3233,8 +3541,10 @@
 		"Catch Rate": 45,
 		"Classification": "Herb"
 	},
-	"Cyndaquil": {
+	"cyndaquil": {
 		"#": 155,
+		"spritePath": 155,
+		"Name": "Cyndaquil",
 		"HP": 39,
 		"Atk": 52,
 		"Def": 43,
@@ -3254,8 +3564,10 @@
 		"Catch Rate": 45,
 		"Classification": "Fire Mouse"
 	},
-	"Quilava": {
+	"quilava": {
 		"#": 156,
+		"spritePath": 156,
+		"Name": "Quilava",
 		"HP": 58,
 		"Atk": 64,
 		"Def": 58,
@@ -3275,8 +3587,10 @@
 		"Catch Rate": 45,
 		"Classification": "Volcano"
 	},
-	"Typhlosion": {
+	"typhlosion": {
 		"#": 157,
+		"spritePath": 157,
+		"Name": "Typhlosion",
 		"HP": 78,
 		"Atk": 84,
 		"Def": 78,
@@ -3296,8 +3610,10 @@
 		"Catch Rate": 45,
 		"Classification": "Volcano"
 	},
-	"Totodile": {
+	"totodile": {
 		"#": 158,
+		"spritePath": 158,
+		"Name": "Totodile",
 		"HP": 50,
 		"Atk": 65,
 		"Def": 64,
@@ -3317,8 +3633,10 @@
 		"Catch Rate": 45,
 		"Classification": "Big Jaw"
 	},
-	"Croconaw": {
+	"croconaw": {
 		"#": 159,
+		"spritePath": 159,
+		"Name": "Croconaw",
 		"HP": 65,
 		"Atk": 80,
 		"Def": 80,
@@ -3338,8 +3656,10 @@
 		"Catch Rate": 45,
 		"Classification": "Big Jaw"
 	},
-	"Feraligatr": {
+	"feraligatr": {
 		"#": 160,
+		"spritePath": 160,
+		"Name": "Feraligatr",
 		"HP": 85,
 		"Atk": 105,
 		"Def": 100,
@@ -3359,8 +3679,10 @@
 		"Catch Rate": 45,
 		"Classification": "Big Jaw"
 	},
-	"Sentret": {
+	"sentret": {
 		"#": 161,
+		"spritePath": 161,
+		"Name": "Sentret",
 		"HP": 35,
 		"Atk": 46,
 		"Def": 34,
@@ -3380,8 +3702,10 @@
 		"Catch Rate": 255,
 		"Classification": "Scout"
 	},
-	"Furret": {
+	"furret": {
 		"#": 162,
+		"spritePath": 162,
+		"Name": "Furret",
 		"HP": 85,
 		"Atk": 76,
 		"Def": 64,
@@ -3401,8 +3725,10 @@
 		"Catch Rate": 90,
 		"Classification": "Long Body"
 	},
-	"Hoothoot": {
+	"hoothoot": {
 		"#": 163,
+		"spritePath": 163,
+		"Name": "Hoothoot",
 		"HP": 60,
 		"Atk": 30,
 		"Def": 30,
@@ -3422,8 +3748,10 @@
 		"Catch Rate": 255,
 		"Classification": "Owl"
 	},
-	"Noctowl": {
+	"noctowl": {
 		"#": 164,
+		"spritePath": 164,
+		"Name": "Noctowl",
 		"HP": 100,
 		"Atk": 50,
 		"Def": 50,
@@ -3443,8 +3771,10 @@
 		"Catch Rate": 90,
 		"Classification": "Owl"
 	},
-	"Ledyba": {
+	"ledyba": {
 		"#": 165,
+		"spritePath": 165,
+		"Name": "Ledyba",
 		"HP": 40,
 		"Atk": 20,
 		"Def": 30,
@@ -3464,8 +3794,10 @@
 		"Catch Rate": 255,
 		"Classification": "Five Star"
 	},
-	"Ledian": {
+	"ledian": {
 		"#": 166,
+		"spritePath": 166,
+		"Name": "Ledian",
 		"HP": 55,
 		"Atk": 35,
 		"Def": 50,
@@ -3485,8 +3817,10 @@
 		"Catch Rate": 90,
 		"Classification": "Five Star"
 	},
-	"Spinarak": {
+	"spinarak": {
 		"#": 167,
+		"spritePath": 167,
+		"Name": "Spinarak",
 		"HP": 40,
 		"Atk": 60,
 		"Def": 40,
@@ -3506,8 +3840,10 @@
 		"Catch Rate": 255,
 		"Classification": "String Spit"
 	},
-	"Ariados": {
+	"ariados": {
 		"#": 168,
+		"spritePath": 168,
+		"Name": "Ariados",
 		"HP": 70,
 		"Atk": 90,
 		"Def": 70,
@@ -3527,8 +3863,10 @@
 		"Catch Rate": 90,
 		"Classification": "Long Leg"
 	},
-	"Crobat": {
+	"crobat": {
 		"#": 169,
+		"spritePath": 169,
+		"Name": "Crobat",
 		"HP": 85,
 		"Atk": 90,
 		"Def": 80,
@@ -3548,8 +3886,10 @@
 		"Catch Rate": 90,
 		"Classification": "Bat"
 	},
-	"Chinchou": {
+	"chinchou": {
 		"#": 170,
+		"spritePath": 170,
+		"Name": "Chinchou",
 		"HP": 75,
 		"Atk": 38,
 		"Def": 38,
@@ -3569,8 +3909,10 @@
 		"Catch Rate": 190,
 		"Classification": "Angler"
 	},
-	"Lanturn": {
+	"lanturn": {
 		"#": 171,
+		"spritePath": 171,
+		"Name": "Lanturn",
 		"HP": 125,
 		"Atk": 58,
 		"Def": 58,
@@ -3590,8 +3932,10 @@
 		"Catch Rate": 75,
 		"Classification": "Light"
 	},
-	"Pichu": {
+	"pichu": {
 		"#": 172,
+		"spritePath": 172,
+		"Name": "Pichu",
 		"HP": 20,
 		"Atk": 40,
 		"Def": 15,
@@ -3611,8 +3955,10 @@
 		"Catch Rate": 190,
 		"Classification": "Tiny Mouse"
 	},
-	"Cleffa": {
+	"cleffa": {
 		"#": 173,
+		"spritePath": 173,
+		"Name": "Cleffa",
 		"HP": 50,
 		"Atk": 25,
 		"Def": 28,
@@ -3632,8 +3978,10 @@
 		"Catch Rate": 150,
 		"Classification": "Star Shape"
 	},
-	"Igglybuff": {
+	"igglybuff": {
 		"#": 174,
+		"spritePath": 174,
+		"Name": "Igglybuff",
 		"HP": 90,
 		"Atk": 30,
 		"Def": 15,
@@ -3653,8 +4001,10 @@
 		"Catch Rate": 170,
 		"Classification": "Balloon"
 	},
-	"Togepi": {
+	"togepi": {
 		"#": 175,
+		"spritePath": 175,
+		"Name": "Togepi",
 		"HP": 35,
 		"Atk": 20,
 		"Def": 65,
@@ -3674,8 +4024,10 @@
 		"Catch Rate": 190,
 		"Classification": "Spike Ball"
 	},
-	"Togetic": {
+	"togetic": {
 		"#": 176,
+		"spritePath": 176,
+		"Name": "Togetic",
 		"HP": 55,
 		"Atk": 40,
 		"Def": 85,
@@ -3695,8 +4047,10 @@
 		"Catch Rate": 75,
 		"Classification": "Happiness"
 	},
-	"Natu": {
+	"natu": {
 		"#": 177,
+		"spritePath": 177,
+		"Name": "Natu",
 		"HP": 40,
 		"Atk": 50,
 		"Def": 45,
@@ -3716,8 +4070,10 @@
 		"Catch Rate": 190,
 		"Classification": "Little Bird"
 	},
-	"Xatu": {
+	"xatu": {
 		"#": 178,
+		"spritePath": 178,
+		"Name": "Xatu",
 		"HP": 65,
 		"Atk": 75,
 		"Def": 70,
@@ -3737,8 +4093,10 @@
 		"Catch Rate": 75,
 		"Classification": "Mystic"
 	},
-	"Mareep": {
+	"mareep": {
 		"#": 179,
+		"spritePath": 179,
+		"Name": "Mareep",
 		"HP": 55,
 		"Atk": 40,
 		"Def": 40,
@@ -3758,8 +4116,10 @@
 		"Catch Rate": 235,
 		"Classification": "Wool"
 	},
-	"Flaaffy": {
+	"flaaffy": {
 		"#": 180,
+		"spritePath": 180,
+		"Name": "Flaaffy",
 		"HP": 70,
 		"Atk": 55,
 		"Def": 55,
@@ -3779,8 +4139,10 @@
 		"Catch Rate": 120,
 		"Classification": "Wool"
 	},
-	"Ampharos": {
+	"ampharos": {
 		"#": 181,
+		"spritePath": 181,
+		"Name": "Ampharos",
 		"HP": 90,
 		"Atk": 75,
 		"Def": 85,
@@ -3800,8 +4162,10 @@
 		"Catch Rate": 45,
 		"Classification": "Light"
 	},
-	"Bellossom": {
+	"bellossom": {
 		"#": 182,
+		"spritePath": 182,
+		"Name": "Bellossom",
 		"HP": 75,
 		"Atk": 80,
 		"Def": 95,
@@ -3821,8 +4185,10 @@
 		"Catch Rate": 45,
 		"Classification": "Flower"
 	},
-	"Marill": {
+	"marill": {
 		"#": 183,
+		"spritePath": 183,
+		"Name": "Marill",
 		"HP": 70,
 		"Atk": 20,
 		"Def": 50,
@@ -3842,8 +4208,10 @@
 		"Catch Rate": 190,
 		"Classification": "Aquamouse"
 	},
-	"Azumarill": {
+	"azumarill": {
 		"#": 184,
+		"spritePath": 184,
+		"Name": "Azumarill",
 		"HP": 100,
 		"Atk": 50,
 		"Def": 80,
@@ -3863,8 +4231,10 @@
 		"Catch Rate": 75,
 		"Classification": "Aquarabbit"
 	},
-	"Sudowoodo": {
+	"sudowoodo": {
 		"#": 185,
+		"spritePath": 185,
+		"Name": "Sudowoodo",
 		"HP": 70,
 		"Atk": 100,
 		"Def": 115,
@@ -3884,8 +4254,10 @@
 		"Catch Rate": 65,
 		"Classification": "Imitation"
 	},
-	"Politoed": {
+	"politoed": {
 		"#": 186,
+		"spritePath": 186,
+		"Name": "Politoed",
 		"HP": 90,
 		"Atk": 75,
 		"Def": 75,
@@ -3905,8 +4277,10 @@
 		"Catch Rate": 45,
 		"Classification": "Frog"
 	},
-	"Hoppip": {
+	"hoppip": {
 		"#": 187,
+		"spritePath": 187,
+		"Name": "Hoppip",
 		"HP": 35,
 		"Atk": 35,
 		"Def": 40,
@@ -3926,8 +4300,10 @@
 		"Catch Rate": 255,
 		"Classification": "Cottonweed"
 	},
-	"Skiploom": {
+	"skiploom": {
 		"#": 188,
+		"spritePath": 188,
+		"Name": "Skiploom",
 		"HP": 55,
 		"Atk": 45,
 		"Def": 50,
@@ -3947,8 +4323,10 @@
 		"Catch Rate": 120,
 		"Classification": "Cottonweed"
 	},
-	"Jumpluff": {
+	"jumpluff": {
 		"#": 189,
+		"spritePath": 189,
+		"Name": "Jumpluff",
 		"HP": 75,
 		"Atk": 55,
 		"Def": 70,
@@ -3968,8 +4346,10 @@
 		"Catch Rate": 45,
 		"Classification": "Cottonweed"
 	},
-	"Aipom": {
+	"aipom": {
 		"#": 190,
+		"spritePath": 190,
+		"Name": "Aipom",
 		"HP": 55,
 		"Atk": 70,
 		"Def": 55,
@@ -3989,8 +4369,10 @@
 		"Catch Rate": 45,
 		"Classification": "Long Tail"
 	},
-	"Sunkern": {
+	"sunkern": {
 		"#": 191,
+		"spritePath": 191,
+		"Name": "Sunkern",
 		"HP": 30,
 		"Atk": 30,
 		"Def": 30,
@@ -4010,8 +4392,10 @@
 		"Catch Rate": 235,
 		"Classification": "Seed"
 	},
-	"Sunflora": {
+	"sunflora": {
 		"#": 192,
+		"spritePath": 192,
+		"Name": "Sunflora",
 		"HP": 75,
 		"Atk": 75,
 		"Def": 55,
@@ -4031,8 +4415,10 @@
 		"Catch Rate": 120,
 		"Classification": "Sun"
 	},
-	"Yanma": {
+	"yanma": {
 		"#": 193,
+		"spritePath": 193,
+		"Name": "Yanma",
 		"HP": 65,
 		"Atk": 65,
 		"Def": 45,
@@ -4052,8 +4438,10 @@
 		"Catch Rate": 75,
 		"Classification": "Clear Wing"
 	},
-	"Wooper": {
+	"wooper": {
 		"#": 194,
+		"spritePath": 194,
+		"Name": "Wooper",
 		"HP": 55,
 		"Atk": 45,
 		"Def": 45,
@@ -4073,8 +4461,10 @@
 		"Catch Rate": 255,
 		"Classification": "Water Fish"
 	},
-	"Quagsire": {
+	"quagsire": {
 		"#": 195,
+		"spritePath": 195,
+		"Name": "Quagsire",
 		"HP": 95,
 		"Atk": 85,
 		"Def": 85,
@@ -4094,8 +4484,10 @@
 		"Catch Rate": 90,
 		"Classification": "Water Fish"
 	},
-	"Espeon": {
+	"espeon": {
 		"#": 196,
+		"spritePath": 196,
+		"Name": "Espeon",
 		"HP": 65,
 		"Atk": 65,
 		"Def": 60,
@@ -4115,8 +4507,10 @@
 		"Catch Rate": 45,
 		"Classification": "Sun"
 	},
-	"Umbreon": {
+	"umbreon": {
 		"#": 197,
+		"spritePath": 197,
+		"Name": "Umbreon",
 		"HP": 95,
 		"Atk": 65,
 		"Def": 110,
@@ -4136,8 +4530,10 @@
 		"Catch Rate": 45,
 		"Classification": "Moonlight"
 	},
-	"Murkrow": {
+	"murkrow": {
 		"#": 198,
+		"spritePath": 198,
+		"Name": "Murkrow",
 		"HP": 60,
 		"Atk": 85,
 		"Def": 42,
@@ -4157,8 +4553,10 @@
 		"Catch Rate": 30,
 		"Classification": "Darkness"
 	},
-	"Slowking": {
+	"slowking": {
 		"#": 199,
+		"spritePath": 199,
+		"Name": "Slowking",
 		"HP": 95,
 		"Atk": 75,
 		"Def": 80,
@@ -4178,8 +4576,10 @@
 		"Catch Rate": 70,
 		"Classification": "Royal"
 	},
-	"Misdreavus": {
+	"misdreavus": {
 		"#": 200,
+		"spritePath": 200,
+		"Name": "Misdreavus",
 		"HP": 60,
 		"Atk": 60,
 		"Def": 60,
@@ -4199,8 +4599,10 @@
 		"Catch Rate": 45,
 		"Classification": "Screech"
 	},
-	"Unown": {
+	"unown": {
 		"#": 201,
+		"spritePath": 201,
+		"Name": "Unown",
 		"HP": 48,
 		"Atk": 72,
 		"Def": 48,
@@ -4220,8 +4622,10 @@
 		"Catch Rate": 225,
 		"Classification": "Symbol"
 	},
-	"Wobbuffet": {
+	"wobbuffet": {
 		"#": 202,
+		"spritePath": 202,
+		"Name": "Wobbuffet",
 		"HP": 190,
 		"Atk": 33,
 		"Def": 58,
@@ -4241,8 +4645,10 @@
 		"Catch Rate": 45,
 		"Classification": "Patient"
 	},
-	"Girafarig": {
+	"girafarig": {
 		"#": 203,
+		"spritePath": 203,
+		"Name": "Girafarig",
 		"HP": 70,
 		"Atk": 80,
 		"Def": 65,
@@ -4262,8 +4668,10 @@
 		"Catch Rate": 60,
 		"Classification": "Long Neck"
 	},
-	"Pineco": {
+	"pineco": {
 		"#": 204,
+		"spritePath": 204,
+		"Name": "Pineco",
 		"HP": 50,
 		"Atk": 65,
 		"Def": 90,
@@ -4283,8 +4691,10 @@
 		"Catch Rate": 190,
 		"Classification": "Bagworm"
 	},
-	"Forretress": {
+	"forretress": {
 		"#": 205,
+		"spritePath": 205,
+		"Name": "Forretress",
 		"HP": 75,
 		"Atk": 90,
 		"Def": 140,
@@ -4304,8 +4714,10 @@
 		"Catch Rate": 75,
 		"Classification": "Bagworm"
 	},
-	"Dunsparce": {
+	"dunsparce": {
 		"#": 206,
+		"spritePath": 206,
+		"Name": "Dunsparce",
 		"HP": 100,
 		"Atk": 70,
 		"Def": 70,
@@ -4325,8 +4737,10 @@
 		"Catch Rate": 190,
 		"Classification": "Land Snake"
 	},
-	"Gligar": {
+	"gligar": {
 		"#": 207,
+		"spritePath": 207,
+		"Name": "Gligar",
 		"HP": 65,
 		"Atk": 75,
 		"Def": 105,
@@ -4346,8 +4760,10 @@
 		"Catch Rate": 60,
 		"Classification": "Flyscorpion"
 	},
-	"Steelix": {
+	"steelix": {
 		"#": 208,
+		"spritePath": 208,
+		"Name": "Steelix",
 		"HP": 75,
 		"Atk": 85,
 		"Def": 200,
@@ -4367,8 +4783,10 @@
 		"Catch Rate": 25,
 		"Classification": "Iron Snake"
 	},
-	"Snubbull": {
+	"snubbull": {
 		"#": 209,
+		"spritePath": 209,
+		"Name": "Snubbull",
 		"HP": 60,
 		"Atk": 80,
 		"Def": 50,
@@ -4388,8 +4806,10 @@
 		"Catch Rate": 190,
 		"Classification": "Fairy"
 	},
-	"Granbull": {
+	"granbull": {
 		"#": 210,
+		"spritePath": 210,
+		"Name": "Granbull",
 		"HP": 90,
 		"Atk": 120,
 		"Def": 75,
@@ -4409,8 +4829,10 @@
 		"Catch Rate": 75,
 		"Classification": "Fairy"
 	},
-	"Qwilfish": {
+	"qwilfish": {
 		"#": 211,
+		"spritePath": 211,
+		"Name": "Qwilfish",
 		"HP": 65,
 		"Atk": 95,
 		"Def": 85,
@@ -4430,8 +4852,10 @@
 		"Catch Rate": 45,
 		"Classification": "Balloon"
 	},
-	"Scizor": {
+	"scizor": {
 		"#": 212,
+		"spritePath": 212,
+		"Name": "Scizor",
 		"HP": 70,
 		"Atk": 130,
 		"Def": 100,
@@ -4451,8 +4875,10 @@
 		"Catch Rate": 25,
 		"Classification": "Pincer"
 	},
-	"Shuckle": {
+	"shuckle": {
 		"#": 213,
+		"spritePath": 213,
+		"Name": "Shuckle",
 		"HP": 20,
 		"Atk": 10,
 		"Def": 230,
@@ -4472,8 +4898,10 @@
 		"Catch Rate": 190,
 		"Classification": "Mold"
 	},
-	"Heracross": {
+	"heracross": {
 		"#": 214,
+		"spritePath": 214,
+		"Name": "Heracross",
 		"HP": 80,
 		"Atk": 125,
 		"Def": 75,
@@ -4493,8 +4921,10 @@
 		"Catch Rate": 45,
 		"Classification": "Singlehorn"
 	},
-	"Sneasel": {
+	"sneasel": {
 		"#": 215,
+		"spritePath": 215,
+		"Name": "Sneasel",
 		"HP": 55,
 		"Atk": 95,
 		"Def": 55,
@@ -4514,8 +4944,10 @@
 		"Catch Rate": 60,
 		"Classification": "Sharp Claw"
 	},
-	"Teddiursa": {
+	"teddiursa": {
 		"#": 216,
+		"spritePath": 216,
+		"Name": "Teddiursa",
 		"HP": 60,
 		"Atk": 80,
 		"Def": 50,
@@ -4535,8 +4967,10 @@
 		"Catch Rate": 120,
 		"Classification": "Little Bear"
 	},
-	"Ursaring": {
+	"ursaring": {
 		"#": 217,
+		"spritePath": 217,
+		"Name": "Ursaring",
 		"HP": 90,
 		"Atk": 130,
 		"Def": 75,
@@ -4556,8 +4990,10 @@
 		"Catch Rate": 60,
 		"Classification": "Hibernator"
 	},
-	"Slugma": {
+	"slugma": {
 		"#": 218,
+		"spritePath": 218,
+		"Name": "Slugma",
 		"HP": 40,
 		"Atk": 40,
 		"Def": 40,
@@ -4577,8 +5013,10 @@
 		"Catch Rate": 190,
 		"Classification": "Lava"
 	},
-	"Magcargo": {
+	"magcargo": {
 		"#": 219,
+		"spritePath": 219,
+		"Name": "Magcargo",
 		"HP": 60,
 		"Atk": 50,
 		"Def": 120,
@@ -4598,8 +5036,10 @@
 		"Catch Rate": 75,
 		"Classification": "Lava"
 	},
-	"Swinub": {
+	"swinub": {
 		"#": 220,
+		"spritePath": 220,
+		"Name": "Swinub",
 		"HP": 50,
 		"Atk": 50,
 		"Def": 40,
@@ -4619,8 +5059,10 @@
 		"Catch Rate": 225,
 		"Classification": "Pig"
 	},
-	"Piloswine": {
+	"piloswine": {
 		"#": 221,
+		"spritePath": 221,
+		"Name": "Piloswine",
 		"HP": 100,
 		"Atk": 100,
 		"Def": 80,
@@ -4640,8 +5082,10 @@
 		"Catch Rate": 75,
 		"Classification": "Swine"
 	},
-	"Corsola": {
+	"corsola": {
 		"#": 222,
+		"spritePath": 222,
+		"Name": "Corsola",
 		"HP": 65,
 		"Atk": 55,
 		"Def": 95,
@@ -4661,8 +5105,10 @@
 		"Catch Rate": 60,
 		"Classification": "Coral"
 	},
-	"Remoraid": {
+	"remoraid": {
 		"#": 223,
+		"spritePath": 223,
+		"Name": "Remoraid",
 		"HP": 35,
 		"Atk": 65,
 		"Def": 35,
@@ -4682,8 +5128,10 @@
 		"Catch Rate": 190,
 		"Classification": "Jet"
 	},
-	"Octillery": {
+	"octillery": {
 		"#": 224,
+		"spritePath": 224,
+		"Name": "Octillery",
 		"HP": 75,
 		"Atk": 105,
 		"Def": 75,
@@ -4703,8 +5151,10 @@
 		"Catch Rate": 75,
 		"Classification": "Jet"
 	},
-	"Delibird": {
+	"delibird": {
 		"#": 225,
+		"spritePath": 225,
+		"Name": "Delibird",
 		"HP": 45,
 		"Atk": 55,
 		"Def": 45,
@@ -4724,8 +5174,10 @@
 		"Catch Rate": 45,
 		"Classification": "Delivery"
 	},
-	"Mantine": {
+	"mantine": {
 		"#": 226,
+		"spritePath": 226,
+		"Name": "Mantine",
 		"HP": 85,
 		"Atk": 40,
 		"Def": 70,
@@ -4745,8 +5197,10 @@
 		"Catch Rate": 25,
 		"Classification": "Kite"
 	},
-	"Skarmory": {
+	"skarmory": {
 		"#": 227,
+		"spritePath": 227,
+		"Name": "Skarmory",
 		"HP": 65,
 		"Atk": 80,
 		"Def": 140,
@@ -4766,8 +5220,10 @@
 		"Catch Rate": 25,
 		"Classification": "Armor Bird"
 	},
-	"Houndour": {
+	"houndour": {
 		"#": 228,
+		"spritePath": 228,
+		"Name": "Houndour",
 		"HP": 45,
 		"Atk": 60,
 		"Def": 30,
@@ -4787,8 +5243,10 @@
 		"Catch Rate": 120,
 		"Classification": "Dark"
 	},
-	"Houndoom": {
+	"houndoom": {
 		"#": 229,
+		"spritePath": 229,
+		"Name": "Houndoom",
 		"HP": 75,
 		"Atk": 90,
 		"Def": 50,
@@ -4808,8 +5266,10 @@
 		"Catch Rate": 45,
 		"Classification": "Dark"
 	},
-	"Kingdra": {
+	"kingdra": {
 		"#": 230,
+		"spritePath": 230,
+		"Name": "Kingdra",
 		"HP": 75,
 		"Atk": 95,
 		"Def": 95,
@@ -4829,8 +5289,10 @@
 		"Catch Rate": 45,
 		"Classification": "Dragon"
 	},
-	"Phanpy": {
+	"phanpy": {
 		"#": 231,
+		"spritePath": 231,
+		"Name": "Phanpy",
 		"HP": 90,
 		"Atk": 60,
 		"Def": 60,
@@ -4850,8 +5312,10 @@
 		"Catch Rate": 120,
 		"Classification": "Long Nose"
 	},
-	"Donphan": {
+	"donphan": {
 		"#": 232,
+		"spritePath": 232,
+		"Name": "Donphan",
 		"HP": 90,
 		"Atk": 120,
 		"Def": 120,
@@ -4871,8 +5335,10 @@
 		"Catch Rate": 60,
 		"Classification": "Armor"
 	},
-	"Porygon2": {
+	"porygon2": {
 		"#": 233,
+		"spritePath": 233,
+		"Name": "Porygon2",
 		"HP": 85,
 		"Atk": 80,
 		"Def": 90,
@@ -4892,8 +5358,10 @@
 		"Catch Rate": 45,
 		"Classification": "Virtual"
 	},
-	"Stantler": {
+	"stantler": {
 		"#": 234,
+		"spritePath": 234,
+		"Name": "Stantler",
 		"HP": 73,
 		"Atk": 95,
 		"Def": 62,
@@ -4913,8 +5381,10 @@
 		"Catch Rate": 45,
 		"Classification": "Big Horn"
 	},
-	"Smeargle": {
+	"smeargle": {
 		"#": 235,
+		"spritePath": 235,
+		"Name": "Smeargle",
 		"HP": 55,
 		"Atk": 20,
 		"Def": 35,
@@ -4934,8 +5404,10 @@
 		"Catch Rate": 45,
 		"Classification": "Painter"
 	},
-	"Tyrogue": {
+	"tyrogue": {
 		"#": 236,
+		"spritePath": 236,
+		"Name": "Tyrogue",
 		"HP": 35,
 		"Atk": 35,
 		"Def": 35,
@@ -4955,8 +5427,10 @@
 		"Catch Rate": 75,
 		"Classification": "Scuffle"
 	},
-	"Hitmontop": {
+	"hitmontop": {
 		"#": 237,
+		"spritePath": 237,
+		"Name": "Hitmontop",
 		"HP": 50,
 		"Atk": 95,
 		"Def": 95,
@@ -4976,8 +5450,10 @@
 		"Catch Rate": 45,
 		"Classification": "Handstand"
 	},
-	"Smoochum": {
+	"smoochum": {
 		"#": 238,
+		"spritePath": 238,
+		"Name": "Smoochum",
 		"HP": 45,
 		"Atk": 30,
 		"Def": 15,
@@ -4997,8 +5473,10 @@
 		"Catch Rate": 45,
 		"Classification": "Kiss"
 	},
-	"Elekid": {
+	"elekid": {
 		"#": 239,
+		"spritePath": 239,
+		"Name": "Elekid",
 		"HP": 45,
 		"Atk": 63,
 		"Def": 37,
@@ -5018,8 +5496,10 @@
 		"Catch Rate": 45,
 		"Classification": "Electric"
 	},
-	"Magby": {
+	"magby": {
 		"#": 240,
+		"spritePath": 240,
+		"Name": "Magby",
 		"HP": 45,
 		"Atk": 75,
 		"Def": 37,
@@ -5039,8 +5519,10 @@
 		"Catch Rate": 45,
 		"Classification": "Live Coal"
 	},
-	"Miltank": {
+	"miltank": {
 		"#": 241,
+		"spritePath": 241,
+		"Name": "Miltank",
 		"HP": 95,
 		"Atk": 80,
 		"Def": 105,
@@ -5060,8 +5542,10 @@
 		"Catch Rate": 45,
 		"Classification": "Milk Cow"
 	},
-	"Blissey": {
+	"blissey": {
 		"#": 242,
+		"spritePath": 242,
+		"Name": "Blissey",
 		"HP": 255,
 		"Atk": 10,
 		"Def": 10,
@@ -5081,8 +5565,10 @@
 		"Catch Rate": 30,
 		"Classification": "Happiness"
 	},
-	"Raikou": {
+	"raikou": {
 		"#": 243,
+		"spritePath": 243,
+		"Name": "Raikou",
 		"HP": 90,
 		"Atk": 85,
 		"Def": 75,
@@ -5102,8 +5588,10 @@
 		"Catch Rate": 3,
 		"Classification": "Thunder"
 	},
-	"Entei": {
+	"entei": {
 		"#": 244,
+		"spritePath": 244,
+		"Name": "Entei",
 		"HP": 115,
 		"Atk": 115,
 		"Def": 85,
@@ -5123,8 +5611,10 @@
 		"Catch Rate": 3,
 		"Classification": "Volcano"
 	},
-	"Suicune": {
+	"suicune": {
 		"#": 245,
+		"spritePath": 245,
+		"Name": "Suicune",
 		"HP": 100,
 		"Atk": 75,
 		"Def": 115,
@@ -5144,8 +5634,10 @@
 		"Catch Rate": 3,
 		"Classification": "Aurora"
 	},
-	"Larvitar": {
+	"larvitar": {
 		"#": 246,
+		"spritePath": 246,
+		"Name": "Larvitar",
 		"HP": 50,
 		"Atk": 64,
 		"Def": 50,
@@ -5165,8 +5657,10 @@
 		"Catch Rate": 45,
 		"Classification": "Rock Skin"
 	},
-	"Pupitar": {
+	"pupitar": {
 		"#": 247,
+		"spritePath": 247,
+		"Name": "Pupitar",
 		"HP": 70,
 		"Atk": 84,
 		"Def": 70,
@@ -5186,8 +5680,10 @@
 		"Catch Rate": 45,
 		"Classification": "Hard Shell"
 	},
-	"Tyranitar": {
+	"tyranitar": {
 		"#": 248,
+		"spritePath": 248,
+		"Name": "Tyranitar",
 		"HP": 100,
 		"Atk": 134,
 		"Def": 110,
@@ -5207,8 +5703,10 @@
 		"Catch Rate": 45,
 		"Classification": "Armor"
 	},
-	"Lugia": {
+	"lugia": {
 		"#": 249,
+		"spritePath": 249,
+		"Name": "Lugia",
 		"HP": 106,
 		"Atk": 90,
 		"Def": 130,
@@ -5228,8 +5726,10 @@
 		"Catch Rate": 3,
 		"Classification": "Diving"
 	},
-	"Ho-Oh": {
+	"ho-oh": {
 		"#": 250,
+		"spritePath": 250,
+		"Name": "Ho-oh",
 		"HP": 106,
 		"Atk": 130,
 		"Def": 90,
@@ -5249,8 +5749,10 @@
 		"Catch Rate": 3,
 		"Classification": "Rainbow"
 	},
-	"Celebi": {
+	"celebi": {
 		"#": 251,
+		"spritePath": 251,
+		"Name": "Celebi",
 		"HP": 100,
 		"Atk": 100,
 		"Def": 100,
@@ -5270,8 +5772,10 @@
 		"Catch Rate": 45,
 		"Classification": "Time Travel"
 	},
-	"Treecko": {
+	"treecko": {
 		"#": 252,
+		"spritePath": 252,
+		"Name": "Treecko",
 		"HP": 40,
 		"Atk": 45,
 		"Def": 35,
@@ -5291,8 +5795,10 @@
 		"Catch Rate": 45,
 		"Classification": "Wood Gecko"
 	},
-	"Grovyle": {
+	"grovyle": {
 		"#": 253,
+		"spritePath": 253,
+		"Name": "Grovyle",
 		"HP": 50,
 		"Atk": 65,
 		"Def": 45,
@@ -5312,8 +5818,10 @@
 		"Catch Rate": 45,
 		"Classification": "Wood Gecko"
 	},
-	"Sceptile": {
+	"sceptile": {
 		"#": 254,
+		"spritePath": 254,
+		"Name": "Sceptile",
 		"HP": 70,
 		"Atk": 85,
 		"Def": 65,
@@ -5333,8 +5841,10 @@
 		"Catch Rate": 45,
 		"Classification": "Forest"
 	},
-	"Torchic": {
+	"torchic": {
 		"#": 255,
+		"spritePath": 255,
+		"Name": "Torchic",
 		"HP": 45,
 		"Atk": 60,
 		"Def": 40,
@@ -5354,8 +5864,10 @@
 		"Catch Rate": 45,
 		"Classification": "Chick"
 	},
-	"Combusken": {
+	"combusken": {
 		"#": 256,
+		"spritePath": 256,
+		"Name": "Combusken",
 		"HP": 60,
 		"Atk": 85,
 		"Def": 60,
@@ -5375,8 +5887,10 @@
 		"Catch Rate": 45,
 		"Classification": "Young Fowl"
 	},
-	"Blaziken": {
+	"blaziken": {
 		"#": 257,
+		"spritePath": 257,
+		"Name": "Blaziken",
 		"HP": 80,
 		"Atk": 120,
 		"Def": 70,
@@ -5396,8 +5910,10 @@
 		"Catch Rate": 45,
 		"Classification": "Blaze"
 	},
-	"Mudkip": {
+	"mudkip": {
 		"#": 258,
+		"spritePath": 258,
+		"Name": "Mudkip",
 		"HP": 50,
 		"Atk": 70,
 		"Def": 50,
@@ -5417,8 +5933,10 @@
 		"Catch Rate": 45,
 		"Classification": "Mud Fish"
 	},
-	"Marshtomp": {
+	"marshtomp": {
 		"#": 259,
+		"spritePath": 259,
+		"Name": "Marshtomp",
 		"HP": 70,
 		"Atk": 85,
 		"Def": 70,
@@ -5438,8 +5956,10 @@
 		"Catch Rate": 45,
 		"Classification": "Mud Fish"
 	},
-	"Swampert": {
+	"swampert": {
 		"#": 260,
+		"spritePath": 260,
+		"Name": "Swampert",
 		"HP": 100,
 		"Atk": 110,
 		"Def": 90,
@@ -5459,8 +5979,10 @@
 		"Catch Rate": 45,
 		"Classification": "Mud Fish"
 	},
-	"Poochyena": {
+	"poochyena": {
 		"#": 261,
+		"spritePath": 261,
+		"Name": "Poochyena",
 		"HP": 35,
 		"Atk": 55,
 		"Def": 35,
@@ -5480,8 +6002,10 @@
 		"Catch Rate": 255,
 		"Classification": "Bite"
 	},
-	"Mightyena": {
+	"mightyena": {
 		"#": 262,
+		"spritePath": 262,
+		"Name": "Mightyena",
 		"HP": 70,
 		"Atk": 90,
 		"Def": 70,
@@ -5501,8 +6025,10 @@
 		"Catch Rate": 127,
 		"Classification": "Bite"
 	},
-	"Zigzagoon": {
+	"zigzagoon": {
 		"#": 263,
+		"spritePath": 263,
+		"Name": "Zigzagoon",
 		"HP": 38,
 		"Atk": 30,
 		"Def": 41,
@@ -5522,8 +6048,10 @@
 		"Catch Rate": 255,
 		"Classification": "Tiny Racoon"
 	},
-	"Linoone": {
+	"linoone": {
 		"#": 264,
+		"spritePath": 264,
+		"Name": "Linoone",
 		"HP": 78,
 		"Atk": 70,
 		"Def": 61,
@@ -5543,8 +6071,10 @@
 		"Catch Rate": 90,
 		"Classification": "Rush"
 	},
-	"Wurmple": {
+	"wurmple": {
 		"#": 265,
+		"spritePath": 265,
+		"Name": "Wurmple",
 		"HP": 45,
 		"Atk": 45,
 		"Def": 35,
@@ -5564,8 +6094,10 @@
 		"Catch Rate": 255,
 		"Classification": "Worm"
 	},
-	"Silcoon": {
+	"silcoon": {
 		"#": 266,
+		"spritePath": 266,
+		"Name": "Silcoon",
 		"HP": 50,
 		"Atk": 35,
 		"Def": 55,
@@ -5585,8 +6117,10 @@
 		"Catch Rate": 120,
 		"Classification": "Cocoon"
 	},
-	"Beautifly": {
+	"beautifly": {
 		"#": 267,
+		"spritePath": 267,
+		"Name": "Beautifly",
 		"HP": 60,
 		"Atk": 70,
 		"Def": 50,
@@ -5606,8 +6140,10 @@
 		"Catch Rate": 45,
 		"Classification": "Butterfly"
 	},
-	"Cascoon": {
+	"cascoon": {
 		"#": 268,
+		"spritePath": 268,
+		"Name": "Cascoon",
 		"HP": 50,
 		"Atk": 35,
 		"Def": 55,
@@ -5627,8 +6163,10 @@
 		"Catch Rate": 120,
 		"Classification": "Cocoon"
 	},
-	"Dustox": {
+	"dustox": {
 		"#": 269,
+		"spritePath": 269,
+		"Name": "Dustox",
 		"HP": 60,
 		"Atk": 50,
 		"Def": 70,
@@ -5648,8 +6186,10 @@
 		"Catch Rate": 45,
 		"Classification": "Poison Moth"
 	},
-	"Lotad": {
+	"lotad": {
 		"#": 270,
+		"spritePath": 270,
+		"Name": "Lotad",
 		"HP": 40,
 		"Atk": 30,
 		"Def": 30,
@@ -5669,8 +6209,10 @@
 		"Catch Rate": 255,
 		"Classification": "Water Weed"
 	},
-	"Lombre": {
+	"lombre": {
 		"#": 271,
+		"spritePath": 271,
+		"Name": "Lombre",
 		"HP": 60,
 		"Atk": 50,
 		"Def": 50,
@@ -5690,8 +6232,10 @@
 		"Catch Rate": 120,
 		"Classification": "Jolly"
 	},
-	"Ludicolo": {
+	"ludicolo": {
 		"#": 272,
+		"spritePath": 272,
+		"Name": "Ludicolo",
 		"HP": 80,
 		"Atk": 70,
 		"Def": 70,
@@ -5711,8 +6255,10 @@
 		"Catch Rate": 45,
 		"Classification": "Carefree"
 	},
-	"Seedot": {
+	"seedot": {
 		"#": 273,
+		"spritePath": 273,
+		"Name": "Seedot",
 		"HP": 40,
 		"Atk": 40,
 		"Def": 50,
@@ -5732,8 +6278,10 @@
 		"Catch Rate": 255,
 		"Classification": "Acorn"
 	},
-	"Nuzleaf": {
+	"nuzleaf": {
 		"#": 274,
+		"spritePath": 274,
+		"Name": "Nuzleaf",
 		"HP": 70,
 		"Atk": 70,
 		"Def": 40,
@@ -5753,8 +6301,10 @@
 		"Catch Rate": 120,
 		"Classification": "Wily"
 	},
-	"Shiftry": {
+	"shiftry": {
 		"#": 275,
+		"spritePath": 275,
+		"Name": "Shiftry",
 		"HP": 90,
 		"Atk": 100,
 		"Def": 60,
@@ -5774,8 +6324,10 @@
 		"Catch Rate": 45,
 		"Classification": "Wickid"
 	},
-	"Taillow": {
+	"taillow": {
 		"#": 276,
+		"spritePath": 276,
+		"Name": "Taillow",
 		"HP": 40,
 		"Atk": 55,
 		"Def": 30,
@@ -5795,8 +6347,10 @@
 		"Catch Rate": 200,
 		"Classification": "TinySwallow"
 	},
-	"Swellow": {
+	"swellow": {
 		"#": 277,
+		"spritePath": 277,
+		"Name": "Swellow",
 		"HP": 60,
 		"Atk": 85,
 		"Def": 60,
@@ -5816,8 +6370,10 @@
 		"Catch Rate": 45,
 		"Classification": "Swallow"
 	},
-	"Wingull": {
+	"wingull": {
 		"#": 278,
+		"spritePath": 278,
+		"Name": "Wingull",
 		"HP": 40,
 		"Atk": 30,
 		"Def": 30,
@@ -5837,8 +6393,10 @@
 		"Catch Rate": 190,
 		"Classification": "Seagull"
 	},
-	"Pelipper": {
+	"pelipper": {
 		"#": 279,
+		"spritePath": 279,
+		"Name": "Pelipper",
 		"HP": 60,
 		"Atk": 50,
 		"Def": 100,
@@ -5858,8 +6416,10 @@
 		"Catch Rate": 45,
 		"Classification": "Water Bird"
 	},
-	"Ralts": {
+	"ralts": {
 		"#": 280,
+		"spritePath": 280,
+		"Name": "Ralts",
 		"HP": 28,
 		"Atk": 25,
 		"Def": 25,
@@ -5879,8 +6439,10 @@
 		"Catch Rate": 235,
 		"Classification": "Feeling"
 	},
-	"Kirlia": {
+	"kirlia": {
 		"#": 281,
+		"spritePath": 281,
+		"Name": "Kirlia",
 		"HP": 38,
 		"Atk": 35,
 		"Def": 35,
@@ -5900,8 +6462,10 @@
 		"Catch Rate": 120,
 		"Classification": "Emotion"
 	},
-	"Gardevoir": {
+	"gardevoir": {
 		"#": 282,
+		"spritePath": 282,
+		"Name": "Gardevoir",
 		"HP": 68,
 		"Atk": 65,
 		"Def": 65,
@@ -5921,8 +6485,10 @@
 		"Catch Rate": 45,
 		"Classification": "Embrace"
 	},
-	"Surskit": {
+	"surskit": {
 		"#": 283,
+		"spritePath": 283,
+		"Name": "Surskit",
 		"HP": 40,
 		"Atk": 30,
 		"Def": 32,
@@ -5942,8 +6508,10 @@
 		"Catch Rate": 200,
 		"Classification": "Pond Skater"
 	},
-	"Masquerain": {
+	"masquerain": {
 		"#": 284,
+		"spritePath": 284,
+		"Name": "Masquerain",
 		"HP": 70,
 		"Atk": 60,
 		"Def": 62,
@@ -5963,8 +6531,10 @@
 		"Catch Rate": 75,
 		"Classification": "Eyeball"
 	},
-	"Shroomish": {
+	"shroomish": {
 		"#": 285,
+		"spritePath": 285,
+		"Name": "Shroomish",
 		"HP": 60,
 		"Atk": 40,
 		"Def": 60,
@@ -5984,8 +6554,10 @@
 		"Catch Rate": 255,
 		"Classification": "Mushroom"
 	},
-	"Breloom": {
+	"breloom": {
 		"#": 286,
+		"spritePath": 286,
+		"Name": "Breloom",
 		"HP": 60,
 		"Atk": 130,
 		"Def": 80,
@@ -6005,8 +6577,10 @@
 		"Catch Rate": 90,
 		"Classification": "Mushroom"
 	},
-	"Slakoth": {
+	"slakoth": {
 		"#": 287,
+		"spritePath": 287,
+		"Name": "Slakoth",
 		"HP": 60,
 		"Atk": 60,
 		"Def": 60,
@@ -6026,8 +6600,10 @@
 		"Catch Rate": 255,
 		"Classification": "Slacker"
 	},
-	"Vigoroth": {
+	"vigoroth": {
 		"#": 288,
+		"spritePath": 288,
+		"Name": "Vigoroth",
 		"HP": 80,
 		"Atk": 80,
 		"Def": 80,
@@ -6047,8 +6623,10 @@
 		"Catch Rate": 120,
 		"Classification": "Wild Monkey"
 	},
-	"Slaking": {
+	"slaking": {
 		"#": 289,
+		"spritePath": 289,
+		"Name": "Slaking",
 		"HP": 150,
 		"Atk": 160,
 		"Def": 100,
@@ -6068,8 +6646,10 @@
 		"Catch Rate": 45,
 		"Classification": "Lazy"
 	},
-	"Nincada": {
+	"nincada": {
 		"#": 290,
+		"spritePath": 290,
+		"Name": "Nincada",
 		"HP": 31,
 		"Atk": 45,
 		"Def": 90,
@@ -6089,8 +6669,10 @@
 		"Catch Rate": 255,
 		"Classification": "Trainee"
 	},
-	"Ninjask": {
+	"ninjask": {
 		"#": 291,
+		"spritePath": 291,
+		"Name": "Ninjask",
 		"HP": 61,
 		"Atk": 90,
 		"Def": 45,
@@ -6110,8 +6692,10 @@
 		"Catch Rate": 120,
 		"Classification": "Ninja"
 	},
-	"Shedinja": {
+	"shedinja": {
 		"#": 292,
+		"spritePath": 292,
+		"Name": "Shedinja",
 		"HP": 1,
 		"Atk": 90,
 		"Def": 45,
@@ -6131,8 +6715,10 @@
 		"Catch Rate": 45,
 		"Classification": "Shed"
 	},
-	"Whismur": {
+	"whismur": {
 		"#": 293,
+		"spritePath": 293,
+		"Name": "Whismur",
 		"HP": 64,
 		"Atk": 51,
 		"Def": 23,
@@ -6152,8 +6738,10 @@
 		"Catch Rate": 190,
 		"Classification": "Whisper"
 	},
-	"Loudred": {
+	"loudred": {
 		"#": 294,
+		"spritePath": 294,
+		"Name": "Loudred",
 		"HP": 84,
 		"Atk": 71,
 		"Def": 43,
@@ -6173,8 +6761,10 @@
 		"Catch Rate": 120,
 		"Classification": "Big Voice"
 	},
-	"Exploud": {
+	"exploud": {
 		"#": 295,
+		"spritePath": 295,
+		"Name": "Exploud",
 		"HP": 104,
 		"Atk": 91,
 		"Def": 63,
@@ -6194,8 +6784,10 @@
 		"Catch Rate": 45,
 		"Classification": "Loud Noise"
 	},
-	"Makuhita": {
+	"makuhita": {
 		"#": 296,
+		"spritePath": 296,
+		"Name": "Makuhita",
 		"HP": 72,
 		"Atk": 60,
 		"Def": 30,
@@ -6215,8 +6807,10 @@
 		"Catch Rate": 180,
 		"Classification": "Guts"
 	},
-	"Hariyama": {
+	"hariyama": {
 		"#": 297,
+		"spritePath": 297,
+		"Name": "Hariyama",
 		"HP": 144,
 		"Atk": 120,
 		"Def": 60,
@@ -6236,8 +6830,10 @@
 		"Catch Rate": 200,
 		"Classification": "Arm Thrust"
 	},
-	"Azurill": {
+	"azurill": {
 		"#": 298,
+		"spritePath": 298,
+		"Name": "Azurill",
 		"HP": 50,
 		"Atk": 20,
 		"Def": 40,
@@ -6257,8 +6853,10 @@
 		"Catch Rate": 150,
 		"Classification": "Polka Dot"
 	},
-	"Nosepass": {
+	"nosepass": {
 		"#": 299,
+		"spritePath": 299,
+		"Name": "Nosepass",
 		"HP": 30,
 		"Atk": 45,
 		"Def": 135,
@@ -6278,8 +6876,10 @@
 		"Catch Rate": 255,
 		"Classification": "Compass"
 	},
-	"Skitty": {
+	"skitty": {
 		"#": 300,
+		"spritePath": 300,
+		"Name": "Skitty",
 		"HP": 50,
 		"Atk": 45,
 		"Def": 45,
@@ -6299,8 +6899,10 @@
 		"Catch Rate": 255,
 		"Classification": "Kitten"
 	},
-	"Delcatty": {
+	"delcatty": {
 		"#": 301,
+		"spritePath": 301,
+		"Name": "Delcatty",
 		"HP": 70,
 		"Atk": 65,
 		"Def": 65,
@@ -6320,8 +6922,10 @@
 		"Catch Rate": 60,
 		"Classification": "Prim"
 	},
-	"Sableye": {
+	"sableye": {
 		"#": 302,
+		"spritePath": 302,
+		"Name": "Sableye",
 		"HP": 50,
 		"Atk": 75,
 		"Def": 75,
@@ -6341,8 +6945,10 @@
 		"Catch Rate": 45,
 		"Classification": "Darkness"
 	},
-	"Mawile": {
+	"mawile": {
 		"#": 303,
+		"spritePath": 303,
+		"Name": "Mawile",
 		"HP": 50,
 		"Atk": 85,
 		"Def": 85,
@@ -6362,8 +6968,10 @@
 		"Catch Rate": 45,
 		"Classification": "Deceiver"
 	},
-	"Aron": {
+	"aron": {
 		"#": 304,
+		"spritePath": 304,
+		"Name": "Aron",
 		"HP": 50,
 		"Atk": 70,
 		"Def": 100,
@@ -6383,8 +6991,10 @@
 		"Catch Rate": 180,
 		"Classification": "Iron Armor"
 	},
-	"Lairon": {
+	"lairon": {
 		"#": 305,
+		"spritePath": 305,
+		"Name": "Lairon",
 		"HP": 60,
 		"Atk": 90,
 		"Def": 140,
@@ -6404,8 +7014,10 @@
 		"Catch Rate": 90,
 		"Classification": "Iron Armor"
 	},
-	"Aggron": {
+	"aggron": {
 		"#": 306,
+		"spritePath": 306,
+		"Name": "Aggron",
 		"HP": 70,
 		"Atk": 110,
 		"Def": 180,
@@ -6425,8 +7037,10 @@
 		"Catch Rate": 45,
 		"Classification": "Iron Armor"
 	},
-	"Meditite": {
+	"meditite": {
 		"#": 307,
+		"spritePath": 307,
+		"Name": "Meditite",
 		"HP": 30,
 		"Atk": 40,
 		"Def": 55,
@@ -6446,8 +7060,10 @@
 		"Catch Rate": 180,
 		"Classification": "Meditate"
 	},
-	"Medicham": {
+	"medicham": {
 		"#": 308,
+		"spritePath": 308,
+		"Name": "Medicham",
 		"HP": 60,
 		"Atk": 60,
 		"Def": 75,
@@ -6467,8 +7083,10 @@
 		"Catch Rate": 90,
 		"Classification": "Meditate"
 	},
-	"Electrike": {
+	"electrike": {
 		"#": 309,
+		"spritePath": 309,
+		"Name": "Electrike",
 		"HP": 40,
 		"Atk": 45,
 		"Def": 40,
@@ -6488,8 +7106,10 @@
 		"Catch Rate": 120,
 		"Classification": "Lightning"
 	},
-	"Manectric": {
+	"manectric": {
 		"#": 310,
+		"spritePath": 310,
+		"Name": "Manectric",
 		"HP": 70,
 		"Atk": 75,
 		"Def": 60,
@@ -6509,8 +7129,10 @@
 		"Catch Rate": 45,
 		"Classification": "Discharge"
 	},
-	"Plusle": {
+	"plusle": {
 		"#": 311,
+		"spritePath": 311,
+		"Name": "Plusle",
 		"HP": 60,
 		"Atk": 50,
 		"Def": 40,
@@ -6530,8 +7152,10 @@
 		"Catch Rate": 200,
 		"Classification": "Cheering"
 	},
-	"Minun": {
+	"minun": {
 		"#": 312,
+		"spritePath": 312,
+		"Name": "Minun",
 		"HP": 60,
 		"Atk": 40,
 		"Def": 50,
@@ -6551,8 +7175,10 @@
 		"Catch Rate": 200,
 		"Classification": "Cheering"
 	},
-	"Volbeat": {
+	"volbeat": {
 		"#": 313,
+		"spritePath": 313,
+		"Name": "Volbeat",
 		"HP": 65,
 		"Atk": 73,
 		"Def": 75,
@@ -6572,8 +7198,10 @@
 		"Catch Rate": 150,
 		"Classification": "Firefly"
 	},
-	"Illumise": {
+	"illumise": {
 		"#": 314,
+		"spritePath": 314,
+		"Name": "Illumise",
 		"HP": 65,
 		"Atk": 47,
 		"Def": 75,
@@ -6593,8 +7221,10 @@
 		"Catch Rate": 150,
 		"Classification": "Firefly"
 	},
-	"Roselia": {
+	"roselia": {
 		"#": 315,
+		"spritePath": 315,
+		"Name": "Roselia",
 		"HP": 50,
 		"Atk": 60,
 		"Def": 45,
@@ -6614,8 +7244,10 @@
 		"Catch Rate": 150,
 		"Classification": "Thorn"
 	},
-	"Gulpin": {
+	"gulpin": {
 		"#": 316,
+		"spritePath": 316,
+		"Name": "Gulpin",
 		"HP": 70,
 		"Atk": 43,
 		"Def": 53,
@@ -6635,8 +7267,10 @@
 		"Catch Rate": 225,
 		"Classification": "Stomach"
 	},
-	"Swalot": {
+	"swalot": {
 		"#": 317,
+		"spritePath": 317,
+		"Name": "Swalot",
 		"HP": 100,
 		"Atk": 73,
 		"Def": 83,
@@ -6656,8 +7290,10 @@
 		"Catch Rate": 75,
 		"Classification": "Poison Bag"
 	},
-	"Carvanha": {
+	"carvanha": {
 		"#": 318,
+		"spritePath": 318,
+		"Name": "Carvanha",
 		"HP": 45,
 		"Atk": 90,
 		"Def": 20,
@@ -6677,8 +7313,10 @@
 		"Catch Rate": 225,
 		"Classification": "Savage"
 	},
-	"Sharpedo": {
+	"sharpedo": {
 		"#": 319,
+		"spritePath": 319,
+		"Name": "Sharpedo",
 		"HP": 70,
 		"Atk": 120,
 		"Def": 40,
@@ -6698,8 +7336,10 @@
 		"Catch Rate": 60,
 		"Classification": "Brutal"
 	},
-	"Wailmer": {
+	"wailmer": {
 		"#": 320,
+		"spritePath": 320,
+		"Name": "Wailmer",
 		"HP": 130,
 		"Atk": 70,
 		"Def": 35,
@@ -6719,8 +7359,10 @@
 		"Catch Rate": 125,
 		"Classification": "Ball Whale"
 	},
-	"Wailord": {
+	"wailord": {
 		"#": 321,
+		"spritePath": 321,
+		"Name": "Wailord",
 		"HP": 170,
 		"Atk": 90,
 		"Def": 45,
@@ -6740,8 +7382,10 @@
 		"Catch Rate": 60,
 		"Classification": "Float Whale"
 	},
-	"Numel": {
+	"numel": {
 		"#": 322,
+		"spritePath": 322,
+		"Name": "Numel",
 		"HP": 60,
 		"Atk": 60,
 		"Def": 40,
@@ -6761,8 +7405,10 @@
 		"Catch Rate": 255,
 		"Classification": "Numb"
 	},
-	"Camerupt": {
+	"camerupt": {
 		"#": 323,
+		"spritePath": 323,
+		"Name": "Camerupt",
 		"HP": 70,
 		"Atk": 100,
 		"Def": 70,
@@ -6782,8 +7428,10 @@
 		"Catch Rate": 150,
 		"Classification": "Eruption"
 	},
-	"Torkoal": {
+	"torkoal": {
 		"#": 324,
+		"spritePath": 324,
+		"Name": "Torkoal",
 		"HP": 70,
 		"Atk": 85,
 		"Def": 140,
@@ -6803,8 +7451,10 @@
 		"Catch Rate": 90,
 		"Classification": "Coal"
 	},
-	"Spoink": {
+	"spoink": {
 		"#": 325,
+		"spritePath": 325,
+		"Name": "Spoink",
 		"HP": 60,
 		"Atk": 25,
 		"Def": 35,
@@ -6824,8 +7474,10 @@
 		"Catch Rate": 255,
 		"Classification": "Bounce"
 	},
-	"Grumpig": {
+	"grumpig": {
 		"#": 326,
+		"spritePath": 326,
+		"Name": "Grumpig",
 		"HP": 80,
 		"Atk": 45,
 		"Def": 65,
@@ -6845,8 +7497,10 @@
 		"Catch Rate": 60,
 		"Classification": "Manipulate"
 	},
-	"Spinda": {
+	"spinda": {
 		"#": 327,
+		"spritePath": 327,
+		"Name": "Spinda",
 		"HP": 60,
 		"Atk": 60,
 		"Def": 60,
@@ -6866,8 +7520,10 @@
 		"Catch Rate": 255,
 		"Classification": "Spot Panda"
 	},
-	"Trapinch": {
+	"trapinch": {
 		"#": 328,
+		"spritePath": 328,
+		"Name": "Trapinch",
 		"HP": 45,
 		"Atk": 100,
 		"Def": 45,
@@ -6887,8 +7543,10 @@
 		"Catch Rate": 255,
 		"Classification": "Ant Pit"
 	},
-	"Vibrava": {
+	"vibrava": {
 		"#": 329,
+		"spritePath": 329,
+		"Name": "Vibrava",
 		"HP": 50,
 		"Atk": 70,
 		"Def": 50,
@@ -6908,8 +7566,10 @@
 		"Catch Rate": 120,
 		"Classification": "Vibration"
 	},
-	"Flygon": {
+	"flygon": {
 		"#": 330,
+		"spritePath": 330,
+		"Name": "Flygon",
 		"HP": 80,
 		"Atk": 100,
 		"Def": 80,
@@ -6929,8 +7589,10 @@
 		"Catch Rate": 45,
 		"Classification": "Mystic"
 	},
-	"Cacnea": {
+	"cacnea": {
 		"#": 331,
+		"spritePath": 331,
+		"Name": "Cacnea",
 		"HP": 50,
 		"Atk": 85,
 		"Def": 40,
@@ -6950,8 +7612,10 @@
 		"Catch Rate": 190,
 		"Classification": "Cactus"
 	},
-	"Cacturne": {
+	"cacturne": {
 		"#": 332,
+		"spritePath": 332,
+		"Name": "Cacturne",
 		"HP": 70,
 		"Atk": 115,
 		"Def": 60,
@@ -6971,8 +7635,10 @@
 		"Catch Rate": 60,
 		"Classification": "Scarecrow"
 	},
-	"Swablu": {
+	"swablu": {
 		"#": 333,
+		"spritePath": 333,
+		"Name": "Swablu",
 		"HP": 45,
 		"Atk": 40,
 		"Def": 60,
@@ -6992,8 +7658,10 @@
 		"Catch Rate": 255,
 		"Classification": "Cotton Bird"
 	},
-	"Altaria": {
+	"altaria": {
 		"#": 334,
+		"spritePath": 334,
+		"Name": "Altaria",
 		"HP": 75,
 		"Atk": 70,
 		"Def": 90,
@@ -7013,8 +7681,10 @@
 		"Catch Rate": 45,
 		"Classification": "Humming"
 	},
-	"Zangoose": {
+	"zangoose": {
 		"#": 335,
+		"spritePath": 335,
+		"Name": "Zangoose",
 		"HP": 73,
 		"Atk": 115,
 		"Def": 60,
@@ -7034,8 +7704,10 @@
 		"Catch Rate": 90,
 		"Classification": "Cat Ferret"
 	},
-	"Seviper": {
+	"seviper": {
 		"#": 336,
+		"spritePath": 336,
+		"Name": "Seviper",
 		"HP": 73,
 		"Atk": 100,
 		"Def": 60,
@@ -7055,8 +7727,10 @@
 		"Catch Rate": 90,
 		"Classification": "Fang Snake"
 	},
-	"Lunatone": {
+	"lunatone": {
 		"#": 337,
+		"spritePath": 337,
+		"Name": "Lunatone",
 		"HP": 90,
 		"Atk": 55,
 		"Def": 65,
@@ -7076,8 +7750,10 @@
 		"Catch Rate": 45,
 		"Classification": "Meteorite"
 	},
-	"Solrock": {
+	"solrock": {
 		"#": 338,
+		"spritePath": 338,
+		"Name": "Solrock",
 		"HP": 90,
 		"Atk": 95,
 		"Def": 85,
@@ -7097,8 +7773,10 @@
 		"Catch Rate": 45,
 		"Classification": "Meteorite"
 	},
-	"Barboach": {
+	"barboach": {
 		"#": 339,
+		"spritePath": 339,
+		"Name": "Barboach",
 		"HP": 50,
 		"Atk": 48,
 		"Def": 43,
@@ -7118,8 +7796,10 @@
 		"Catch Rate": 190,
 		"Classification": "Whiskers"
 	},
-	"Whiscash": {
+	"whiscash": {
 		"#": 340,
+		"spritePath": 340,
+		"Name": "Whiscash",
 		"HP": 110,
 		"Atk": 78,
 		"Def": 73,
@@ -7139,8 +7819,10 @@
 		"Catch Rate": 75,
 		"Classification": "Whiskers"
 	},
-	"Corphish": {
+	"corphish": {
 		"#": 341,
+		"spritePath": 341,
+		"Name": "Corphish",
 		"HP": 43,
 		"Atk": 80,
 		"Def": 65,
@@ -7160,8 +7842,10 @@
 		"Catch Rate": 205,
 		"Classification": "Ruffian"
 	},
-	"Crawdaunt": {
+	"crawdaunt": {
 		"#": 342,
+		"spritePath": 342,
+		"Name": "Crawdaunt",
 		"HP": 63,
 		"Atk": 120,
 		"Def": 85,
@@ -7181,8 +7865,10 @@
 		"Catch Rate": 155,
 		"Classification": "Rogue"
 	},
-	"Baltoy": {
+	"baltoy": {
 		"#": 343,
+		"spritePath": 343,
+		"Name": "Baltoy",
 		"HP": 40,
 		"Atk": 40,
 		"Def": 55,
@@ -7202,8 +7888,10 @@
 		"Catch Rate": 255,
 		"Classification": "Clay Doll"
 	},
-	"Claydol": {
+	"claydol": {
 		"#": 344,
+		"spritePath": 344,
+		"Name": "Claydol",
 		"HP": 60,
 		"Atk": 70,
 		"Def": 105,
@@ -7223,8 +7911,10 @@
 		"Catch Rate": 90,
 		"Classification": "Clay Doll"
 	},
-	"Lileep": {
+	"lileep": {
 		"#": 345,
+		"spritePath": 345,
+		"Name": "Lileep",
 		"HP": 66,
 		"Atk": 41,
 		"Def": 77,
@@ -7244,8 +7934,10 @@
 		"Catch Rate": 45,
 		"Classification": "Sea Lily"
 	},
-	"Cradily": {
+	"cradily": {
 		"#": 346,
+		"spritePath": 346,
+		"Name": "Cradily",
 		"HP": 86,
 		"Atk": 81,
 		"Def": 97,
@@ -7265,8 +7957,10 @@
 		"Catch Rate": 45,
 		"Classification": "Barnacle"
 	},
-	"Anorith": {
+	"anorith": {
 		"#": 347,
+		"spritePath": 347,
+		"Name": "Anorith",
 		"HP": 45,
 		"Atk": 95,
 		"Def": 50,
@@ -7286,8 +7980,10 @@
 		"Catch Rate": 45,
 		"Classification": "Old Shrimp"
 	},
-	"Armaldo": {
+	"armaldo": {
 		"#": 348,
+		"spritePath": 348,
+		"Name": "Armaldo",
 		"HP": 75,
 		"Atk": 125,
 		"Def": 100,
@@ -7307,8 +8003,10 @@
 		"Catch Rate": 45,
 		"Classification": "Plate"
 	},
-	"Feebas": {
+	"feebas": {
 		"#": 349,
+		"spritePath": 349,
+		"Name": "Feebas",
 		"HP": 20,
 		"Atk": 15,
 		"Def": 20,
@@ -7328,8 +8026,10 @@
 		"Catch Rate": 255,
 		"Classification": "Fish"
 	},
-	"Milotic": {
+	"milotic": {
 		"#": 350,
+		"spritePath": 350,
+		"Name": "Milotic",
 		"HP": 95,
 		"Atk": 60,
 		"Def": 79,
@@ -7349,8 +8049,10 @@
 		"Catch Rate": 60,
 		"Classification": "Tender"
 	},
-	"Castform (Normal)": {
+	"castform (normal)": {
 		"#": 351,
+		"spritePath": 351,
+		"Name": "Castform (Normal)",
 		"HP": 70,
 		"Atk": 70,
 		"Def": 70,
@@ -7370,8 +8072,10 @@
 		"Catch Rate": 45,
 		"Classification": "Weather"
 	},
-	"Kecleon": {
+	"kecleon": {
 		"#": 352,
+		"spritePath": 352,
+		"Name": "Kecleon",
 		"HP": 60,
 		"Atk": 90,
 		"Def": 70,
@@ -7391,8 +8095,10 @@
 		"Catch Rate": 200,
 		"Classification": "Color Swap"
 	},
-	"Shuppet": {
+	"shuppet": {
 		"#": 353,
+		"spritePath": 353,
+		"Name": "Shuppet",
 		"HP": 44,
 		"Atk": 75,
 		"Def": 35,
@@ -7412,8 +8118,10 @@
 		"Catch Rate": 225,
 		"Classification": "Puppet"
 	},
-	"Banette": {
+	"banette": {
 		"#": 354,
+		"spritePath": 354,
+		"Name": "Banette",
 		"HP": 64,
 		"Atk": 115,
 		"Def": 65,
@@ -7433,8 +8141,10 @@
 		"Catch Rate": 45,
 		"Classification": "Marionette"
 	},
-	"Duskull": {
+	"duskull": {
 		"#": 355,
+		"spritePath": 355,
+		"Name": "Duskull",
 		"HP": 20,
 		"Atk": 40,
 		"Def": 90,
@@ -7454,8 +8164,10 @@
 		"Catch Rate": 190,
 		"Classification": "Requiem"
 	},
-	"Dusclops": {
+	"dusclops": {
 		"#": 356,
+		"spritePath": 356,
+		"Name": "Dusclops",
 		"HP": 40,
 		"Atk": 70,
 		"Def": 130,
@@ -7475,8 +8187,10 @@
 		"Catch Rate": 90,
 		"Classification": "Beckon"
 	},
-	"Tropius": {
+	"tropius": {
 		"#": 357,
+		"spritePath": 357,
+		"Name": "Tropius",
 		"HP": 99,
 		"Atk": 68,
 		"Def": 83,
@@ -7496,8 +8210,10 @@
 		"Catch Rate": 200,
 		"Classification": "Fruit"
 	},
-	"Chimecho": {
+	"chimecho": {
 		"#": 358,
+		"spritePath": 358,
+		"Name": "Chimecho",
 		"HP": 75,
 		"Atk": 50,
 		"Def": 89,
@@ -7517,8 +8233,10 @@
 		"Catch Rate": 45,
 		"Classification": "Wind Chime"
 	},
-	"Absol": {
+	"absol": {
 		"#": 359,
+		"spritePath": 359,
+		"Name": "Absol",
 		"HP": 65,
 		"Atk": 130,
 		"Def": 60,
@@ -7538,8 +8256,10 @@
 		"Catch Rate": 30,
 		"Classification": "Disaster"
 	},
-	"Wynaut": {
+	"wynaut": {
 		"#": 360,
+		"spritePath": 360,
+		"Name": "Wynaut",
 		"HP": 95,
 		"Atk": 23,
 		"Def": 48,
@@ -7559,8 +8279,10 @@
 		"Catch Rate": 125,
 		"Classification": "Bright"
 	},
-	"Snorunt": {
+	"snorunt": {
 		"#": 361,
+		"spritePath": 361,
+		"Name": "Snorunt",
 		"HP": 50,
 		"Atk": 50,
 		"Def": 50,
@@ -7580,8 +8302,10 @@
 		"Catch Rate": 190,
 		"Classification": "Snow Hat"
 	},
-	"Glalie": {
+	"glalie": {
 		"#": 362,
+		"spritePath": 362,
+		"Name": "Glalie",
 		"HP": 80,
 		"Atk": 80,
 		"Def": 80,
@@ -7601,8 +8325,10 @@
 		"Catch Rate": 75,
 		"Classification": "Face"
 	},
-	"Spheal": {
+	"spheal": {
 		"#": 363,
+		"spritePath": 363,
+		"Name": "Spheal",
 		"HP": 70,
 		"Atk": 40,
 		"Def": 50,
@@ -7622,8 +8348,10 @@
 		"Catch Rate": 255,
 		"Classification": "Clap"
 	},
-	"Sealeo": {
+	"sealeo": {
 		"#": 364,
+		"spritePath": 364,
+		"Name": "Sealeo",
 		"HP": 90,
 		"Atk": 60,
 		"Def": 70,
@@ -7643,8 +8371,10 @@
 		"Catch Rate": 120,
 		"Classification": "Ball Roll"
 	},
-	"Walrein": {
+	"walrein": {
 		"#": 365,
+		"spritePath": 365,
+		"Name": "Walrein",
 		"HP": 110,
 		"Atk": 80,
 		"Def": 90,
@@ -7664,8 +8394,10 @@
 		"Catch Rate": 45,
 		"Classification": "Ice Break"
 	},
-	"Clamperl": {
+	"clamperl": {
 		"#": 366,
+		"spritePath": 366,
+		"Name": "Clamperl",
 		"HP": 35,
 		"Atk": 64,
 		"Def": 85,
@@ -7685,8 +8417,10 @@
 		"Catch Rate": 255,
 		"Classification": "Bivalve"
 	},
-	"Huntail": {
+	"huntail": {
 		"#": 367,
+		"spritePath": 367,
+		"Name": "Huntail",
 		"HP": 55,
 		"Atk": 104,
 		"Def": 105,
@@ -7706,8 +8440,10 @@
 		"Catch Rate": 60,
 		"Classification": "Deep Sea"
 	},
-	"Gorebyss": {
+	"gorebyss": {
 		"#": 368,
+		"spritePath": 368,
+		"Name": "Gorebyss",
 		"HP": 55,
 		"Atk": 84,
 		"Def": 105,
@@ -7727,8 +8463,10 @@
 		"Catch Rate": 60,
 		"Classification": "South Sea"
 	},
-	"Relicanth": {
+	"relicanth": {
 		"#": 369,
+		"spritePath": 369,
+		"Name": "Relicanth",
 		"HP": 100,
 		"Atk": 90,
 		"Def": 130,
@@ -7748,8 +8486,10 @@
 		"Catch Rate": 25,
 		"Classification": "Longevity"
 	},
-	"Luvdisc": {
+	"luvdisc": {
 		"#": 370,
+		"spritePath": 370,
+		"Name": "Luvdisc",
 		"HP": 43,
 		"Atk": 30,
 		"Def": 55,
@@ -7769,8 +8509,10 @@
 		"Catch Rate": 225,
 		"Classification": "Rendezvous"
 	},
-	"Bagon": {
+	"bagon": {
 		"#": 371,
+		"spritePath": 371,
+		"Name": "Bagon",
 		"HP": 45,
 		"Atk": 75,
 		"Def": 60,
@@ -7790,8 +8532,10 @@
 		"Catch Rate": 45,
 		"Classification": "Rock Head"
 	},
-	"Shelgon": {
+	"shelgon": {
 		"#": 372,
+		"spritePath": 372,
+		"Name": "Shelgon",
 		"HP": 65,
 		"Atk": 95,
 		"Def": 100,
@@ -7811,8 +8555,10 @@
 		"Catch Rate": 45,
 		"Classification": "Endurance"
 	},
-	"Salamence": {
+	"salamence": {
 		"#": 373,
+		"spritePath": 373,
+		"Name": "Salamence",
 		"HP": 95,
 		"Atk": 135,
 		"Def": 80,
@@ -7832,8 +8578,10 @@
 		"Catch Rate": 45,
 		"Classification": "Dragon"
 	},
-	"Beldum": {
+	"beldum": {
 		"#": 374,
+		"spritePath": 374,
+		"Name": "Beldum",
 		"HP": 40,
 		"Atk": 55,
 		"Def": 80,
@@ -7853,8 +8601,10 @@
 		"Catch Rate": 3,
 		"Classification": "Iron Ball"
 	},
-	"Metang": {
+	"metang": {
 		"#": 375,
+		"spritePath": 375,
+		"Name": "Metang",
 		"HP": 60,
 		"Atk": 75,
 		"Def": 100,
@@ -7874,8 +8624,10 @@
 		"Catch Rate": 3,
 		"Classification": "Iron Claw"
 	},
-	"Metagross": {
+	"metagross": {
 		"#": 376,
+		"spritePath": 376,
+		"Name": "Metagross",
 		"HP": 80,
 		"Atk": 135,
 		"Def": 130,
@@ -7895,8 +8647,10 @@
 		"Catch Rate": 3,
 		"Classification": "Iron Leg"
 	},
-	"Regirock": {
+	"regirock": {
 		"#": 377,
+		"spritePath": 377,
+		"Name": "Regirock",
 		"HP": 80,
 		"Atk": 100,
 		"Def": 200,
@@ -7916,8 +8670,10 @@
 		"Catch Rate": 3,
 		"Classification": "Rock Peak"
 	},
-	"Regice": {
+	"regice": {
 		"#": 378,
+		"spritePath": 378,
+		"Name": "Regice",
 		"HP": 80,
 		"Atk": 50,
 		"Def": 100,
@@ -7937,8 +8693,10 @@
 		"Catch Rate": 3,
 		"Classification": "Iceberg"
 	},
-	"Registeel": {
+	"registeel": {
 		"#": 379,
+		"spritePath": 379,
+		"Name": "Registeel",
 		"HP": 80,
 		"Atk": 75,
 		"Def": 150,
@@ -7958,8 +8716,10 @@
 		"Catch Rate": 3,
 		"Classification": "Iron"
 	},
-	"Latias": {
+	"latias": {
 		"#": 380,
+		"spritePath": 380,
+		"Name": "Latias",
 		"HP": 80,
 		"Atk": 80,
 		"Def": 90,
@@ -7979,8 +8739,10 @@
 		"Catch Rate": 3,
 		"Classification": "Eon"
 	},
-	"Latios": {
+	"latios": {
 		"#": 381,
+		"spritePath": 381,
+		"Name": "Latios",
 		"HP": 80,
 		"Atk": 90,
 		"Def": 80,
@@ -8000,8 +8762,10 @@
 		"Catch Rate": 3,
 		"Classification": "Eon"
 	},
-	"Kyogre": {
+	"kyogre": {
 		"#": 382,
+		"spritePath": 382,
+		"Name": "Kyogre",
 		"HP": 100,
 		"Atk": 100,
 		"Def": 90,
@@ -8021,8 +8785,10 @@
 		"Catch Rate": 5,
 		"Classification": "Sea Basin"
 	},
-	"Groudon": {
+	"groudon": {
 		"#": 383,
+		"spritePath": 383,
+		"Name": "Groudon",
 		"HP": 100,
 		"Atk": 150,
 		"Def": 140,
@@ -8042,8 +8808,10 @@
 		"Catch Rate": 5,
 		"Classification": "Continent"
 	},
-	"Rayquaza": {
+	"rayquaza": {
 		"#": 384,
+		"spritePath": 384,
+		"Name": "Rayquaza",
 		"HP": 105,
 		"Atk": 150,
 		"Def": 90,
@@ -8063,8 +8831,10 @@
 		"Catch Rate": 3,
 		"Classification": "Sky High"
 	},
-	"Jirachi": {
+	"jirachi": {
 		"#": 385,
+		"spritePath": 385,
+		"Name": "Jirachi",
 		"HP": 100,
 		"Atk": 100,
 		"Def": 100,
@@ -8084,8 +8854,10 @@
 		"Catch Rate": 3,
 		"Classification": "Wish"
 	},
-	"Deoxys (Normal)": {
+	"deoxys (normal)": {
 		"#": 386,
+		"spritePath": 386,
+		"Name": "Deoxys (Normal)",
 		"HP": 50,
 		"Atk": 150,
 		"Def": 50,
@@ -8105,8 +8877,10 @@
 		"Catch Rate": 3,
 		"Classification": "DNA"
 	},
-	"Turtwig": {
+	"turtwig": {
 		"#": 387,
+		"spritePath": 387,
+		"Name": "Turtwig",
 		"HP": 55,
 		"Atk": 68,
 		"Def": 64,
@@ -8126,8 +8900,10 @@
 		"Catch Rate": 45,
 		"Classification": "Tiny Leaf"
 	},
-	"Grotle": {
+	"grotle": {
 		"#": 388,
+		"spritePath": 388,
+		"Name": "Grotle",
 		"HP": 75,
 		"Atk": 89,
 		"Def": 85,
@@ -8147,8 +8923,10 @@
 		"Catch Rate": 45,
 		"Classification": "Grove"
 	},
-	"Torterra": {
+	"torterra": {
 		"#": 389,
+		"spritePath": 389,
+		"Name": "Torterra",
 		"HP": 95,
 		"Atk": 109,
 		"Def": 105,
@@ -8168,8 +8946,10 @@
 		"Catch Rate": 45,
 		"Classification": "Continent"
 	},
-	"Chimchar": {
+	"chimchar": {
 		"#": 390,
+		"spritePath": 390,
+		"Name": "Chimchar",
 		"HP": 44,
 		"Atk": 58,
 		"Def": 44,
@@ -8189,8 +8969,10 @@
 		"Catch Rate": 45,
 		"Classification": "Chimp"
 	},
-	"Monferno": {
+	"monferno": {
 		"#": 391,
+		"spritePath": 391,
+		"Name": "Monferno",
 		"HP": 64,
 		"Atk": 78,
 		"Def": 52,
@@ -8210,8 +8992,10 @@
 		"Catch Rate": 45,
 		"Classification": "Playful"
 	},
-	"Infernape": {
+	"infernape": {
 		"#": 392,
+		"spritePath": 392,
+		"Name": "Infernape",
 		"HP": 76,
 		"Atk": 104,
 		"Def": 71,
@@ -8231,8 +9015,10 @@
 		"Catch Rate": 45,
 		"Classification": "Flame"
 	},
-	"Piplup": {
+	"piplup": {
 		"#": 393,
+		"spritePath": 393,
+		"Name": "Piplup",
 		"HP": 53,
 		"Atk": 51,
 		"Def": 53,
@@ -8252,8 +9038,10 @@
 		"Catch Rate": 45,
 		"Classification": "Penguin"
 	},
-	"Prinplup": {
+	"prinplup": {
 		"#": 394,
+		"spritePath": 394,
+		"Name": "Prinplup",
 		"HP": 64,
 		"Atk": 66,
 		"Def": 68,
@@ -8273,8 +9061,10 @@
 		"Catch Rate": 45,
 		"Classification": "Penguin"
 	},
-	"Empoleon": {
+	"empoleon": {
 		"#": 395,
+		"spritePath": 395,
+		"Name": "Empoleon",
 		"HP": 84,
 		"Atk": 86,
 		"Def": 88,
@@ -8294,8 +9084,10 @@
 		"Catch Rate": 45,
 		"Classification": "Emperor"
 	},
-	"Starly": {
+	"starly": {
 		"#": 396,
+		"spritePath": 396,
+		"Name": "Starly",
 		"HP": 40,
 		"Atk": 55,
 		"Def": 30,
@@ -8315,8 +9107,10 @@
 		"Catch Rate": 255,
 		"Classification": "Starling"
 	},
-	"Staravia": {
+	"staravia": {
 		"#": 397,
+		"spritePath": 397,
+		"Name": "Staravia",
 		"HP": 55,
 		"Atk": 75,
 		"Def": 50,
@@ -8336,8 +9130,10 @@
 		"Catch Rate": 120,
 		"Classification": "Starling"
 	},
-	"Staraptor": {
+	"staraptor": {
 		"#": 398,
+		"spritePath": 398,
+		"Name": "Staraptor",
 		"HP": 85,
 		"Atk": 120,
 		"Def": 70,
@@ -8357,8 +9153,10 @@
 		"Catch Rate": 45,
 		"Classification": "Predator"
 	},
-	"Bidoof": {
+	"bidoof": {
 		"#": 399,
+		"spritePath": 399,
+		"Name": "Bidoof",
 		"HP": 59,
 		"Atk": 45,
 		"Def": 40,
@@ -8378,8 +9176,10 @@
 		"Catch Rate": 255,
 		"Classification": "Plump Mouse"
 	},
-	"Bibarel": {
+	"bibarel": {
 		"#": 400,
+		"spritePath": 400,
+		"Name": "Bibarel",
 		"HP": 79,
 		"Atk": 85,
 		"Def": 60,
@@ -8399,8 +9199,10 @@
 		"Catch Rate": 127,
 		"Classification": "Beaver"
 	},
-	"Kricketot": {
+	"kricketot": {
 		"#": 401,
+		"spritePath": 401,
+		"Name": "Kricketot",
 		"HP": 37,
 		"Atk": 25,
 		"Def": 41,
@@ -8420,8 +9222,10 @@
 		"Catch Rate": 255,
 		"Classification": "Cricket"
 	},
-	"Kricketune": {
+	"kricketune": {
 		"#": 402,
+		"spritePath": 402,
+		"Name": "Kricketune",
 		"HP": 77,
 		"Atk": 85,
 		"Def": 51,
@@ -8441,8 +9245,10 @@
 		"Catch Rate": 45,
 		"Classification": "Cricket"
 	},
-	"Shinx": {
+	"shinx": {
 		"#": 403,
+		"spritePath": 403,
+		"Name": "Shinx",
 		"HP": 45,
 		"Atk": 65,
 		"Def": 34,
@@ -8462,8 +9268,10 @@
 		"Catch Rate": 235,
 		"Classification": "Flash"
 	},
-	"Luxio": {
+	"luxio": {
 		"#": 404,
+		"spritePath": 404,
+		"Name": "Luxio",
 		"HP": 60,
 		"Atk": 85,
 		"Def": 49,
@@ -8483,8 +9291,10 @@
 		"Catch Rate": 120,
 		"Classification": "Spark"
 	},
-	"Luxray": {
+	"luxray": {
 		"#": 405,
+		"spritePath": 405,
+		"Name": "Luxray",
 		"HP": 80,
 		"Atk": 120,
 		"Def": 79,
@@ -8504,8 +9314,10 @@
 		"Catch Rate": 45,
 		"Classification": "Gleam Eyes"
 	},
-	"Budew": {
+	"budew": {
 		"#": 406,
+		"spritePath": 406,
+		"Name": "Budew",
 		"HP": 40,
 		"Atk": 30,
 		"Def": 35,
@@ -8525,8 +9337,10 @@
 		"Catch Rate": 255,
 		"Classification": "Bud"
 	},
-	"Roserade": {
+	"roserade": {
 		"#": 407,
+		"spritePath": 407,
+		"Name": "Roserade",
 		"HP": 60,
 		"Atk": 70,
 		"Def": 65,
@@ -8546,8 +9360,10 @@
 		"Catch Rate": 75,
 		"Classification": "Bouquet"
 	},
-	"Cranidos": {
+	"cranidos": {
 		"#": 408,
+		"spritePath": 408,
+		"Name": "Cranidos",
 		"HP": 67,
 		"Atk": 125,
 		"Def": 40,
@@ -8567,8 +9383,10 @@
 		"Catch Rate": 45,
 		"Classification": "Head Butt"
 	},
-	"Rampardos": {
+	"rampardos": {
 		"#": 409,
+		"spritePath": 409,
+		"Name": "Rampardos",
 		"HP": 97,
 		"Atk": 165,
 		"Def": 60,
@@ -8588,8 +9406,10 @@
 		"Catch Rate": 45,
 		"Classification": "Head Butt"
 	},
-	"Shieldon": {
+	"shieldon": {
 		"#": 410,
+		"spritePath": 410,
+		"Name": "Shieldon",
 		"HP": 30,
 		"Atk": 42,
 		"Def": 118,
@@ -8609,8 +9429,10 @@
 		"Catch Rate": 45,
 		"Classification": "Shield"
 	},
-	"Bastiodon": {
+	"bastiodon": {
 		"#": 411,
+		"spritePath": 411,
+		"Name": "Bastiodon",
 		"HP": 60,
 		"Atk": 52,
 		"Def": 168,
@@ -8630,8 +9452,10 @@
 		"Catch Rate": 45,
 		"Classification": "Shield"
 	},
-	"Burmy (Plant)": {
+	"burmy (plant)": {
 		"#": 412,
+		"spritePath": 412,
+		"Name": "Burmy (Plant)",
 		"HP": 40,
 		"Atk": 29,
 		"Def": 45,
@@ -8651,8 +9475,10 @@
 		"Catch Rate": 120,
 		"Classification": "Bagworm"
 	},
-	"Wormadam (Plant)": {
+	"wormadam (plant)": {
 		"#": 413,
+		"spritePath": 413,
+		"Name": "Wormadam (Plant)",
 		"HP": 60,
 		"Atk": 59,
 		"Def": 85,
@@ -8672,8 +9498,10 @@
 		"Catch Rate": 45,
 		"Classification": "Bagworm"
 	},
-	"Mothim": {
+	"mothim": {
 		"#": 414,
+		"spritePath": 414,
+		"Name": "Mothim",
 		"HP": 70,
 		"Atk": 94,
 		"Def": 50,
@@ -8693,8 +9521,10 @@
 		"Catch Rate": 45,
 		"Classification": "Moth"
 	},
-	"Combee": {
+	"combee": {
 		"#": 415,
+		"spritePath": 415,
+		"Name": "Combee",
 		"HP": 30,
 		"Atk": 30,
 		"Def": 42,
@@ -8714,8 +9544,10 @@
 		"Catch Rate": 120,
 		"Classification": "Tiny Bee"
 	},
-	"Vespiquen": {
+	"vespiquen": {
 		"#": 416,
+		"spritePath": 416,
+		"Name": "Vespiquen",
 		"HP": 70,
 		"Atk": 80,
 		"Def": 102,
@@ -8735,8 +9567,10 @@
 		"Catch Rate": 45,
 		"Classification": "Beehive"
 	},
-	"Pachirisu": {
+	"pachirisu": {
 		"#": 417,
+		"spritePath": 417,
+		"Name": "Pachirisu",
 		"HP": 60,
 		"Atk": 45,
 		"Def": 70,
@@ -8756,8 +9590,10 @@
 		"Catch Rate": 200,
 		"Classification": "EleSquirrel"
 	},
-	"Buizel": {
+	"buizel": {
 		"#": 418,
+		"spritePath": 418,
+		"Name": "Buizel",
 		"HP": 55,
 		"Atk": 65,
 		"Def": 35,
@@ -8777,8 +9613,10 @@
 		"Catch Rate": 190,
 		"Classification": "Sea Weasel"
 	},
-	"Floatzel": {
+	"floatzel": {
 		"#": 419,
+		"spritePath": 419,
+		"Name": "Floatzel",
 		"HP": 85,
 		"Atk": 105,
 		"Def": 55,
@@ -8798,8 +9636,10 @@
 		"Catch Rate": 75,
 		"Classification": "Sea Weasel"
 	},
-	"Cherubi": {
+	"cherubi": {
 		"#": 420,
+		"spritePath": 420,
+		"Name": "Cherubi",
 		"HP": 45,
 		"Atk": 35,
 		"Def": 45,
@@ -8819,8 +9659,10 @@
 		"Catch Rate": 190,
 		"Classification": "Cherry"
 	},
-	"Cherrim (Overcast)": {
+	"cherrim (overcast)": {
 		"#": 421,
+		"spritePath": 421,
+		"Name": "Cherrim (Overcast)",
 		"HP": 70,
 		"Atk": 60,
 		"Def": 70,
@@ -8840,8 +9682,10 @@
 		"Catch Rate": 75,
 		"Classification": "Blossom"
 	},
-	"Shellos (East)": {
+	"shellos (east)": {
 		"#": 422,
+		"spritePath": 422,
+		"Name": "Shellos (East)",
 		"HP": 76,
 		"Atk": 48,
 		"Def": 48,
@@ -8861,8 +9705,10 @@
 		"Catch Rate": 190,
 		"Classification": "Sea Slug"
 	},
-	"Gastrodon (East)": {
+	"gastrodon (east)": {
 		"#": 423,
+		"spritePath": 423,
+		"Name": "Gastrodon (East)",
 		"HP": 111,
 		"Atk": 83,
 		"Def": 68,
@@ -8882,8 +9728,10 @@
 		"Catch Rate": 75,
 		"Classification": "Sea Slug"
 	},
-	"Ambipom": {
+	"ambipom": {
 		"#": 424,
+		"spritePath": 424,
+		"Name": "Ambipom",
 		"HP": 75,
 		"Atk": 100,
 		"Def": 66,
@@ -8903,8 +9751,10 @@
 		"Catch Rate": 45,
 		"Classification": "Long Tail"
 	},
-	"Drifloon": {
+	"drifloon": {
 		"#": 425,
+		"spritePath": 425,
+		"Name": "Drifloon",
 		"HP": 90,
 		"Atk": 50,
 		"Def": 34,
@@ -8924,8 +9774,10 @@
 		"Catch Rate": 125,
 		"Classification": "Balloon"
 	},
-	"Drifblim": {
+	"drifblim": {
 		"#": 426,
+		"spritePath": 426,
+		"Name": "Drifblim",
 		"HP": 150,
 		"Atk": 80,
 		"Def": 44,
@@ -8945,8 +9797,10 @@
 		"Catch Rate": 60,
 		"Classification": "Blimp"
 	},
-	"Buneary": {
+	"buneary": {
 		"#": 427,
+		"spritePath": 427,
+		"Name": "Buneary",
 		"HP": 55,
 		"Atk": 66,
 		"Def": 44,
@@ -8966,8 +9820,10 @@
 		"Catch Rate": 190,
 		"Classification": "Rabbit"
 	},
-	"Lopunny": {
+	"lopunny": {
 		"#": 428,
+		"spritePath": 428,
+		"Name": "Lopunny",
 		"HP": 65,
 		"Atk": 76,
 		"Def": 84,
@@ -8987,8 +9843,10 @@
 		"Catch Rate": 60,
 		"Classification": "Rabbit"
 	},
-	"Mismagius": {
+	"mismagius": {
 		"#": 429,
+		"spritePath": 429,
+		"Name": "Mismagius",
 		"HP": 60,
 		"Atk": 60,
 		"Def": 60,
@@ -9008,8 +9866,10 @@
 		"Catch Rate": 45,
 		"Classification": "Magical"
 	},
-	"Honchkrow": {
+	"honchkrow": {
 		"#": 430,
+		"spritePath": 430,
+		"Name": "Honchkrow",
 		"HP": 100,
 		"Atk": 125,
 		"Def": 52,
@@ -9029,8 +9889,10 @@
 		"Catch Rate": 30,
 		"Classification": "Big Boss"
 	},
-	"Glameow": {
+	"glameow": {
 		"#": 431,
+		"spritePath": 431,
+		"Name": "Glameow",
 		"HP": 49,
 		"Atk": 55,
 		"Def": 42,
@@ -9050,8 +9912,10 @@
 		"Catch Rate": 190,
 		"Classification": "Catty"
 	},
-	"Purugly": {
+	"purugly": {
 		"#": 432,
+		"spritePath": 432,
+		"Name": "Purugly",
 		"HP": 71,
 		"Atk": 82,
 		"Def": 64,
@@ -9071,8 +9935,10 @@
 		"Catch Rate": 75,
 		"Classification": "Tiger Cat"
 	},
-	"Chingling": {
+	"chingling": {
 		"#": 433,
+		"spritePath": 433,
+		"Name": "Chingling",
 		"HP": 45,
 		"Atk": 30,
 		"Def": 50,
@@ -9092,8 +9958,10 @@
 		"Catch Rate": 120,
 		"Classification": "Bell"
 	},
-	"Stunky": {
+	"stunky": {
 		"#": 434,
+		"spritePath": 434,
+		"Name": "Stunky",
 		"HP": 63,
 		"Atk": 63,
 		"Def": 47,
@@ -9113,8 +9981,10 @@
 		"Catch Rate": 225,
 		"Classification": "Skunk"
 	},
-	"Skuntank": {
+	"skuntank": {
 		"#": 435,
+		"spritePath": 435,
+		"Name": "Skuntank",
 		"HP": 103,
 		"Atk": 93,
 		"Def": 67,
@@ -9134,8 +10004,10 @@
 		"Catch Rate": 60,
 		"Classification": "Skunk"
 	},
-	"Bronzor": {
+	"bronzor": {
 		"#": 436,
+		"spritePath": 436,
+		"Name": "Bronzor",
 		"HP": 57,
 		"Atk": 24,
 		"Def": 86,
@@ -9155,8 +10027,10 @@
 		"Catch Rate": 255,
 		"Classification": "Bronze"
 	},
-	"Bronzong": {
+	"bronzong": {
 		"#": 437,
+		"spritePath": 437,
+		"Name": "Bronzong",
 		"HP": 67,
 		"Atk": 89,
 		"Def": 116,
@@ -9176,8 +10050,10 @@
 		"Catch Rate": 90,
 		"Classification": "Bronze Bell"
 	},
-	"Bonsly": {
+	"bonsly": {
 		"#": 438,
+		"spritePath": 438,
+		"Name": "Bonsly",
 		"HP": 50,
 		"Atk": 80,
 		"Def": 95,
@@ -9197,8 +10073,10 @@
 		"Catch Rate": 255,
 		"Classification": "Bonsai"
 	},
-	"Mime Jr.": {
+	"mime jr.": {
 		"#": 439,
+		"spritePath": 439,
+		"Name": "Mime Jr.",
 		"HP": 20,
 		"Atk": 25,
 		"Def": 45,
@@ -9218,8 +10096,10 @@
 		"Catch Rate": 145,
 		"Classification": "Mime"
 	},
-	"Happiny": {
+	"happiny": {
 		"#": 440,
+		"spritePath": 440,
+		"Name": "Happiny",
 		"HP": 100,
 		"Atk": 5,
 		"Def": 5,
@@ -9239,8 +10119,10 @@
 		"Catch Rate": 130,
 		"Classification": "Playhouse"
 	},
-	"Chatot": {
+	"chatot": {
 		"#": 441,
+		"spritePath": 441,
+		"Name": "Chatot",
 		"HP": 76,
 		"Atk": 65,
 		"Def": 45,
@@ -9260,8 +10142,10 @@
 		"Catch Rate": 30,
 		"Classification": "Music Note"
 	},
-	"Spiritomb": {
+	"spiritomb": {
 		"#": 442,
+		"spritePath": 442,
+		"Name": "Spiritomb",
 		"HP": 50,
 		"Atk": 92,
 		"Def": 108,
@@ -9281,8 +10165,10 @@
 		"Catch Rate": 100,
 		"Classification": "Forbidden"
 	},
-	"Gible": {
+	"gible": {
 		"#": 443,
+		"spritePath": 443,
+		"Name": "Gible",
 		"HP": 58,
 		"Atk": 70,
 		"Def": 45,
@@ -9302,8 +10188,10 @@
 		"Catch Rate": 45,
 		"Classification": "Land Shark"
 	},
-	"Gabite": {
+	"gabite": {
 		"#": 444,
+		"spritePath": 444,
+		"Name": "Gabite",
 		"HP": 68,
 		"Atk": 90,
 		"Def": 65,
@@ -9323,8 +10211,10 @@
 		"Catch Rate": 45,
 		"Classification": "Cave"
 	},
-	"Garchomp": {
+	"garchomp": {
 		"#": 445,
+		"spritePath": 445,
+		"Name": "Garchomp",
 		"HP": 108,
 		"Atk": 130,
 		"Def": 95,
@@ -9344,8 +10234,10 @@
 		"Catch Rate": 45,
 		"Classification": "Mach"
 	},
-	"Munchlax": {
+	"munchlax": {
 		"#": 446,
+		"spritePath": 446,
+		"Name": "Munchlax",
 		"HP": 135,
 		"Atk": 85,
 		"Def": 40,
@@ -9365,8 +10257,10 @@
 		"Catch Rate": 50,
 		"Classification": "Big Eater"
 	},
-	"Riolu": {
+	"riolu": {
 		"#": 447,
+		"spritePath": 447,
+		"Name": "Riolu",
 		"HP": 40,
 		"Atk": 70,
 		"Def": 40,
@@ -9386,8 +10280,10 @@
 		"Catch Rate": 75,
 		"Classification": "Emanation"
 	},
-	"Lucario": {
+	"lucario": {
 		"#": 448,
+		"spritePath": 448,
+		"Name": "Lucario",
 		"HP": 70,
 		"Atk": 110,
 		"Def": 70,
@@ -9407,8 +10303,10 @@
 		"Catch Rate": 45,
 		"Classification": "Aura"
 	},
-	"Hippopotas": {
+	"hippopotas": {
 		"#": 449,
+		"spritePath": 449,
+		"Name": "Hippopotas",
 		"HP": 68,
 		"Atk": 72,
 		"Def": 78,
@@ -9428,8 +10326,10 @@
 		"Catch Rate": 140,
 		"Classification": "Hippo"
 	},
-	"Hippowdon": {
+	"hippowdon": {
 		"#": 450,
+		"spritePath": 450,
+		"Name": "Hippowdon",
 		"HP": 108,
 		"Atk": 112,
 		"Def": 118,
@@ -9449,8 +10349,10 @@
 		"Catch Rate": 60,
 		"Classification": "Heavyweight"
 	},
-	"Skorupi": {
+	"skorupi": {
 		"#": 451,
+		"spritePath": 451,
+		"Name": "Skorupi",
 		"HP": 40,
 		"Atk": 50,
 		"Def": 90,
@@ -9470,8 +10372,10 @@
 		"Catch Rate": 120,
 		"Classification": "Scorpion"
 	},
-	"Drapion": {
+	"drapion": {
 		"#": 452,
+		"spritePath": 452,
+		"Name": "Drapion",
 		"HP": 70,
 		"Atk": 90,
 		"Def": 110,
@@ -9491,8 +10395,10 @@
 		"Catch Rate": 45,
 		"Classification": "Ogre Scorp"
 	},
-	"Croagunk": {
+	"croagunk": {
 		"#": 453,
+		"spritePath": 453,
+		"Name": "Croagunk",
 		"HP": 48,
 		"Atk": 61,
 		"Def": 40,
@@ -9512,8 +10418,10 @@
 		"Catch Rate": 140,
 		"Classification": "Toxic Mouth"
 	},
-	"Toxicroak": {
+	"toxicroak": {
 		"#": 454,
+		"spritePath": 454,
+		"Name": "Toxicroak",
 		"HP": 83,
 		"Atk": 106,
 		"Def": 65,
@@ -9533,8 +10441,10 @@
 		"Catch Rate": 75,
 		"Classification": "Toxic Mouth"
 	},
-	"Carnivine": {
+	"carnivine": {
 		"#": 455,
+		"spritePath": 455,
+		"Name": "Carnivine",
 		"HP": 74,
 		"Atk": 100,
 		"Def": 72,
@@ -9554,8 +10464,10 @@
 		"Catch Rate": 200,
 		"Classification": "Bug Catcher"
 	},
-	"Finneon": {
+	"finneon": {
 		"#": 456,
+		"spritePath": 456,
+		"Name": "Finneon",
 		"HP": 49,
 		"Atk": 49,
 		"Def": 56,
@@ -9575,8 +10487,10 @@
 		"Catch Rate": 190,
 		"Classification": "Wing Fish"
 	},
-	"Lumineon": {
+	"lumineon": {
 		"#": 457,
+		"spritePath": 457,
+		"Name": "Lumineon",
 		"HP": 69,
 		"Atk": 69,
 		"Def": 76,
@@ -9596,8 +10510,10 @@
 		"Catch Rate": 75,
 		"Classification": "Neon"
 	},
-	"Mantyke": {
+	"mantyke": {
 		"#": 458,
+		"spritePath": 458,
+		"Name": "Mantyke",
 		"HP": 45,
 		"Atk": 20,
 		"Def": 50,
@@ -9617,8 +10533,10 @@
 		"Catch Rate": 25,
 		"Classification": "Kite"
 	},
-	"Snover": {
+	"snover": {
 		"#": 459,
+		"spritePath": 459,
+		"Name": "Snover",
 		"HP": 60,
 		"Atk": 62,
 		"Def": 50,
@@ -9638,8 +10556,10 @@
 		"Catch Rate": 120,
 		"Classification": "Frosted Tree"
 	},
-	"Abomasnow": {
+	"abomasnow": {
 		"#": 460,
+		"spritePath": 460,
+		"Name": "Abomasnow",
 		"HP": 90,
 		"Atk": 92,
 		"Def": 75,
@@ -9659,8 +10579,10 @@
 		"Catch Rate": 60,
 		"Classification": "Frosted Tree"
 	},
-	"Weavile": {
+	"weavile": {
 		"#": 461,
+		"spritePath": 461,
+		"Name": "Weavile",
 		"HP": 70,
 		"Atk": 120,
 		"Def": 65,
@@ -9680,8 +10602,10 @@
 		"Catch Rate": 45,
 		"Classification": "Sharp Claw"
 	},
-	"Magnezone": {
+	"magnezone": {
 		"#": 462,
+		"spritePath": 462,
+		"Name": "Magnezone",
 		"HP": 70,
 		"Atk": 70,
 		"Def": 115,
@@ -9701,8 +10625,10 @@
 		"Catch Rate": 30,
 		"Classification": "Magnet Area"
 	},
-	"Lickilicky": {
+	"lickilicky": {
 		"#": 463,
+		"spritePath": 463,
+		"Name": "Lickilicky",
 		"HP": 110,
 		"Atk": 85,
 		"Def": 95,
@@ -9722,8 +10648,10 @@
 		"Catch Rate": 30,
 		"Classification": "Licking"
 	},
-	"Rhyperior": {
+	"rhyperior": {
 		"#": 464,
+		"spritePath": 464,
+		"Name": "Rhyperior",
 		"HP": 115,
 		"Atk": 140,
 		"Def": 130,
@@ -9743,8 +10671,10 @@
 		"Catch Rate": 30,
 		"Classification": "Drill"
 	},
-	"Tangrowth": {
+	"tangrowth": {
 		"#": 465,
+		"spritePath": 465,
+		"Name": "Tangrowth",
 		"HP": 100,
 		"Atk": 100,
 		"Def": 125,
@@ -9764,8 +10694,10 @@
 		"Catch Rate": 30,
 		"Classification": "Vine"
 	},
-	"Electivire": {
+	"electivire": {
 		"#": 466,
+		"spritePath": 466,
+		"Name": "Electivire",
 		"HP": 75,
 		"Atk": 123,
 		"Def": 67,
@@ -9785,8 +10717,10 @@
 		"Catch Rate": 30,
 		"Classification": "Thunderbolt"
 	},
-	"Magmortar": {
+	"magmortar": {
 		"#": 467,
+		"spritePath": 467,
+		"Name": "Magmortar",
 		"HP": 75,
 		"Atk": 95,
 		"Def": 67,
@@ -9806,8 +10740,10 @@
 		"Catch Rate": 30,
 		"Classification": "Blast"
 	},
-	"Togekiss": {
+	"togekiss": {
 		"#": 468,
+		"spritePath": 468,
+		"Name": "Togekiss",
 		"HP": 85,
 		"Atk": 50,
 		"Def": 95,
@@ -9827,8 +10763,10 @@
 		"Catch Rate": 30,
 		"Classification": "Jubilee"
 	},
-	"Yanmega": {
+	"yanmega": {
 		"#": 469,
+		"spritePath": 469,
+		"Name": "Yanmega",
 		"HP": 86,
 		"Atk": 76,
 		"Def": 86,
@@ -9848,8 +10786,10 @@
 		"Catch Rate": 30,
 		"Classification": "Ogre Darner"
 	},
-	"Leafeon": {
+	"leafeon": {
 		"#": 470,
+		"spritePath": 470,
+		"Name": "Leafeon",
 		"HP": 65,
 		"Atk": 110,
 		"Def": 130,
@@ -9869,8 +10809,10 @@
 		"Catch Rate": 45,
 		"Classification": "Verdant"
 	},
-	"Glaceon": {
+	"glaceon": {
 		"#": 471,
+		"spritePath": 471,
+		"Name": "Glaceon",
 		"HP": 65,
 		"Atk": 60,
 		"Def": 110,
@@ -9890,8 +10832,10 @@
 		"Catch Rate": 45,
 		"Classification": "Fresh Snow"
 	},
-	"Gliscor": {
+	"gliscor": {
 		"#": 472,
+		"spritePath": 472,
+		"Name": "Gliscor",
 		"HP": 75,
 		"Atk": 95,
 		"Def": 125,
@@ -9911,8 +10855,10 @@
 		"Catch Rate": 30,
 		"Classification": "Fang Scorp"
 	},
-	"Mamoswine": {
+	"mamoswine": {
 		"#": 473,
+		"spritePath": 473,
+		"Name": "Mamoswine",
 		"HP": 110,
 		"Atk": 130,
 		"Def": 80,
@@ -9932,8 +10878,10 @@
 		"Catch Rate": 50,
 		"Classification": "Twin Tusk"
 	},
-	"Porygon-Z": {
+	"porygon-z": {
 		"#": 474,
+		"spritePath": 474,
+		"Name": "Porygon-Z",
 		"HP": 85,
 		"Atk": 80,
 		"Def": 70,
@@ -9953,8 +10901,10 @@
 		"Catch Rate": 30,
 		"Classification": "Virtual"
 	},
-	"Gallade": {
+	"gallade": {
 		"#": 475,
+		"spritePath": 475,
+		"Name": "Gallade",
 		"HP": 68,
 		"Atk": 125,
 		"Def": 65,
@@ -9974,8 +10924,10 @@
 		"Catch Rate": 45,
 		"Classification": "Blade"
 	},
-	"Probopass": {
+	"probopass": {
 		"#": 476,
+		"spritePath": 476,
+		"Name": "Probopass",
 		"HP": 60,
 		"Atk": 55,
 		"Def": 145,
@@ -9995,8 +10947,10 @@
 		"Catch Rate": 60,
 		"Classification": "Compass"
 	},
-	"Dusknoir": {
+	"dusknoir": {
 		"#": 477,
+		"spritePath": 477,
+		"Name": "Dusknoir",
 		"HP": 45,
 		"Atk": 100,
 		"Def": 135,
@@ -10016,8 +10970,10 @@
 		"Catch Rate": 45,
 		"Classification": "Gripper"
 	},
-	"Froslass": {
+	"froslass": {
 		"#": 478,
+		"spritePath": 478,
+		"Name": "Froslass",
 		"HP": 70,
 		"Atk": 80,
 		"Def": 70,
@@ -10037,8 +10993,10 @@
 		"Catch Rate": 75,
 		"Classification": "Snow Land"
 	},
-	"Rotom": {
+	"rotom": {
 		"#": 479,
+		"spritePath": 479,
+		"Name": "Rotom",
 		"HP": 50,
 		"Atk": 50,
 		"Def": 77,
@@ -10058,8 +11016,10 @@
 		"Catch Rate": 45,
 		"Classification": "Plasma"
 	},
-	"Uxie": {
+	"uxie": {
 		"#": 480,
+		"spritePath": 480,
+		"Name": "Uxie",
 		"HP": 75,
 		"Atk": 75,
 		"Def": 130,
@@ -10079,8 +11039,10 @@
 		"Catch Rate": 3,
 		"Classification": "Knowledge"
 	},
-	"Mesprit": {
+	"mesprit": {
 		"#": 481,
+		"spritePath": 481,
+		"Name": "Mesprit",
 		"HP": 80,
 		"Atk": 105,
 		"Def": 105,
@@ -10100,8 +11062,10 @@
 		"Catch Rate": 3,
 		"Classification": "Emotion"
 	},
-	"Azelf": {
+	"azelf": {
 		"#": 482,
+		"spritePath": 482,
+		"Name": "Azelf",
 		"HP": 75,
 		"Atk": 125,
 		"Def": 70,
@@ -10121,8 +11085,10 @@
 		"Catch Rate": 3,
 		"Classification": "Willpower"
 	},
-	"Dialga (Altered)": {
+	"dialga (altered)": {
 		"#": 483,
+		"spritePath": 483,
+		"Name": "Dialga (Altered)",
 		"HP": 100,
 		"Atk": 120,
 		"Def": 120,
@@ -10142,8 +11108,10 @@
 		"Catch Rate": 30,
 		"Classification": "Temporal"
 	},
-	"Palkia (Altered)": {
+	"palkia (altered)": {
 		"#": 484,
+		"spritePath": 484,
+		"Name": "Palkia (Altered)",
 		"HP": 90,
 		"Atk": 120,
 		"Def": 100,
@@ -10163,8 +11131,10 @@
 		"Catch Rate": 30,
 		"Classification": "Spatial"
 	},
-	"Heatran": {
+	"heatran": {
 		"#": 485,
+		"spritePath": 485,
+		"Name": "Heatran",
 		"HP": 91,
 		"Atk": 90,
 		"Def": 106,
@@ -10184,8 +11154,10 @@
 		"Catch Rate": 3,
 		"Classification": "Lava Dome"
 	},
-	"Regigigas": {
+	"regigigas": {
 		"#": 486,
+		"spritePath": 486,
+		"Name": "Regigigas",
 		"HP": 110,
 		"Atk": 160,
 		"Def": 110,
@@ -10205,8 +11177,10 @@
 		"Catch Rate": 3,
 		"Classification": "Colossal"
 	},
-	"Giratina (Altered)": {
+	"giratina (altered)": {
 		"#": 487,
+		"spritePath": 487,
+		"Name": "Giratina (Altered)",
 		"HP": 150,
 		"Atk": 100,
 		"Def": 120,
@@ -10226,8 +11200,10 @@
 		"Catch Rate": 3,
 		"Classification": "Renegade"
 	},
-	"Cresselia": {
+	"cresselia": {
 		"#": 488,
+		"spritePath": 488,
+		"Name": "Cresselia",
 		"HP": 120,
 		"Atk": 70,
 		"Def": 110,
@@ -10247,8 +11223,10 @@
 		"Catch Rate": 3,
 		"Classification": "Lunar"
 	},
-	"Phione": {
+	"phione": {
 		"#": 489,
+		"spritePath": 489,
+		"Name": "Phione",
 		"HP": 80,
 		"Atk": 80,
 		"Def": 80,
@@ -10268,8 +11246,10 @@
 		"Catch Rate": 30,
 		"Classification": "Sea Drifter"
 	},
-	"Manaphy": {
+	"manaphy": {
 		"#": 490,
+		"spritePath": 490,
+		"Name": "Manaphy",
 		"HP": 100,
 		"Atk": 100,
 		"Def": 100,
@@ -10289,8 +11269,10 @@
 		"Catch Rate": 3,
 		"Classification": "Seafaring"
 	},
-	"Darkrai": {
+	"darkrai": {
 		"#": 491,
+		"spritePath": 491,
+		"Name": "Darkrai",
 		"HP": 70,
 		"Atk": 90,
 		"Def": 90,
@@ -10310,8 +11292,10 @@
 		"Catch Rate": 3,
 		"Classification": "Pitch-Black"
 	},
-	"Shaymin (Land)": {
+	"shaymin (land)": {
 		"#": 492,
+		"spritePath": 492,
+		"Name": "Shaymin (Land)",
 		"HP": 100,
 		"Atk": 100,
 		"Def": 100,
@@ -10331,8 +11315,10 @@
 		"Catch Rate": 45,
 		"Classification": "Gratitude"
 	},
-	"Arceus": {
+	"arceus": {
 		"#": 493,
+		"spritePath": 493,
+		"Name": "Arceus",
 		"HP": 120,
 		"Atk": 120,
 		"Def": 120,
