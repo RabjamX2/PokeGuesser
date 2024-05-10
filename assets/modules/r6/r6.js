@@ -40,8 +40,8 @@ fetch(`/assets/modules/${gameInfo.gameID}/data.json`)
 			headerRow.innerHTML += `<th>${valueData["title"]}</th>`;
 		}
 
-		// const randomOperator = getRandomObjectKeyPair(allOperators);
-		const randomOperator = { mira: allOperators["mira"] };
+		const randomOperator = getRandomObjectKeyPair(allOperators);
+		// const randomOperator = { mira: allOperators["mira"] };
 		console.log(Object.keys(randomOperator)[0]); // Name of the random pokemon
 		const gameOne = new RainbowSix(gameInfo, randomOperator, allOperators, lookup);
 

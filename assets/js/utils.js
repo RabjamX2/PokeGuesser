@@ -185,7 +185,7 @@ export default class Game {
 				content.classList.add("range");
 				content.setAttribute(
 					"style",
-					`background-image: url('assets/images/${result === "less" ? "downArrow" : "upArrow"}.svg')`
+					`background-image: url('assets/images/${result === "greater" ? "downArrow" : "upArrow"}.svg')`
 				);
 				content.innerHTML = `${value ?? "None"}`;
 				cell.appendChild(content);
