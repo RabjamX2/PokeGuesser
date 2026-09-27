@@ -1,0 +1,617 @@
+/* ═══════════════════════════════════════════════
+   GuesserGames — Design System
+   ═══════════════════════════════════════════════ */
+
+/* ── Design tokens ── */
+:root {
+    --bg: #0f1117;
+    --surface: #1a1d24;
+    --surface-2: #22252e;
+    --border: #2a2d36;
+    --text: #e6e7ec;
+    --muted: #6e7280;
+
+    /* Outcome colours (used by JS inline styles too) */
+    --correct: #3aa05a;
+    --partial: #c9951a;
+    --incorrect: #2d2f3c;
+    --greater: #c05228;
+    --less: #c05228;
+
+    /* Per-game accent — overridden by body class */
+    --accent: #9d7ee8;
+    --accent-glow: rgba(157, 126, 232, 0.18);
+
+    --header-h: 60px;
+    --footer-h: 44px;
+    --input-h: 68px;
+    --radius-sm: 6px;
+    --radius-md: 14px;
+    --radius-lg: 999px;
+}
+
+/* Pokémon theme */
+body.pokemon {
+    --accent: #e3350d;
+    --accent-glow: rgba(227, 53, 13, 0.18);
+}
+
+/* R6 Siege theme */
+body.r6 {
+    --accent: #d4a843;
+    --accent-glow: rgba(212, 168, 67, 0.18);
+}
+
+/* ── Reset ── */
+html {
+    /* Horizontal scroll lives on the root so it doesn't create a new
+       sticky scroll container — position:sticky on th works correctly. */
+    overflow-x: auto;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", system-ui, sans-serif;
+    color: var(--text);
+}
+
+body {
+    background: var(--bg);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    /* Space for fixed footer */
+    padding-bottom: var(--footer-h);
+}
+
+/* Game pages also need room for the sticky input bar */
+body.pokemon,
+body.r6 {
+    padding-bottom: calc(var(--footer-h) + var(--input-h));
+}
+
+/* ──────────────────────────────────────
+   HEADER
+────────────────────────────────────── */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: var(--header-h);
+    background: rgba(15, 17, 23, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+header h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    justify-self: center;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--text) 65%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.back-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition:
+        color 0.2s,
+        border-color 0.2s,
+        background 0.2s;
+    justify-self: start;
+    white-space: nowrap;
+}
+
+.back-link:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    background: var(--accent-glow);
+}
+
+/* ──────────────────────────────────────
+   FOOTER
+────────────────────────────────────── */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--footer-h);
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+}
+
+footer p {
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/* ══════════════════════════════════════
+   MENU PAGE
+══════════════════════════════════════ */
+main.menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 4rem 1.5rem 3rem;
+    width: 100%;
+}
+
+.menu-hero-title {
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-align: center;
+    line-height: 1;
+    background: linear-gradient(135deg, #fff 20%, var(--muted) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.menu-sub {
+    font-size: 0.95rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: -1rem;
+}
+
+.menu-grid {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    width: 210px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 2.25rem 1.5rem 2rem;
+    transition:
+        transform 0.22s,
+        border-color 0.25s,
+        box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Per-card glow overlay */
+.menu-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Pokémon card */
+.menu-card.pokemon::after {
+    background: radial-gradient(circle at 50% 0%, rgba(227, 53, 13, 0.15), transparent 70%);
+}
+.menu-card.pokemon:hover {
+    border-color: #e3350d;
+    box-shadow: 0 10px 36px rgba(227, 53, 13, 0.28);
+}
+.menu-card.pokemon:hover::after {
+    opacity: 1;
+}
+
+/* R6 card */
+.menu-card.r6::after {
+    background: radial-gradient(circle at 50% 0%, rgba(212, 168, 67, 0.15), transparent 70%);
+}
+.menu-card.r6:hover {
+    border-color: #d4a843;
+    box-shadow: 0 10px 36px rgba(212, 168, 67, 0.22);
+}
+.menu-card.r6:hover::after {
+    opacity: 1;
+}
+
+.menu-card-icon {
+    font-size: 3.2rem;
+    line-height: 1;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+}
+
+.menu-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.menu-card-desc {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   GAME PAGE
+══════════════════════════════════════ */
+main:not(.menu) {
+    flex: 1;
+    width: 100%;
+    max-width: 1080px;
+    padding: 1.5rem 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ── Results table ── */
+.guess-results {
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+
+/* No overflow wrapper here — any overflow container between a sticky
+   th and the scroll root breaks sticky. Horizontal overflow is handled
+   by html so it doesn't create a new sticky scroll container. */
+
+#results-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 5px;
+    table-layout: fixed;
+}
+
+/* Sprite column is narrower */
+#results-table th:first-child {
+    width: 92px;
+}
+
+#results-table th {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    padding: 0.65rem 0.25rem;
+    position: sticky;
+    top: var(--header-h);
+    background: var(--bg);
+    z-index: 2;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Slide-in animation for new rows */
+#results-table tbody tr {
+    animation: rowIn 0.32s ease both;
+}
+
+@keyframes rowIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#results-table tbody td {
+    border-radius: var(--radius-sm);
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    vertical-align: middle;
+    padding: 0.4rem;
+    -webkit-text-stroke: 0;
+    min-height: 80px;
+}
+
+/* ── Sprite cell ── */
+.sprite-cell {
+    width: 92px;
+    min-width: 92px;
+    padding: 6px !important;
+}
+
+#results-table .sprite {
+    display: block;
+    width: 100%;
+    height: 80px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.55));
+}
+
+/* ── Range cells ── */
+.range-cell {
+    min-width: 80px;
+}
+
+.range {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 0.5rem 0.25rem;
+    min-height: 80px;
+}
+
+.range-value {
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+#results-table svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* ── Regular value cells ── */
+#results-table tbody td:not(.sprite-cell):not(.range-cell) {
+    min-width: 80px;
+    line-height: 1.3;
+}
+
+/* ──────────────────────────────────────
+   STICKY INPUT BAR (game pages only)
+────────────────────────────────────── */
+.guess-wrapper {
+    position: fixed;
+    bottom: var(--footer-h);
+    left: 0;
+    right: 0;
+    height: var(--input-h);
+    background: rgba(15, 17, 23, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0 1.25rem;
+    z-index: 5;
+}
+
+#guess-input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+}
+
+#guess-input {
+    width: 100%;
+    height: 44px;
+    padding: 0 1.25rem;
+    background: var(--surface-2);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    color: var(--text);
+    font-size: 0.95rem;
+    outline: none;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+#guess-input::placeholder {
+    color: var(--muted);
+}
+
+#guess-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Suggestions dropdown — floats above input */
+#suggestionsList {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    list-style: none;
+    overflow: hidden;
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#suggestionsList li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.45rem 0.9rem;
+    cursor: pointer;
+    transition: background 0.12s;
+}
+
+#suggestionsList li:hover {
+    background: var(--surface-2);
+}
+
+#suggestionsList .sprite {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#suggestionsList span {
+    font-size: 0.88rem;
+    color: var(--text);
+}
+
+/* Submit button */
+#submit-div {
+    flex-shrink: 0;
+}
+
+#guess-input-button {
+    height: 44px;
+    padding: 0 1.5rem;
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius-lg);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+        filter 0.18s,
+        transform 0.12s;
+    white-space: nowrap;
+}
+
+#guess-input-button:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
+#guess-input-button:active {
+    filter: brightness(0.88);
+    transform: translateY(0);
+}
+
+/* ── Give Up button ── */
+#give-up-button {
+    height: 44px;
+    padding: 0 1.25rem;
+    background: transparent;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition:
+        border-color 0.18s,
+        color 0.18s,
+        background 0.18s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+#give-up-button:hover {
+    border-color: #c05228;
+    color: #e07050;
+    background: rgba(192, 82, 40, 0.1);
+}
+
+/* ── Reveal card (replaces input bar on give-up / correct guess) ── */
+.reveal-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 640px;
+    padding: 0 0.5rem;
+}
+
+.reveal-sprite {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+}
+
+.reveal-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+}
+
+.reveal-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+
+.reveal-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reveal-new-game {
+    height: 44px;
+    padding: 0 1.4rem;
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius-lg);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition:
+        filter 0.18s,
+        transform 0.12s;
+}
+
+.reveal-new-game:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}

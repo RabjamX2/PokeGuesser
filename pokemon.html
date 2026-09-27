@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="RabjamX2, SearAm" />
+    <title>PokèGuesser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="pokemon">
+    <header>
+        <a class="back-link" href="index.html">← All Games</a>
+        <h1>PokèGuesser</h1>
+    </header>
+
+    <main>
+        <section class="guess-results">
+            <table id="results-table">
+                <thead id="thead"></thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </section>
+        <section class="guess-wrapper">
+            <div id="guess-input-wrapper">
+                <input id="guess-input" name="guess" type="text" placeholder="Guess a Pokèmon" autocomplete="off" />
+                <ul id="suggestionsList"></ul>
+            </div>
+            <div id="submit-div"><button id="guess-input-button" type="submit">Submit</button></div>
+            <button id="give-up-button" type="button">Give Up</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; RabjamX2 & SearAm</p>
+    </footer>
+
+    <script type="module" src="assets/modules/pokemon/pokemon.js"></script>
+</body>
+
+</html>
